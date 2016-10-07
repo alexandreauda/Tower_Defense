@@ -17,14 +17,16 @@ int main(int argc, char * argv[])
     Engine e(argc,argv,height,widht,title);
 
 
-    GraphicEngine * ge = new MyGraphicEngine();
-    GameEngine * gme = new MyGameEngine();
-    ControlEngine * ce = new MyControlEngine();
+    /*GraphicEngine * ge=new MyGraphicEngine();
+    GameEngine * gme=new MyGameEngine();
+    ControlEngine * ce=new MyControlEngine();
 
-    e.setGraphicEngine(ge);//Trace le contenu dans la fenetre
-    e.setGameEngine(gme);//Anime les objet anime du jeu apparaissant dans la fenetre
-    e.setControlEngine(ce);//Active les interactions de l'utilisateur (Clic de souris, pression sur touche du clavier,...
+    e.setGraphicEngine(ge);
+    e.setGameEngine(gme);
+    e.setControlEngine(ce);
 
-    e.start();
+    e.start();*/
+    cout<<"Hello";
+
     return 0;
 }

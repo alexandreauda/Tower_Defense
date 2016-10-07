@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Engine.h"
-#include "Papillon.h"
+
 class MyGameEngine:public GameEngine {
 
 private:

@@ -1,25 +1,18 @@
-#pragma once
-#include "Engine.h"
-#include "GraphicPrimitives.h"
-#include "Papillon.h"
-//#include "Block.h"
+#include "Block.h"
 
 class MyGraphicEngine:public GraphicEngine {
 
-private:
-
-    /******ATTRIBUT******/
-    int const worldWidth = 12;
-	int const worldHeight = 12;
-	int blockSize = 52;
-
-	//Block block [12][12];
-
-
 public:
 
+    /******ATTRIBUT******/
+    int worldWidth;
+	int worldHeight;
+	int blockSize;
+
+
+
     /******CONSTRUCTEUR******/
-    MyGraphicEngine();
+    MyGraphicEngine():GraphicEngine(),worldWidth(12),worldHeight(12),blockSize(52){}
 
     /******PROTOTYPES DES METHODES******/
 
