@@ -7,12 +7,12 @@ class MyGameEngine:public GameEngine {
 private:
 
     /******ATTRIBUT******/
-    std::vector<Papillon * > *paps;
+
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGameEngine(std::vector<Papillon * > * paps_):paps(paps_){}
+    MyGameEngine(){}
 
     /******PROTOTYPES DES METHODES******/
     virtual void idle();
