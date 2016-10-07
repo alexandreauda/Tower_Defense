@@ -2,6 +2,7 @@
 #include "Engine.h"
 #include "GraphicPrimitives.h"
 #include "Papillon.h"
+//#include "Block.h"
 
 class MyGraphicEngine:public GraphicEngine {
 
@@ -12,13 +13,13 @@ private:
 	int const worldHeight = 12;
 	int blockSize = 52;
 
-	Block block [][];
+	//Block block [12][12];
 
 
 public:
 
-    /******CONSTRUCTEUR A PARAMETRE******/
-    MyGraphicEngine(){}
+    /******CONSTRUCTEUR******/
+    MyGraphicEngine();
 
     /******PROTOTYPES DES METHODES******/
 

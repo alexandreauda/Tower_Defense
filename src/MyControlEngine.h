@@ -11,7 +11,7 @@ class MyControlEngine:public ControlEngine {
 public:
 
     /******CONSTRUCTEUR******/
-    MyControlEngine(){}
+    MyControlEngine();
 
     /******PROTOTYPES DES METHODES******/
     virtual void MouseCallback(int button, int state, int x, int y) ;

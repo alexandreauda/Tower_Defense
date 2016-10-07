@@ -12,7 +12,7 @@ private:
 public:
 
     /******CONSTRUCTEUR******/
-    MyGameEngine(){}
+    MyGameEngine();
 
     /******PROTOTYPES DES METHODES******/
     virtual void idle();
