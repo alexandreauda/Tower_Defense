@@ -7,12 +7,12 @@ class MyGameEngine:public GameEngine {
 private:
 
     /******ATTRIBUT******/
-    int g1;
+    int m_g1;
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGameEngine():g1(0){}
+    MyGameEngine():m_g1(0){}
 
     /******PROTOTYPES DES METHODES******/
     virtual void idle();

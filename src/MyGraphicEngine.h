@@ -5,14 +5,14 @@ class MyGraphicEngine:public GraphicEngine {
 public:
 
     /******ATTRIBUT******/
-    int worldWidth;
-	int worldHeight;
-	int blockSize;
+    int m_worldWidth;
+	int m_worldHeight;
+	int m_blockSize;
 
 
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():GraphicEngine(),worldWidth(12),worldHeight(12),blockSize(50){}
+    MyGraphicEngine():GraphicEngine(),m_worldWidth(12),m_worldHeight(12),m_blockSize(50){}
 
     /******PROTOTYPES DES METHODES******/
 
