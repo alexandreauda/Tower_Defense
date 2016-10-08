@@ -12,11 +12,11 @@ public:
 
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():GraphicEngine(),worldWidth(12),worldHeight(12),blockSize(52){}
+    MyGraphicEngine():GraphicEngine(),worldWidth(12),worldHeight(12),blockSize(50){}
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual void physic();
+    //virtual void physic();
 
     virtual void Draw();
 

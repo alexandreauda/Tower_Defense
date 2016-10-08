@@ -17,7 +17,7 @@ int main(int argc, char * argv[])
     Engine e(argc,argv,height,widht,title);
 
 
-    /*GraphicEngine * ge=new MyGraphicEngine();
+    GraphicEngine * ge=new MyGraphicEngine();
     GameEngine * gme=new MyGameEngine();
     ControlEngine * ce=new MyControlEngine();
 
@@ -25,7 +25,7 @@ int main(int argc, char * argv[])
     e.setGameEngine(gme);
     e.setControlEngine(ce);
 
-    e.start();*/
+    e.start();
     cout<<"Hello";
 
     return 0;
