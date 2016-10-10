@@ -13,8 +13,8 @@ using namespace std;
 int main(int argc, char * argv[])
 {
     char * title=new char[40]{'T','o','w','e','r',' ','D','e','f','e','n','c','e',' ','P','r','o','j','e','c','t',' ','B','y',' ','A','l','e','x','a','n','d','r','e',' ','A','U','D','A','\0'};
-    double const height=800,widht=600;
-    Engine e(argc,argv,height,widht,title);
+    double const widht=800,height=600;
+    Engine e(argc,argv,widht,height,title);
 
 
     GraphicEngine * ge=new MyGraphicEngine();
@@ -26,7 +26,7 @@ int main(int argc, char * argv[])
     e.setControlEngine(ce);
 
     e.start();
-    cout<<"Hello";
+
 
     return 0;
 }

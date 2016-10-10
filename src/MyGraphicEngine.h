@@ -1,3 +1,6 @@
+#include <cstdio>
+#include <cstdlib>
+#include <ctime> //Ne pas oublier d'inclure le fichier ctime
 #include "Block.h"
 
 class MyGraphicEngine:public GraphicEngine {
@@ -5,14 +8,14 @@ class MyGraphicEngine:public GraphicEngine {
 public:
 
     /******ATTRIBUT******/
-    int m_worldWidth;
-	int m_worldHeight;
-	int m_blockSize;
+    float m_worldWidth;
+	float m_worldHeight;
+	float m_blockSize;
 
 
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():GraphicEngine(),m_worldWidth(12),m_worldHeight(12),m_blockSize(50){}
+    MyGraphicEngine():m_worldWidth(12),m_worldHeight(12),m_blockSize(0.05){}
 
     /******PROTOTYPES DES METHODES******/
 

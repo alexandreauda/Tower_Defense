@@ -5,10 +5,11 @@ using namespace std;
 
 
 /******IMPLEMENTATION DES METHODES******/
-void Block::draw()
+void Block::draw(float r, float g, float  b)
 {
 
-    GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, m_r, m_g,  m_b, m_a);
+    GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, r, g,  b, m_a);
+
 	//if (airID != Value::airAir)
 	//{
     //
