@@ -19,8 +19,6 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    //virtual void physic();
-
     virtual void Draw();
 
 };
