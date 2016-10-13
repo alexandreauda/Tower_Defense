@@ -5,7 +5,7 @@
 
 class Block {
 
-public:
+protected:
 
     /******ATTRIBUT******/
 	float m_posx;
@@ -14,6 +14,8 @@ public:
 	float m_height;
 	float m_r, m_g, m_b, m_a;//Couleur RGB + a=Alpha (transparence)
     int m_grassID;
+
+    public:
 
     /******CONSTRUCTEUR A PARAMETRE******/
 	Block(float posx=0, float posy=0, float width=5, float height=5, float r = 0.0, float g = 1.0, float  b = 0.0, float a = 1.0, int grassID = 0):m_posx(posx),
@@ -26,9 +28,9 @@ public:
                                                                                                                                                                  {}//constructeur
 
     /******PROTOTYPES DES METHODES******/
-    void draw();//draw the block
+    void draw() const;//draw the block
 
-    void setm_grassID (int grassID);//Setteur de l'attribut m_grassID
+    void setm_grassID (int const& grassID);//Setteur de l'attribut m_grassID
 
 };
 

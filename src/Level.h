@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+
 class Level{
 
 private:
@@ -13,11 +14,11 @@ private:
 
 public:
 
-    /******CONSTRUCTEUR******/
+    /******CONSTRUCTEUR PAR DEFAUT******/
 	Level():m_l1(0){}
 
     /******PROTOTYPES DES METHODES******/
 
-    void loadLevel(std::string stringLevel,int matLevel[12][12]);
+    void loadLevel(std::string const& stringLevel,int matLevel[12][12]) const;
 
 };
