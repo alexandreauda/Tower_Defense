@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime> //Ne pas oublier d'inclure le fichier ctime
 #include "Block.h"
+#include "Level.h"
 
 class MyGraphicEngine:public GraphicEngine {
 

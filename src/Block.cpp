@@ -17,8 +17,12 @@ void Block::draw()
      if (m_grassID == v.getm_groundGrass()){
         GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, r, g, b, m_a);
     }
-    else{
+    else if(m_grassID == 1){
         GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 1, 0,  0, m_a);
+    }
+    else{
+        GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 0, 0,  1, m_a);
+
     }
 
 }
