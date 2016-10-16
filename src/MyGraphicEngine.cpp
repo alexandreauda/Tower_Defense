@@ -22,6 +22,9 @@ void MyGraphicEngine::Draw(){
     int matLevel[12][12]; //on definit une matrice vide 12*12 nommee matLevel
     level.loadLevel("Files_Levels/Level_1.txt",matLevel);// on initialise la matrice precedente matLevel avec les donnes lues dans le fichier specifie
 
+    LibMatrix mat;
+    mat.matrixRot180(matLevel);//On fait une rotation de la matrice matLevel de 180° de la sens horaire.
+
         //on parcourt la grille
 		for(int y=0;y<12;y++){
 			for(int x=0;x<12;x++){
