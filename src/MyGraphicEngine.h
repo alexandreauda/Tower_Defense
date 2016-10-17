@@ -14,7 +14,7 @@ protected:
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():m_worldWidth(12),m_worldHeight(12),m_blockSize(0.06){}
+    MyGraphicEngine():m_worldWidth(12),m_worldHeight(12),m_blockSize(0.13){}
 
     /******PROTOTYPES DES METHODES******/
 

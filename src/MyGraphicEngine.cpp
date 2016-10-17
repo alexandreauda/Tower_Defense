@@ -30,7 +30,7 @@ void MyGraphicEngine::Draw(){
 			for(int x=0;x<12;x++){
             Value v;
 
-				block[y][x]= Block(-x*m_blockSize-0.1*x+0.8,-y*m_blockSize+0.2*y-0.8,m_blockSize,m_blockSize,r,g,b,alpha, v.getm_groundGrass());//on initialise la matrice block[][] avec des blocs
+				block[y][x]= Block(-x*m_blockSize-0.004*x+0.67,-y*m_blockSize+0.266*y-0.638,m_blockSize,m_blockSize,r,g,b,alpha, v.getm_groundGrass());//on initialise la matrice block[][] avec des blocs
 
                     (block[y][x]).setm_grassID(matLevel[y][x]);//on set le m_grassID des blocs en fonction de la valeur de l'element correspondant dans matLevel
                                                                //Ainsi, si le bloc est un morceau de chemin dans le fichier Files_Levels, son m_grassID sera parametre
