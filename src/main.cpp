@@ -24,6 +24,9 @@ int main(int argc, char * argv[])
     e.setGameEngine(gme);
     e.setControlEngine(ce);
 
+    glClearColor(0.3, 0.3, 0.3, 1.0);//Permet de changer la couleur de vidange par défaut du tampon de couleur, qui par defaut est le noir. Cela permet entre autre de changer la couleur de fond de la fenetre.
+
+
     //lance l'application
     e.start();
 
