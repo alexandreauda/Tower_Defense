@@ -43,5 +43,9 @@ void MyGraphicEngine::Draw(){
 			}
 		}
 
+        //On affiche le Store
+		Store shop;
+		shop.draw();//Draw le Store
+
 }
 

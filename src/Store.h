@@ -1,22 +1,19 @@
 #ifndef STORE_H
 #define STORE_H
 
+#include "Block.h"
 
 class Store
 {
     private:
 
         /******ATTRIBUT******/
-        int const m_shopwidth;
-        int const m_buttonSize;
-        int const m_cellSpace;
-
-    protected:
+        float const m_shopCellSize;
 
     public:
 
         /******CONSTRUCTEUR PAR DEFAUT******/
-        Store():m_shopwidth(8), m_buttonSize(32), m_cellSpace(2){}
+        Store(float shopCellSize=0.13):m_shopCellSize(shopCellSize){}
 
 
     /******PROTOTYPES DES METHODES******/
