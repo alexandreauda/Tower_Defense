@@ -8,17 +8,20 @@ class Store
     private:
 
         /******ATTRIBUT******/
-        float const m_shopCellSize;
+        float m_shopCellWidth;
+        float m_shopCellHeight;
 
     public:
 
         /******CONSTRUCTEUR PAR DEFAUT******/
-        Store(float shopCellSize=0.13):m_shopCellSize(shopCellSize){}
+        Store(float shopCellWidth=0.13, float shopCellHeight=0.13):m_shopCellWidth(shopCellWidth), m_shopCellHeight(shopCellHeight){}
 
 
     /******PROTOTYPES DES METHODES******/
 
-    void draw()const;//draw the block
+    void loadStore(Block stockStore[12]) const;
+
+    void draw() const ;//dessine le Store
 
 
 };

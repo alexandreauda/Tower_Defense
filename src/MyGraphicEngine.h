@@ -1,5 +1,6 @@
 #include "Level.h"
 #include "LibMatrix.h"
+#include "Grille.h"
 #include "Store.h"
 
 class MyGraphicEngine:public GraphicEngine {
@@ -7,14 +8,12 @@ class MyGraphicEngine:public GraphicEngine {
 protected:
 
     /******ATTRIBUT******/
-    float m_worldWidth;
-	float m_worldHeight;
-	float m_blockSize;
+    int m_mg;
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():m_worldWidth(12),m_worldHeight(12),m_blockSize(0.13){}
+    MyGraphicEngine():m_mg(0){}
 
     /******PROTOTYPES DES METHODES******/
 
