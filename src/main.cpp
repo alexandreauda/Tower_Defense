@@ -13,10 +13,11 @@ using namespace std;
 int main(int argc, char * argv[])
 {
     char * title=new char[40]{'T','o','w','e','r',' ','D','e','f','e','n','c','e',' ','P','r','o','j','e','c','t',' ','B','y',' ','A','l','e','x','a','n','d','r','e',' ','A','U','D','A','\0'};
-    int widht,height;
+    int widthWindows,heigthWindows;
     Windows dimensionWindows;
-    dimensionWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widht, height);
-    Engine e(argc,argv,widht,height,title);//definition de la dimension de la fenetre et de son titre
+    dimensionWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
+
+    Engine e(argc,argv,widthWindows,heigthWindows,title);//definition de la dimension de la fenetre et de son titre
 
     //Initialisation des objets
     GraphicEngine * ge=new MyGraphicEngine();
