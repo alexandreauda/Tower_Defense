@@ -16,9 +16,8 @@ Le vecteur statique en parametre est modifiee par la methode car il est passe pa
 void Store::loadStore(BlockStore stockStore[12]) const {
 
 for(int i=0;i<12;i++){
-            Value w;
 
-				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67, -0.85, m_shopCellWidth, m_shopCellHeight, w.getm_groundGrass());//on initialise le tableau stockStore[] avec des blocs
+				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67, -0.85, m_shopCellWidth, m_shopCellHeight);//on initialise le tableau stockStore[] avec des blocs
 
                 (stockStore[i]).setm_colorBlockID(2);//on set l'ID
 

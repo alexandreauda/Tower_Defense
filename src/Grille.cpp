@@ -24,9 +24,8 @@ void Grille::loadGrille(string const& stringLevel, BlockGrille grilleBlock[12][1
         //on parcourt la grille
 		for(int y=0;y<12;y++){
 			for(int x=0;x<12;x++){
-            Value v;
 
-				grilleBlock[y][x]= BlockGrille(-x*m_blockWidth-0.004*x+0.67, -y*m_blockHeight+0.266*y-0.638, m_blockWidth, m_blockHeight, v.getm_groundGrass());//on initialise la matrice block[][] avec des blocs
+				grilleBlock[y][x]= BlockGrille(-x*m_blockWidth-0.004*x+0.67, -y*m_blockHeight+0.266*y-0.638, m_blockWidth, m_blockHeight);//on initialise la matrice block[][] avec des blocs
 
                     (grilleBlock[y][x]).setm_colorBlockID(matLevel[y][x]);//on set le m_colorBlockID des blocs en fonction de la valeur de l'element correspondant dans matLevel
                                                                           //Ainsi, si le bloc est un morceau de chemin dans le fichier Files_Levels, son m_colorBlockID sera parametre

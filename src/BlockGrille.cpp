@@ -13,10 +13,9 @@ La methode draw de la classe BlockGrille permet de dessiner des blocs de maniere
 */
 void BlockGrille::draw() const
 {
-    Value v;
     float const alpha=1.0;
 
-     if (m_colorBlockID == v.getm_groundGrass()){ //si le m_colorBlockID du bloc est egale a 0
+     if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert
         float const r=0.0;
         float const g=1.0;
