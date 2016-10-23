@@ -18,9 +18,9 @@ void Store::loadStore(BlockStore stockStore[12]) const {
 for(int i=0;i<12;i++){
             Value w;
 
-				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67,-0.85,m_shopCellWidth,m_shopCellHeight,0.0,0.0,1.0,1.0, w.getm_groundGrass());//on initialise le tableau stockStore[] avec des blocs
+				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67, -0.85, m_shopCellWidth, m_shopCellHeight, w.getm_groundGrass());//on initialise le tableau stockStore[] avec des blocs
 
-                (stockStore[i]).setm_grassID(2);//on set l'ID
+                (stockStore[i]).setm_colorBlockID(2);//on set l'ID
 
 			}
 }
@@ -41,7 +41,7 @@ loadStore(stockStore);//on initialise le vecteur statique stockStore pris en par
 //on parcourt le vecteur statique
 for(int i=0;i<12;i++){
 
-                   (stockStore[i]).draw();//on dessine le bloc correspondant
+                   (stockStore[i]).draw();//on dessine le bloc correspondant (dependamment de son m_colorBlockID, il sera dessine dans une couleur specifique)
 
 			}
 }

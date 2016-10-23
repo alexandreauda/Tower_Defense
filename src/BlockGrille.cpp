@@ -14,22 +14,30 @@ La methode draw de la classe BlockGrille permet de dessiner des blocs de maniere
 void BlockGrille::draw() const
 {
     Value v;
-
-    float const r=0.0;
-    float const g=1.0;
-    float const b=0.0;
+    float const alpha=1.0;
 
      if (m_colorBlockID == v.getm_groundGrass()){ //si le m_colorBlockID du bloc est egale a 0
-        GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, r, g, b, m_a); //on affiche le bloc en carre vert
-    }
+         //on met les contantes RGB a vert
+        float const r=0.0;
+        float const g=1.0;
+        float const b=0.0;
+        GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha); //on affiche le bloc en carre vert
+     }
     else if(m_colorBlockID == 1){ //si le m_colorBlockID du bloc est egale a 1
-        GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 1, 0,  0, m_a);//on affiche le bloc en carre rouge
-    }
+        //on met les contantes RGB au rouge
+        float const r=1.0;
+        float const g=0.0;
+        float const b=0.0;
+        GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha);//on affiche le bloc en carre rouge
+         }
     else{ //si le m_colorBlockID possede toutes autres valeurs
-        GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 0, 0,  1, m_a); //on affiche le bloc en carre bleu
+        //on met les contantes RGB au bleu
+        float const r=0.0;
+        float const g=0.0;
+        float const b=1.0;
+        GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha); //on affiche le bloc en carre bleu
 
     }
-
 }
 
 
