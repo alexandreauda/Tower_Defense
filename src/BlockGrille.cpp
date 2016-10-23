@@ -19,13 +19,13 @@ void BlockGrille::draw() const
     float const g=1.0;
     float const b=0.0;
 
-     if (m_grassID == v.getm_groundGrass()){ //si le m_grassID du bloc est egale a 0
+     if (m_colorBlockID == v.getm_groundGrass()){ //si le m_colorBlockID du bloc est egale a 0
         GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, r, g, b, m_a); //on affiche le bloc en carre vert
     }
-    else if(m_grassID == 1){ //si le m_grassID du bloc est egale a 1
+    else if(m_colorBlockID == 1){ //si le m_colorBlockID du bloc est egale a 1
         GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 1, 0,  0, m_a);//on affiche le bloc en carre rouge
     }
-    else{ //si le m_grassID possede toutes autres valeurs
+    else{ //si le m_colorBlockID possede toutes autres valeurs
         GraphicPrimitives::drawFillRect2D(m_posx,m_posy,m_width,m_height, 0, 0,  1, m_a); //on affiche le bloc en carre bleu
 
     }
@@ -35,11 +35,11 @@ void BlockGrille::draw() const
 
 /*
 @description:
-Mutateur de l'attribut m_grassID.
+Mutateur de l'attribut m_colorBlockID.
 
-@param: La methode setm_grassID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_grassID
+@param: La methode setm_colorBlockID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_colorBlockID
 */
-void BlockGrille::setm_grassID (int const& grassID){
- m_grassID=grassID;
+void BlockGrille::setm_colorBlockID (int const& colorBlockID){
+ m_colorBlockID=colorBlockID;
 }
