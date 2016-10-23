@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 /******IMPLEMENTATION DES METHODES******/
 
 /*
@@ -19,11 +18,12 @@ for(int i=0;i<12;i++){
 
 				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67, -0.85, m_shopCellWidth, m_shopCellHeight);//on initialise le tableau stockStore[] avec des blocs
 
+                (stockStore[i]).setm_posID(11-i);//on numerote les blocks au fur et a mesure
+
                 (stockStore[i]).setm_colorBlockID(2);//on set l'ID
 
 			}
 }
-
 
 
 /*
