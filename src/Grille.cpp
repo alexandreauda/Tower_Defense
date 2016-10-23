@@ -27,6 +27,10 @@ void Grille::loadGrille(string const& stringLevel, BlockGrille grilleBlock[12][1
 
 				grilleBlock[y][x]= BlockGrille(-x*m_blockWidth-0.004*x+0.67, -y*m_blockHeight+0.266*y-0.638, m_blockWidth, m_blockHeight);//on initialise la matrice block[][] avec des blocs
 
+                    (grilleBlock[y][x]).setm_posxID(11-x);//on set le m_posxID des blocs en fonction de leurs numeros en abscisse
+
+                    (grilleBlock[y][x]).setm_posyID(11-y);//on set le m_posyID des blocs en fonction de leurs numeros en ordonne
+
                     (grilleBlock[y][x]).setm_colorBlockID(matLevel[y][x]);//on set le m_colorBlockID des blocs en fonction de la valeur de l'element correspondant dans matLevel
                                                                           //Ainsi, si le bloc est un morceau de chemin dans le fichier Files_Levels, son m_colorBlockID sera parametre
                                                                           //en consequence pour qu'il s'affiche in fine dans la bonne couleur. De meme, si le bloc en question est un

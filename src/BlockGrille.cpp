@@ -39,6 +39,48 @@ void BlockGrille::draw() const
     }
 }
 
+/*
+@description:
+Accesseur de l'attribut m_posxID.
+
+@param: null
+*/
+int BlockGrille::getm_posxID() const{
+    return m_posxID;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_posyID.
+
+@param: null
+*/
+int BlockGrille::getm_posyID() const{
+    return m_posyID;
+}
+
+
+/*
+@description:
+Mutateur de l'attribut m_posxID.
+
+@param: La methode setm_posxID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_posxID
+*/
+void BlockGrille::setm_posxID (int const& posxID){
+ m_posxID=posxID;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_posyID.
+
+@param: La methode setm_posyID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_posyID
+*/
+void BlockGrille::setm_posyID (int const& posyID){
+ m_posyID=posyID;
+}
 
 /*
 @description:
