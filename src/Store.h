@@ -1,7 +1,7 @@
 #ifndef STORE_H
 #define STORE_H
 
-#include "Block.h"
+#include "BlockStore.h"
 
 class Store
 {
@@ -19,7 +19,7 @@ class Store
 
     /******PROTOTYPES DES METHODES******/
 
-    void loadStore(Block stockStore[12]) const;
+    void loadStore(BlockStore stockStore[12]) const;
 
     void draw() const ;//dessine le Store
 

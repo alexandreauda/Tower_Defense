@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "Level.h"
-#include "Block.h"
+#include "BlockGrille.h"
 #include "LibMatrix.h"
 
 
@@ -23,7 +23,7 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    void loadGrille(std::string const& stringLevel, Block grilleBlock[12][12]) const;
+    void loadGrille(std::string const& stringLevel, BlockGrille grilleBlock[12][12]) const;
 
     void draw(std::string const& stringLevel) const;
 

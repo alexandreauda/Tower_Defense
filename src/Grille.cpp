@@ -8,11 +8,11 @@ using namespace std;
 La methode loadGrille permet d'initialiser une matrice prise en parametre avec la matrice presente dans un fichier.
 La matrice en parametre est modifiee par la methode car elle est passee par reference.
 
-@param: La methode loadGrille prend deux parametres obligatoires: un string, et une matrice statique de Block 12*12.
+@param: La methode loadGrille prend deux parametres obligatoires: un string, et une matrice statique de BlockGrille 12*12.
 -param1: le string permet de specifier le chemin du fichier contenant la matrice qui sert a initialiser la matrice passee en second parametre
--param2: une matrice de Block 12*12 qui va etre modifiee pour etre initialisee avec les donnees lues dans le fichier.
+-param2: une matrice de BlockGrille 12*12 qui va etre modifiee pour etre initialisee avec les donnees lues dans le fichier.
 */
-void Grille::loadGrille(string const& stringLevel, Block grilleBlock[12][12]) const{
+void Grille::loadGrille(string const& stringLevel, BlockGrille grilleBlock[12][12]) const{
 
     float const r=0.0;
     float const g=1.0;
@@ -31,7 +31,7 @@ void Grille::loadGrille(string const& stringLevel, Block grilleBlock[12][12]) co
 			for(int x=0;x<12;x++){
             Value v;
 
-				grilleBlock[y][x]= Block(-x*m_blockWidth-0.004*x+0.67,-y*m_blockHeight+0.266*y-0.638,m_blockWidth,m_blockHeight,r,g,b,alpha, v.getm_groundGrass());//on initialise la matrice block[][] avec des blocs
+				grilleBlock[y][x]= BlockGrille(-x*m_blockWidth-0.004*x+0.67,-y*m_blockHeight+0.266*y-0.638,m_blockWidth,m_blockHeight,r,g,b,alpha, v.getm_groundGrass());//on initialise la matrice block[][] avec des blocs
 
                     (grilleBlock[y][x]).setm_grassID(matLevel[y][x]);//on set le m_grassID des blocs en fonction de la valeur de l'element correspondant dans matLevel
                                                                //Ainsi, si le bloc est un morceau de chemin dans le fichier Files_Levels, son m_grassID sera parametre
@@ -53,7 +53,7 @@ La methode draw permet d'afficher la Grille de Jeu en fonction de la matrice pre
 */
 void Grille::draw(string const& stringLevel) const{
 
-Block grilleBlock[12][12];
+BlockGrille grilleBlock[12][12];
 loadGrille(stringLevel, grilleBlock);//on initialise la matrice grilleBlock prise en parametre avec la matrice presente dans le fichier, specifie par le chemin stringLevel.
 
         //on parcourt la grille

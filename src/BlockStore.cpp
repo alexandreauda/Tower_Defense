@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "BlockStore.h"
 
 using namespace std;
 
@@ -7,11 +7,11 @@ using namespace std;
 
 /*
 @description:
-La methode draw de la classe Block permet de dessiner des blocs de maniere graphique.
+La methode draw de la classe BlockStore permet de dessiner des blocs de maniere graphique.
 
 @param: null
 */
-void Block::draw() const
+void BlockStore::draw() const
 {
     Value v;
 
@@ -40,6 +40,6 @@ Mutateur de l'attribut m_grassID.
 @param: La methode setm_grassID prend un parametre obligatoire: un int
 -param1: le nouvel id pour m_grassID
 */
-void Block::setm_grassID (int const& grassID){
+void BlockStore::setm_grassID (int const& grassID){
  m_grassID=grassID;
 }

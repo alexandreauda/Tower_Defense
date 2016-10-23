@@ -10,15 +10,15 @@ using namespace std;
 La methode loadStore permet d'initialiser un vecteur statique pris en parametre avec des blocks de carasteristiques differentes.
 Le vecteur statique en parametre est modifiee par la methode car il est passe par reference.
 
-@param: La methode loadStore prend un parametre obligatoire: un vecteur statique de type Block et de dimension 12.
--param1: un vecteur statique de type Block et de dimension 12 qui va etre modifie pour etre initialise avec des blocks de carasteristiques differentes.
+@param: La methode loadStore prend un parametre obligatoire: un vecteur statique de type BlockStore et de dimension 12.
+-param1: un vecteur statique de type BlockStore et de dimension 12 qui va etre modifie pour etre initialise avec des blocks de carasteristiques differentes.
 */
-void Store::loadStore(Block stockStore[12]) const {
+void Store::loadStore(BlockStore stockStore[12]) const {
 
 for(int i=0;i<12;i++){
             Value w;
 
-				stockStore[i]= Block(-i*m_shopCellWidth-0.004*i+0.67,-0.85,m_shopCellWidth,m_shopCellHeight,0.0,0.0,1.0,1.0, w.getm_groundGrass());//on initialise le tableau stockStore[] avec des blocs
+				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67,-0.85,m_shopCellWidth,m_shopCellHeight,0.0,0.0,1.0,1.0, w.getm_groundGrass());//on initialise le tableau stockStore[] avec des blocs
 
                 (stockStore[i]).setm_grassID(2);//on set l'ID
 
@@ -35,7 +35,7 @@ La methode draw de la classe Store permet de dessiner l'inventaire de maniere gr
 */
 void Store::draw() const {
 
-Block stockStore[12];//on definit un tableau vide de longueur 12 de type Block
+BlockStore stockStore[12];//on definit un tableau vide de longueur 12 de type BlockStore
 loadStore(stockStore);//on initialise le vecteur statique stockStore pris en parametre avec des blocks de carasteristiques differentes
 
 //on parcourt le vecteur statique

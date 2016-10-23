@@ -3,7 +3,7 @@
 #include "GraphicPrimitives.h"
 #include "Value.h"
 
-class Block {
+class BlockGrille {
 
 protected:
 
@@ -18,7 +18,7 @@ protected:
     public:
 
     /******CONSTRUCTEUR A PARAMETRE******/
-	Block(float posx=0, float posy=0, float width=5, float height=5, float r = 0.0, float g = 1.0, float  b = 0.0, float a = 1.0, int grassID = 0):m_posx(posx),
+	BlockGrille(float posx=0, float posy=0, float width=5, float height=5, float r = 0.0, float g = 1.0, float  b = 0.0, float a = 1.0, int grassID = 0):m_posx(posx),
                                                                                                                                                                  m_posy(posy),
                                                                                                                                                                  m_width(width),
                                                                                                                                                                  m_height(height),
