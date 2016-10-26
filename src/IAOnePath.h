@@ -19,8 +19,6 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual int isEndWay() const; //Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
-
     virtual BlockGrille searchInitWay();//Renvoie le block sur lequel un monstre devra entrer sur une grille avec un seul chemin
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;//Renvoie le prochain block sur lequel un monstre devra se rendre sur une grille avec un seul chemin

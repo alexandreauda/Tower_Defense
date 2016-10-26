@@ -18,7 +18,7 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual int isEndWay() const = 0; //méthode virtuelle pure
+    int isEndWay() const;//Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
 
     virtual BlockGrille searchInitWay()= 0; //méthode virtuelle pure
 
