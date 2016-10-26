@@ -59,6 +59,16 @@ int BlockGrille::getm_posyID() const{
     return m_posyID;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_colorBlockID.
+
+@param: null
+*/
+int BlockGrille::getm_colorBlockID() const{
+    return m_colorBlockID;
+}
+
 
 /*
 @description:

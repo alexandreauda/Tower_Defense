@@ -13,13 +13,13 @@ private:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-	IAOnePath(): m_iao1(0){}
+	IAOnePath(): MonstreIA(), m_iao1(0){}
 
 
     /******PROTOTYPES DES METHODES******/
 
     virtual BlockGrille searchInitWay();
 
-    virtual BlockGrille searchWay();
+    virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;
 
 };

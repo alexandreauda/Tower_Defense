@@ -27,6 +27,8 @@ public:
 
     int getm_posyID() const;//Accesseur de l'attribut m_posyID
 
+    int getm_colorBlockID() const;//Accesseur de l'attribut m_colorBlockID
+
     void setm_posxID (int const& posxID);//Setteur de l'attribut m_posxID
 
     void setm_posyID (int const& posyID);//Setteur de l'attribut m_posyID

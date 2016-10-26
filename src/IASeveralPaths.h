@@ -13,13 +13,13 @@ private:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-	IASeveralPaths(): m_ias1(0){}
+	IASeveralPaths(): MonstreIA(), m_ias1(0){}
 
 
     /******PROTOTYPES DES METHODES******/
 
     virtual BlockGrille searchInitWay();
 
-    virtual BlockGrille searchWay();
+    virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;
 
 };

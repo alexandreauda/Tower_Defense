@@ -28,8 +28,8 @@ BlockGrille Monstre::searchInitPath(){
   return blockInitPath;
 }
 
- BlockGrille Monstre::searchPath(){
-    BlockGrille nextBlockPath = m_monstreIA->searchWay();
+ BlockGrille Monstre::searchPath(BlockGrille grilleDeJeu[12][12]) const{
+    BlockGrille nextBlockPath = m_monstreIA->searchWay(grilleDeJeu);
     return nextBlockPath;
  }
 

@@ -28,7 +28,7 @@ public:
 
     BlockGrille searchInitPath();
 
-    BlockGrille searchPath();
+    BlockGrille searchPath(BlockGrille grilleDeJeu[12][12]) const;
 
     void moveSmoothly();
 

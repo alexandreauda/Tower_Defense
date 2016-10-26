@@ -9,7 +9,7 @@ BlockGrille IASeveralPaths::searchInitWay(){
   //return
 }
 
- BlockGrille IASeveralPaths::searchWay(){
+ BlockGrille IASeveralPaths::searchWay(BlockGrille grilleDeJeu[12][12]) const{
     //TODO
     //return
  }
