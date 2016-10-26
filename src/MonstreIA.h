@@ -18,6 +18,8 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
+    virtual int isEndWay() const = 0; //méthode virtuelle pure
+
     virtual BlockGrille searchInitWay()= 0; //méthode virtuelle pure
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const = 0; //méthode virtuelle pure

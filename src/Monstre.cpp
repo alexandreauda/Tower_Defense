@@ -23,6 +23,17 @@ void Monstre::init(string nomIA){
     }
 }
 
+/*
+@description:
+La methode isEndPath renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon.
+
+@param: null
+*/
+int Monstre::isEndPath() const{
+int endPathBool = m_monstreIA->isEndWay();
+return endPathBool;
+}
+
 BlockGrille Monstre::searchInitPath(){
   BlockGrille blockInitPath =  m_monstreIA->searchInitWay();
   return blockInitPath;
