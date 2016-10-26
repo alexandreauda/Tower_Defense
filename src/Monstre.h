@@ -11,11 +11,15 @@ private:
 
     /******ATTRIBUT******/
 	MonstreIA* m_monstreIA=NULL;//initialisation
+	int m_m1;
 
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-	Monstre(MonstreIA* monstreIA): m_monstreIA(monstreIA) {}
+    Monstre(): m_m1(0) {}
+
+    /******CONSTRUCTEUR A PARAMETRES******/
+	Monstre(MonstreIA* monstreIA, int m1=0): m_monstreIA(monstreIA), m_m1(m1) {}
 
 
     /******PROTOTYPES DES METHODES******/
