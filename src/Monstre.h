@@ -10,7 +10,7 @@ class Monstre{
 private:
 
     /******ATTRIBUT******/
-	MonstreIA* m_monstreIA=NULL;//initialisation
+	MonstreIA* m_monstreIA=NULL;//initialisation (objet membre)
 	int m_m1;
 
 public:

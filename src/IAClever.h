@@ -3,6 +3,7 @@
 #include "MonstreIA.h"
 
 
+//La Class IAClever herite de la Class MonstreIA
 class IAClever: public MonstreIA{
 
 private:

@@ -3,6 +3,7 @@
 #include "MonstreIA.h"
 
 
+//La Class IASeveralPaths herite de la Class MonstreIA
 class IASeveralPaths: public MonstreIA{
 
 private:
