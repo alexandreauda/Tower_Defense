@@ -6,8 +6,13 @@ using namespace std;
 
 
 BlockGrille IAOnePath::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
-  //TODO
-  //return
+  int xEntryWay=0;
+  for(int i=0;i<12;i++){
+    if((grilleDeJeu[i][0]).getm_colorBlockID() == 1){
+        xEntryWay=i;
+    }
+  }
+  return grilleDeJeu[xEntryWay][0];
 }
 
 
