@@ -1,6 +1,8 @@
 #pragma once
 #include "Engine.h"
 #include "Windows.h"
+#include "Grille.h"
+#include "Store.h"
 
 class MyControlEngine:public ControlEngine {
 
