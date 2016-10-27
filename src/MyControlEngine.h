@@ -13,7 +13,7 @@ class MyControlEngine:public ControlEngine {
 
 public:
 
-    /******CONSTRUCTEUR******/
+    /******CONSTRUCTEUR PAR DEFAUT******/
     MyControlEngine():m_c1(0){}
 
     /******PROTOTYPES DES METHODES******/

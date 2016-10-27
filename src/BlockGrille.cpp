@@ -82,6 +82,46 @@ int BlockGrille::pointIsInBlockFree(int const& x, int const& y) const{
 
 /*
 @description:
+Accesseur de l'attribut m_posx.
+
+@param: null
+*/
+int BlockGrille::getm_posx() const{
+    return m_posx;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_posy.
+
+@param: null
+*/
+int BlockGrille::getm_posy() const{
+    return m_posy;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_width.
+
+@param: null
+*/
+int BlockGrille::getm_width() const{
+    return m_width;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_height.
+
+@param: null
+*/
+int BlockGrille::getm_height() const{
+    return m_height;
+}
+
+/*
+@description:
 Accesseur de l'attribut m_posxID.
 
 @param: null

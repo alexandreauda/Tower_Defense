@@ -22,11 +22,19 @@ public:
 	BlockGrille(float posx=0, float posy=0, float width=0.13, float height=0.13, float posxID=0, float posyID=0, int colorBlockID=0, int isFreeID=0):m_posx(posx), m_posy(posy), m_width(width), m_height(height), m_posxID(posxID), m_posyID(posyID), m_colorBlockID(colorBlockID), m_isFreeID(isFreeID){}//constructeur
 
     /******PROTOTYPES DES METHODES******/
-    void draw() const;//draw the block
+    void draw() const;//Dessine le block
 
     int pointIsInBlock(int const& x, int const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon
 
     int pointIsInBlockFree(int const& x, int const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon
+
+    int getm_posx() const;//Accesseur de l'attribut m_posx
+
+    int getm_posy() const;//Accesseur de l'attribut m_posy
+
+    int getm_width() const;//Accesseur de l'attribut m_width
+
+    int getm_height() const;//Accesseur de l'attribut m_height
 
     int getm_posxID() const;//Accesseur de l'attribut m_posxID
 
