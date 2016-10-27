@@ -34,11 +34,15 @@ public:
 
     int getm_colorBlockID() const;//Accesseur de l'attribut m_colorBlockID
 
+    int getm_isFreeID() const;//Accesseur de l'attribut m_isFreeID
+
     void setm_posxID (int const& posxID);//Setteur de l'attribut m_posxID
 
     void setm_posyID (int const& posyID);//Setteur de l'attribut m_posyID
 
     void setm_colorBlockID (int const& colorBlockID);//Setteur de l'attribut m_colorBlockID
+
+    void setm_isFreeID (int const& m_isFreeID);//Setteur de l'attribut m_isFreeID
 
 };
 

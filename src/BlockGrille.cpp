@@ -110,6 +110,16 @@ int BlockGrille::getm_colorBlockID() const{
     return m_colorBlockID;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_isFreeID.
+
+@param: null
+*/
+int BlockGrille::getm_isFreeID() const{
+    return m_isFreeID;
+}
+
 
 /*
 @description:
@@ -142,4 +152,15 @@ Mutateur de l'attribut m_colorBlockID.
 */
 void BlockGrille::setm_colorBlockID (int const& colorBlockID){
  m_colorBlockID=colorBlockID;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_isFreeID.
+
+@param: La methode setm_isFreeID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_isFreeID
+*/
+void BlockGrille::setm_isFreeID (int const& isFreeID){
+ m_isFreeID=isFreeID;
 }
