@@ -3,6 +3,7 @@
 using namespace std;
 
 /******IMPLEMENTATION DES METHODES******/
+
 /*
 @description:
 La methode loadGrille permet d'initialiser une matrice prise en parametre avec la matrice presente dans un fichier.

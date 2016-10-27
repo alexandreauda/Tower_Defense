@@ -61,6 +61,27 @@ int BlockGrille::pointIsInBlock(int const& x, int const& y) const{
 
 /*
 @description:
+La methode pointIsInBlockFree renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon.
+
+@param:  La methode pointIsInBlockFree prend deux parametres obligatoires: un int, un int.
+-param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
+-param2: Ce deuxieme parametre designe l'ordonnee du point que l'on veut tester.
+*/
+int BlockGrille::pointIsInBlockFree(int const& x, int const& y) const{
+    int const pointisinblock=pointIsInBlock(x,y);
+    //Si le point se trouve dans le block et que le block est libre
+    if((pointisinblock == 1) && (m_isFreeID == 0)){
+        return 1;//renvoi 1
+    }
+    //Sinon
+    else{
+        return 0;//renvoi 0;
+    }
+}
+
+
+/*
+@description:
 Accesseur de l'attribut m_posxID.
 
 @param: null
