@@ -4,7 +4,13 @@ using namespace std;
 
 /******IMPLEMENTATION DES METHODES******/
 
+/*
+@description:
+La methode searchInitWay de la classe IAOnePath renvoie le premier block du chemin de la grille en considerant que celle-ci ne comporte qu' un seul chemin.
 
+@param: La methode searchInitWay de la classe IAOnePath prend un parametre obligatoire: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
+-param1: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
+*/
 BlockGrille IAOnePath::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
   int xEntryWay=0;
   for(int i=0;i<12;i++){
@@ -12,13 +18,13 @@ BlockGrille IAOnePath::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
         xEntryWay=i;
     }
   }
-  return grilleDeJeu[xEntryWay][0];
+  return grilleDeJeu[xEntryWay][0];//retourne le block qui est une dalle du chemin et qui est sur la premiere colonne
 }
 
 
 /*
 @description:
-La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel un monstre devra se rendre sur une grille avec un seul chemin.
+La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel un monstre devra se rendre sur une grille en considerant que celle-ci ne comporte qu' un seul chemin.
 
 @param: La methode searchWay de la classe IAOnePath prend un parametre obligatoire: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
 -param1: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.

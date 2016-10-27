@@ -19,7 +19,7 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const;//Renvoie le block sur lequel un monstre devra entrer sur une grille avec un seul chemin
+    virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const;//Renvoie le premier block du chemin de la grille en considerant que celle-ci ne comporte qu' un seul chemin
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;//Renvoie le prochain block sur lequel un monstre devra se rendre sur une grille avec un seul chemin
 
