@@ -5,7 +5,7 @@ using namespace std;
 /******IMPLEMENTATION DES METHODES******/
 
 
-BlockGrille IAOnePath::searchInitWay(){
+BlockGrille IAOnePath::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
   //TODO
   //return
 }

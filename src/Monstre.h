@@ -28,7 +28,7 @@ public:
 
     int isEndPath() const; //Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
 
-    BlockGrille searchInitPath();
+    BlockGrille searchInitPath(BlockGrille grilleDeJeu[12][12]) const;
 
     BlockGrille searchPath(BlockGrille grilleDeJeu[12][12]) const;
 

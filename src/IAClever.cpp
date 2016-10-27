@@ -5,7 +5,7 @@ using namespace std;
 /******IMPLEMENTATION DES METHODES******/
 
 
-BlockGrille IAClever::searchInitWay(){
+BlockGrille IAClever::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
   //TODO
   //return
 }

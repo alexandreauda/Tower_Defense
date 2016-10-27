@@ -34,8 +34,8 @@ int endPathBool = m_monstreIA->isEndWay();
 return endPathBool;
 }
 
-BlockGrille Monstre::searchInitPath(){
-  BlockGrille blockInitPath =  m_monstreIA->searchInitWay();
+BlockGrille Monstre::searchInitPath(BlockGrille grilleDeJeu[12][12]) const{
+  BlockGrille blockInitPath =  m_monstreIA->searchInitWay(grilleDeJeu);
   return blockInitPath;
 }
 

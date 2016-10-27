@@ -20,7 +20,7 @@ public:
 
     int isEndWay() const;//Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
 
-    virtual BlockGrille searchInitWay()= 0; //méthode virtuelle pure
+    virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const = 0; //méthode virtuelle pure
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const = 0; //méthode virtuelle pure
 

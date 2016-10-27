@@ -4,7 +4,7 @@ using namespace std;
 
 /******IMPLEMENTATION DES METHODES******/
 
-BlockGrille IASeveralPaths::searchInitWay(){
+BlockGrille IASeveralPaths::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
   //TODO
   //return
 }

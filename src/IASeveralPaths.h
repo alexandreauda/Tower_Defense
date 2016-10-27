@@ -19,7 +19,7 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual BlockGrille searchInitWay();
+    virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const;
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;
 
