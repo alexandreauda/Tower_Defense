@@ -23,6 +23,8 @@ public:
     /******PROTOTYPES DES METHODES******/
     void draw() const;//draw the block
 
+    int pointIsInBlock(int const& x, int const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon
+
     int getm_posxID() const;//Accesseur de l'attribut m_posxID
 
     int getm_posyID() const;//Accesseur de l'attribut m_posyID

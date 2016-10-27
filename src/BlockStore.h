@@ -17,7 +17,7 @@ protected:
 public:
 
     /******CONSTRUCTEUR A PARAMETRE******/
-	BlockStore(float posx=0, float posy=0, float width=0.13, float height=0.13, float posID=0, int colorBlockID=0):m_posx(posx), m_posy(posy), m_width(width), m_height(height), m_posID(posID), m_colorBlockID(colorBlockID){}//constructeur
+	BlockStore(float posx=0, float posy=0, float width=0.13, float height=0.13, float posID=0, int colorBlockID=2):m_posx(posx), m_posy(posy), m_width(width), m_height(height), m_posID(posID), m_colorBlockID(colorBlockID){}//constructeur
 
     /******PROTOTYPES DES METHODES******/
     void draw() const;//Dessine le block
