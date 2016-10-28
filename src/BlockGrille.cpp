@@ -43,11 +43,11 @@ void BlockGrille::draw() const
 @description:
 La methode pointIsInBlock renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon.
 
-@param:  La methode pointIsInBlock prend deux parametres obligatoires: un int, un int.
+@param:  La methode pointIsInBlock prend deux parametres obligatoires: un float, un float.
 -param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
 -param2: Ce deuxieme parametre designe l'ordonnee du point que l'on veut tester.
 */
-int BlockGrille::pointIsInBlock(int const& x, int const& y) const{
+int BlockGrille::pointIsInBlock(float const& x, float const& y) const{
     //Si le point se trouve dans le block
     if((m_posx <= x) && (x <= m_posx+m_width) && (m_posy <= y) && (y <= m_posy+m_height)){
         return 1;//renvoi 1
@@ -63,11 +63,11 @@ int BlockGrille::pointIsInBlock(int const& x, int const& y) const{
 @description:
 La methode pointIsInBlockFree renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon.
 
-@param:  La methode pointIsInBlockFree prend deux parametres obligatoires: un int, un int.
+@param:  La methode pointIsInBlockFree prend deux parametres obligatoires: un float, un float.
 -param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
 -param2: Ce deuxieme parametre designe l'ordonnee du point que l'on veut tester.
 */
-int BlockGrille::pointIsInBlockFree(int const& x, int const& y) const{
+int BlockGrille::pointIsInBlockFree(float const& x, float const& y) const{
     int const pointisinblock=pointIsInBlock(x,y);
     //Si le point se trouve dans le block et que le block est libre
     if((pointisinblock == 1) && (m_isFreeID == 0)){
@@ -86,7 +86,7 @@ Accesseur de l'attribut m_posx.
 
 @param: null
 */
-int BlockGrille::getm_posx() const{
+float BlockGrille::getm_posx() const{
     return m_posx;
 }
 
@@ -96,7 +96,7 @@ Accesseur de l'attribut m_posy.
 
 @param: null
 */
-int BlockGrille::getm_posy() const{
+float BlockGrille::getm_posy() const{
     return m_posy;
 }
 
@@ -106,7 +106,7 @@ Accesseur de l'attribut m_width.
 
 @param: null
 */
-int BlockGrille::getm_width() const{
+float BlockGrille::getm_width() const{
     return m_width;
 }
 
@@ -116,7 +116,7 @@ Accesseur de l'attribut m_height.
 
 @param: null
 */
-int BlockGrille::getm_height() const{
+float BlockGrille::getm_height() const{
     return m_height;
 }
 

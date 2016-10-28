@@ -44,11 +44,11 @@ void BlockStore::draw() const
 @description:
 La methode pointIsInBlock renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon.
 
-@param:  La methode pointIsInBlock prend deux parametres obligatoires: un int, un int.
+@param:  La methode pointIsInBlock prend deux parametres obligatoires: un float, un float.
 -param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
 -param2: Ce deuxieme parametre designe l'ordonnee du point que l'on veut tester.
 */
-int BlockStore::pointIsInBlock(int const& x, int const& y) const{
+int BlockStore::pointIsInBlock(float const& x, float const& y) const{
     //Si le point se trouve dans le block
     if((m_posx <= x) && (x <= m_posx+m_width) && (m_posy <= y) && (y <= m_posy+m_height)){
         return 1;//renvoi 1

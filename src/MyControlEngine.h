@@ -20,7 +20,7 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList):m_stockColorTower(0), m_TowerDefenseList(TowerDefenseList){}
+    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList): m_TowerDefenseList(TowerDefenseList), m_stockColorTower(1){}
 
     /******PROTOTYPES DES METHODES******/
     virtual void MouseCallback(int button, int state, int x, int y) ;

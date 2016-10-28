@@ -34,21 +34,26 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                 if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){
                     switch(m_stockColorTower){
 
-                        case 0:break;
-
-                        case 1:m_TowerDefenseList->push_back(new TowerDefenseYellow((grilleDeJeu[x][y])));
-                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 0: cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
+                                cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
                                 break;
 
-                        case 2:m_TowerDefenseList->push_back(new TowerDefenseOrange((grilleDeJeu[x][y])));
-                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 1: m_TowerDefenseList->push_back(new TowerDefenseYellow((grilleDeJeu[x][y])));
+                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                cout<<"Vous avez depose une tour jaune!"<<endl<<endl;
                                 break;
 
-                        case 3:m_TowerDefenseList->push_back(new TowerDefensePurple((grilleDeJeu[x][y])));
-                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 2: m_TowerDefenseList->push_back(new TowerDefenseOrange((grilleDeJeu[x][y])));
+                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                cout<<"Vous avez depose une tour orange!"<<endl<<endl;
                                 break;
 
-                        default:break;
+                        case 3: m_TowerDefenseList->push_back(new TowerDefensePurple((grilleDeJeu[x][y])));
+                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                cout<<"Vous avez deposer une tour viollette!"<<endl<<endl;
+                                break;
+
+                        default: break;
                     }
                 }
             }
@@ -58,19 +63,30 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
                     switch((stockStore[i]).getm_posID()){
 
-                        case 0:m_stockColorTower=0;
-                               break;
+                        case 0: m_stockColorTower=0;
+                                cout<<"Vous avez clique sur la corbeille du Store:"<<endl;
+                                cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
+                                cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+                                break;
 
-                        case 1:m_stockColorTower=1;
-                               break;
+                        case 1: m_stockColorTower=1;
+                                cout<<"Vous avez choisi une tourelle jaune dans le Store:"<<endl;
+                                cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
+                                break;
 
-                        case 2:m_stockColorTower=2;
-                               break;
+                        case 2: m_stockColorTower=2;
+                                cout<<"Vous avez choisi une tourelle orange dans le Store:"<<endl;
+                                cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
+                                break;
 
-                        case 3:m_stockColorTower=3;
-                               break;
+                        case 3: m_stockColorTower=3;
+                                cout<<"Vous avez choisi une tourelle violette dans le Store:"<<endl;
+                                cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
+                                break;
 
-                        default:break;
+                        default: cout<<"Vous avez clique sur une case du Store qui n'est pas encore approvisionnee!"<<endl;
+                                 cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+                                 break;
                     }
             }
         }
@@ -81,5 +97,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
 
         m_stockColorTower=0;//on met l'attribut m_stockColorTower a 0. Ainsi, cela permet a l'utilisateur qui a choisit une couleur de tourelle de se retracter pour choisir une autre couleur de tourelle ou simplement pour eviter de mettre une tourelle sur la grille involontairement.
+        cout<<"Vous avez clique avec le bouton droit de la souris:"<<endl;
+        cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
+        cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
     }
 }

@@ -12,10 +12,7 @@ private:
 
 public:
 
-    /******CONSTRUCTEUR PAR DEFAUT******/
-	TowerDefenseYellow(): TowerDefense(), m_tdy1(0){}
-
-	    /******CONSTRUCTEUR A PARAMETRES******/
+    /******CONSTRUCTEUR A PARAMETRES******/
 	TowerDefenseYellow(BlockGrille blockBase): TowerDefense(blockBase), m_tdy1(0){}
 
 

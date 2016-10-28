@@ -24,17 +24,17 @@ public:
     /******PROTOTYPES DES METHODES******/
     void draw() const;//Dessine le block
 
-    int pointIsInBlock(int const& x, int const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon
+    int pointIsInBlock(float const& x, float const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon
 
-    int pointIsInBlockFree(int const& x, int const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon
+    int pointIsInBlockFree(float const& x, float const& y) const;//renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon
 
-    int getm_posx() const;//Accesseur de l'attribut m_posx
+    float getm_posx() const;//Accesseur de l'attribut m_posx
 
-    int getm_posy() const;//Accesseur de l'attribut m_posy
+    float getm_posy() const;//Accesseur de l'attribut m_posy
 
-    int getm_width() const;//Accesseur de l'attribut m_width
+    float getm_width() const;//Accesseur de l'attribut m_width
 
-    int getm_height() const;//Accesseur de l'attribut m_height
+    float getm_height() const;//Accesseur de l'attribut m_height
 
     int getm_posxID() const;//Accesseur de l'attribut m_posxID
 
