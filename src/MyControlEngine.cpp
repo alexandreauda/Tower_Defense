@@ -31,8 +31,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
-                if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du libre de la grille
-                    switch(m_stockColorTower){
+                if(((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((grilleDeJeu[x][y]).getm_colorBlockID() == 0)){ //Si la souris appuie sur un block libre de la grille
+                    switch(m_stockColorTower){ //switch la couleur stockees dans la souris
 
                         case 0: cout<<"-Vous n'avez plus de tourelles stockees dans votre souris!"<<endl;
                                 cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
@@ -40,20 +40,25 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
                         case 1: m_TowerDefenseList->push_back(new TowerDefenseYellow((grilleDeJeu[x][y])));
                                 (grilleDeJeu[x][y]).setm_isFreeID(1);
-                                cout<<"Vous avez depose une tour jaune!"<<endl<<endl;
+                                cout<<"Vous avez depose une tourelle jaune!"<<endl<<endl;
                                 break;
 
                         case 2: m_TowerDefenseList->push_back(new TowerDefenseOrange((grilleDeJeu[x][y])));
                                 (grilleDeJeu[x][y]).setm_isFreeID(1);
-                                cout<<"Vous avez depose une tour orange!"<<endl<<endl;
+                                cout<<"Vous avez depose une tourelle orange!"<<endl<<endl;
                                 break;
 
                         case 3: m_TowerDefenseList->push_back(new TowerDefensePurple((grilleDeJeu[x][y])));
                                 (grilleDeJeu[x][y]).setm_isFreeID(1);
-                                cout<<"Vous avez deposer une tour viollette!"<<endl<<endl;
+                                cout<<"Vous avez deposer une tourelle viollette!"<<endl<<endl;
                                 break;
 
                         default: break;
+                    }
+                }
+                else{
+                    if(((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((grilleDeJeu[x][y]).getm_colorBlockID() == 1)){//Si la souris appuie sur un block appartenant au chemin emprunte par les Monstres
+                        cout<<"Attention: Vous ne pouvez pas depose une tourelle sur le chemin emprunte par les Monstres!"<<endl<<endl;
                     }
                 }
             }
@@ -61,7 +66,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         for(int i=0; i<12;i++){
             if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
-                    switch((stockStore[i]).getm_posID()){
+                    switch((stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
 
                         case 0: m_stockColorTower=0;
                                 cout<<"Vous avez clique sur la corbeille du Store:"<<endl;
