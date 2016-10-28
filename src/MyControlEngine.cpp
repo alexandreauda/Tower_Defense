@@ -19,11 +19,6 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         float mousePosx=(x-widthWindows)/widthWindows;//position en abscisse de la souris dans la fenetre GLUT
         float mousePosy=(-(y-heigthWindows)/heigthWindows);//position en ordonne de la souris dans la fenetre GLUT
 
-        //On load la grille de Jeu
-        BlockGrille grilleDeJeu[12][12];
-        Grille grilleDamier;
-        grilleDamier.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice grilleDeJeu
-
         //On load le Store
         BlockStore stockStore[12];
         Store shop;
@@ -31,34 +26,45 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
-                if(((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((grilleDeJeu[x][y]).getm_colorBlockID() == 0)){ //Si la souris appuie sur un block libre de la grille
+                if(((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).getm_colorBlockID() == 0)){ //Si la souris appuie sur un block libre de la grille
                     switch(m_stockColorTower){ //switch la couleur stockees dans la souris
 
                         case 0: cout<<"-Vous n'avez plus de tourelles stockees dans votre souris!"<<endl;
                                 cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
                                 break;
 
-                        case 1: m_TowerDefenseList->push_back(new TowerDefenseYellow((grilleDeJeu[x][y])));
-                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 1: m_TowerDefenseList->push_back(new TowerDefenseYellow((m_grilleDeJeu[x][y])));//on rajoute une tourelle jaune sur la case correspondante
+                                (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
                                 cout<<"Vous avez depose une tourelle jaune!"<<endl<<endl;
                                 break;
 
-                        case 2: m_TowerDefenseList->push_back(new TowerDefenseOrange((grilleDeJeu[x][y])));
-                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 2: m_TowerDefenseList->push_back(new TowerDefenseOrange((m_grilleDeJeu[x][y])));//on rajoute une tourelle orange sur la case correspondante
+                                (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
                                 cout<<"Vous avez depose une tourelle orange!"<<endl<<endl;
                                 break;
 
-                        case 3: m_TowerDefenseList->push_back(new TowerDefensePurple((grilleDeJeu[x][y])));
-                                (grilleDeJeu[x][y]).setm_isFreeID(1);
+                        case 3: m_TowerDefenseList->push_back(new TowerDefensePurple((m_grilleDeJeu[x][y])));//on rajoute une tourelle violette sur la case correspondante
+                                (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
                                 cout<<"Vous avez deposer une tourelle viollette!"<<endl<<endl;
                                 break;
 
                         default: break;
                     }
                 }
-                else{
-                    if(((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((grilleDeJeu[x][y]).getm_colorBlockID() == 1)){//Si la souris appuie sur un block appartenant au chemin emprunte par les Monstres
+                else{//Sinon
+                    if(((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).getm_colorBlockID() == 1)){//Si la souris appuie sur un block appartenant au chemin emprunte par les Monstres
                         cout<<"Attention: Vous ne pouvez pas depose une tourelle sur le chemin emprunte par les Monstres!"<<endl<<endl;
+                    }
+                    else{//Sinon
+                        if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower != 0)){//Si la souris appuie sur un block deja occupe par une tourelle
+                            cout<<"Attention: Vous ne pouvez pas depose une tourelle sur une tourelle existante!"<<endl<<endl;
+                        }
+                        else{//Sinon
+                            if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower == 0)){//Si la souris appuie sur un block deja occupe par une tourelle mais qu'elle n'a pas de couleur stockee dans celle-ci
+                                cout<<"-Vous n'avez plus de tourelles stockees dans votre souris!"<<endl;
+                                cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+                            }
+                        }
                     }
                 }
             }
@@ -68,23 +74,23 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
                     switch((stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
 
-                        case 0: m_stockColorTower=0;
+                        case 0: m_stockColorTower=0;//on vide la couleur de la souris
                                 cout<<"Vous avez clique sur la corbeille du Store:"<<endl;
                                 cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
                                 cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
                                 break;
 
-                        case 1: m_stockColorTower=1;
+                        case 1: m_stockColorTower=1;//on met la couleur de la souris a 1 ce qui correspond a la couleur jaune
                                 cout<<"Vous avez choisi une tourelle jaune dans le Store:"<<endl;
                                 cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
                                 break;
 
-                        case 2: m_stockColorTower=2;
+                        case 2: m_stockColorTower=2;//on met la couleur de la souris a 2 ce qui correspond a la couleur orange
                                 cout<<"Vous avez choisi une tourelle orange dans le Store:"<<endl;
                                 cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
                                 break;
 
-                        case 3: m_stockColorTower=3;
+                        case 3: m_stockColorTower=3;//on met la couleur de la souris a 3 ce qui correspond a la couleur violette
                                 cout<<"Vous avez choisi une tourelle violette dans le Store:"<<endl;
                                 cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
                                 break;
