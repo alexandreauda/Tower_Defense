@@ -31,7 +31,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
-                if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){
+                if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du libre de la grille
                     switch(m_stockColorTower){
 
                         case 0: cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
