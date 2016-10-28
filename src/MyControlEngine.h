@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Engine.h"
 #include "Windows.h"
 #include "Grille.h"
@@ -13,12 +14,13 @@ class MyControlEngine:public ControlEngine {
 private:
 
     /******ATTRIBUT******/
+    std::vector <TowerDefense *> *m_TowerDefenseList;
     int m_stockColorTower;
 
 public:
 
-    /******CONSTRUCTEUR PAR DEFAUT******/
-    MyControlEngine():m_stockColorTower(0){}
+    /******CONSTRUCTEUR A PARAMETRES******/
+    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList):m_stockColorTower(0), m_TowerDefenseList(TowerDefenseList){}
 
     /******PROTOTYPES DES METHODES******/
     virtual void MouseCallback(int button, int state, int x, int y) ;

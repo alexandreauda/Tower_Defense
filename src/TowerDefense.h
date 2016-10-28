@@ -7,20 +7,23 @@ class TowerDefense{
 protected:
 
     /******ATTRIBUT******/
-    float m_posx;
-	float m_posy;
-	float m_width;
-	float m_height;
+    BlockGrille m_blockBase;
+
 
 public:
 
+    /******CONSTRUCTEUR PAR DEFAUT******/
+    TowerDefense(): m_blockBase() {}
+
     /******CONSTRUCTEUR A PARAMETRES******/
-    TowerDefense(float posx=0, float posy=0, float width=0.13, float height=0.13): m_posx(posx), m_posy(posy), m_width(width), m_height(height) {}
+    TowerDefense(BlockGrille blockBase): m_blockBase(blockBase) {}
 
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual void draw(BlockGrille blockBase) const = 0; //Methode virtuelle pure
+    void setm_blockBase(BlockGrille const& blockBase);//Setteur de l'attribut m_blockBase
+
+    virtual void draw() const = 0; //Methode virtuelle pure
 
 
 };

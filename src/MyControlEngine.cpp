@@ -1,5 +1,7 @@
 #include "MyControlEngine.h"
 
+using namespace std;
+
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
     //Si le bouton gauche de la souris est enfoncé alors...
@@ -24,10 +26,6 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         Store shop;
         shop.loadStore(stockStore);//Load le Store
 
-        TowerDefenseYellow newTowerDefenseYellow;
-        TowerDefenseOrange newTowerDefenseOrange;
-        TowerDefensePurple newTowerDefensePurple;
-
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
                 if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){
@@ -35,15 +33,15 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
                         case 0:break;
 
-                        case 1:newTowerDefenseYellow.draw(grilleDeJeu[x][y]);
+                        case 1:m_TowerDefenseList->push_back(new TowerDefenseYellow((grilleDeJeu[x][y])));
                                (grilleDeJeu[x][y]).setm_isFreeID(1);
                                 break;
 
-                        case 2:newTowerDefenseOrange.draw(grilleDeJeu[x][y]);
+                        case 2:m_TowerDefenseList->push_back(new TowerDefenseOrange((grilleDeJeu[x][y])));
                                (grilleDeJeu[x][y]).setm_isFreeID(1);
                                 break;
 
-                        case 3:newTowerDefensePurple.draw(grilleDeJeu[x][y]);
+                        case 3:m_TowerDefenseList->push_back(new TowerDefensePurple((grilleDeJeu[x][y])));
                                (grilleDeJeu[x][y]).setm_isFreeID(1);
                                 break;
 

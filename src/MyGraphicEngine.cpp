@@ -20,5 +20,9 @@ void MyGraphicEngine::Draw(){
 		Store shop;
 		shop.draw();//Draw le Store
 
+		for(int i=0;i<m_TowerDefenseList->size();i++){
+            (*m_TowerDefenseList)[i]->draw();
+		}
+
 }
 

@@ -15,10 +15,13 @@ public:
     /******CONSTRUCTEUR PAR DEFAUT******/
 	TowerDefenseOrange(): TowerDefense(), m_tdo1(0){}
 
+    /******CONSTRUCTEUR A PARAMETRES******/
+	TowerDefenseOrange(BlockGrille blockBase): TowerDefense(blockBase), m_tdo1(0){}
+
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual void draw(BlockGrille blockBase) const; //Dessine la tourelle
+    virtual void draw() const; //Dessine la tourelle
 
 
 };

@@ -1,19 +1,24 @@
+#include <vector>
 #include "Level.h"
 #include "LibMatrix.h"
 #include "Grille.h"
 #include "Store.h"
+#include "TowerDefense.h"
+#include "TowerDefenseYellow.h"
+#include "TowerDefenseOrange.h"
+#include "TowerDefensePurple.h"
 
 class MyGraphicEngine:public GraphicEngine {
 
 protected:
 
     /******ATTRIBUT******/
-    int m_mg;
+    std::vector <TowerDefense *> *m_TowerDefenseList;
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine():m_mg(0){}
+    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList): m_TowerDefenseList(TowerDefenseList){}
 
     /******PROTOTYPES DES METHODES******/
 

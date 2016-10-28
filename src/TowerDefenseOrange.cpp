@@ -6,12 +6,11 @@ using namespace std;
 
 /*
 @description:
-La methode draw de la classe TowerDefenseOrange permet de dessiner des tourelles oranges de maniere graphique dans le block pris en parametre.
+La methode draw de la classe TowerDefenseOrange permet de dessiner des tourelles oranges de maniere graphique dans le m_blockBase.
 
-@param: La methode draw prend un parametre obligatoire: un BlockGrille.
--param1: Ce parametre permet de designer le block dans lequel on va dessiner la tourelle.
+@param: null
 */
-void TowerDefenseOrange::draw(BlockGrille blockBase) const{
+void TowerDefenseOrange::draw() const{
 
     //Met les valeurs RGB dans la couleur orange
     float const r=1.0;
@@ -20,10 +19,10 @@ void TowerDefenseOrange::draw(BlockGrille blockBase) const{
     float const alpha = 1.0;
 
     //Recupere les attributs du block pris en parametre
-    float const posx = blockBase.getm_posx();
-    float const posy = blockBase.getm_posy();
-    float const width = blockBase.getm_width();
-    float const height = blockBase.getm_height();
+    float const posx = m_blockBase.getm_posx();
+    float const posy = m_blockBase.getm_posy();
+    float const width = m_blockBase.getm_width();
+    float const height = m_blockBase.getm_height();
 
     //Dessine la tourelle dans le block pris en parametre
     GraphicPrimitives::drawFillRect2D(posx+width/6, posy+height/6, width*2/3, height*2/3, r, g, b, alpha);

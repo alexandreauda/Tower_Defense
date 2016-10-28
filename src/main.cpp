@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
 #include "Engine.h"
 
 #include "MyGraphicEngine.h"
 #include "MyGameEngine.h"
 #include "MyControlEngine.h"
+
+#include "TowerDefense.h"
 
 #include "Windows.h"
 
@@ -17,12 +20,14 @@ int main(int argc, char * argv[])
     Windows dimensionWindows;
     dimensionWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
 
+    vector <TowerDefense *> m_TowerDefenseList;
+
     Engine e(argc,argv,widthWindows,heigthWindows,title);//definition de la dimension de la fenetre et de son titre
 
     //Initialisation des objets
-    GraphicEngine * ge=new MyGraphicEngine();
+    GraphicEngine * ge=new MyGraphicEngine(&m_TowerDefenseList);
     GameEngine * gme=new MyGameEngine();
-    ControlEngine * ce=new MyControlEngine();
+    ControlEngine * ce=new MyControlEngine(&m_TowerDefenseList);
 
     //parametrage des objets
     e.setGraphicEngine(ge);
