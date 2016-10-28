@@ -13,6 +13,9 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         Windows gameWindows;
         gameWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
 
+        widthWindows/=2.0;
+        heigthWindows/=2.0;
+
         float mousePosx=(x-widthWindows)/widthWindows;//position en abscisse de la souris dans la fenetre GLUT
         float mousePosy=(-(y-heigthWindows)/heigthWindows);//position en ordonne de la souris dans la fenetre GLUT
 
