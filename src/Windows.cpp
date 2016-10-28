@@ -8,12 +8,12 @@ using namespace std;
 La methode loadDimensionWindows permet d'initialiser deux parametres avec les valeurs presents dans un fichier specifie.
 Les deux variables param2 et param3 passees en parametre sont modifiees par la methode car elles sont passees par reference.
 
-@param: La methode loadDimensionWindows prend trois parametres obligatoires: un string, un int qui definira la largeur de la fenetre et un int qui definira la hauteur de la fenetre.
+@param: La methode loadDimensionWindows prend trois parametres obligatoires: un string, un float qui definira la largeur de la fenetre et un float qui definira la hauteur de la fenetre.
 -param1: le string permet de specifier le chemin du fichier contenant les valeurs qui serviront a initialiser les deux autres parametres param2 et param3 qui seront utilises pour definir respectivement la largeur et la hauteur de la fenetre.
--param2: un int qui sera initialise avec une valeur lu dans le fichier specifie par le param1 et qui correspondra a la largeur de la fenetre.
--param3: un int qui sera initialise avec une valeur lu dans le fichier specifie par le param1 et qui correspondra a la hauteur de la fenetre.
+-param2: un float qui sera initialise avec une valeur lu dans le fichier specifie par le param1 et qui correspondra a la largeur de la fenetre.
+-param3: un float qui sera initialise avec une valeur lu dans le fichier specifie par le param1 et qui correspondra a la hauteur de la fenetre.
 */
-void Windows::loadDimensionWindows(string const& stringWindows, int &windowsWidth, int &windowsHeight) const{
+void Windows::loadDimensionWindows(string const& stringWindows, float &windowsWidth, float &windowsHeight) const{
 
     ifstream flux(stringWindows.c_str(),ios::app);//ouverture du flux de lecture
     int valueWindows;

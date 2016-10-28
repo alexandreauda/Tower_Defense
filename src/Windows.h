@@ -19,6 +19,6 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    void loadDimensionWindows(string const& stringWindows, int &windowsWidth, int &windowsHeight) const;
+    void loadDimensionWindows(string const& stringWindows, float &windowsWidth, float &windowsHeight) const;
 
 };

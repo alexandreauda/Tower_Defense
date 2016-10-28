@@ -20,7 +20,7 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    virtual void draw(BlockGrille blockBase) const =0; //Methode virtuelle pure
+    virtual void draw(BlockGrille blockBase) const = 0; //Methode virtuelle pure
 
 
 };

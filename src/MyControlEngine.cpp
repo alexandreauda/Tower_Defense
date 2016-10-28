@@ -1,30 +1,84 @@
 #include "MyControlEngine.h"
 
-
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
-    int widthWindows;
-    int heigthWindows;
+    //Si le bouton gauche de la souris est enfoncé alors...
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 
-    Windows gameWindows;
-    gameWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
+        float widthWindows;
+        float heigthWindows;
 
-    int mousePosx=(x-widthWindows)/widthWindows;//position en abscisse de la souris dans la fenetre GLUT
-    int mousePosy=(-(y-heigthWindows)/heigthWindows);//position en ordonne de la souris dans la fenetre GLUT
+        Windows gameWindows;
+        gameWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
+
+        float mousePosx=(x-widthWindows)/widthWindows;//position en abscisse de la souris dans la fenetre GLUT
+        float mousePosy=(-(y-heigthWindows)/heigthWindows);//position en ordonne de la souris dans la fenetre GLUT
 
         //On load la grille de Jeu
         BlockGrille grilleDeJeu[12][12];
         Grille grilleDamier;
-        grilleDamier.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);
+        grilleDamier.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice grilleDeJeu
 
         //On load le Store
         BlockStore stockStore[12];
-		Store shop;
-		shop.loadStore(stockStore);//Load le Store
+        Store shop;
+        shop.loadStore(stockStore);//Load le Store
 
+        TowerDefenseYellow newTowerDefenseYellow;
+        TowerDefenseOrange newTowerDefenseOrange;
+        TowerDefensePurple newTowerDefensePurple;
 
-    //Si le bouton gauche de la souris est enfoncé alors...
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        //...TODO
+        for(int x=0;x<12;x++){
+            for(int y=0;y<12;y++){
+                if((grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1){
+                    switch(m_stockColorTower){
+
+                        case 0:break;
+
+                        case 1:newTowerDefenseYellow.draw(grilleDeJeu[x][y]);
+                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                break;
+
+                        case 2:newTowerDefenseOrange.draw(grilleDeJeu[x][y]);
+                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                break;
+
+                        case 3:newTowerDefensePurple.draw(grilleDeJeu[x][y]);
+                               (grilleDeJeu[x][y]).setm_isFreeID(1);
+                                break;
+
+                        default:break;
+                    }
+                }
+            }
+        }
+
+        for(int i=0; i<12;i++){
+            if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
+                    switch((stockStore[i]).getm_posID()){
+
+                        case 0:m_stockColorTower=0;
+                               break;
+
+                        case 1:m_stockColorTower=1;
+                               break;
+
+                        case 2:m_stockColorTower=2;
+                               break;
+
+                        case 3:m_stockColorTower=3;
+                               break;
+
+                        default:break;
+                    }
+            }
+        }
+
+    }
+
+    //Si le bouton droit de la souris est enfoncé alors...
+    if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
+
+        m_stockColorTower=0;//on met l'attribut m_stockColorTower a 0. Ainsi, cela permet a l'utilisateur qui a choisit une couleur de tourelle de se retracter pour choisir une autre couleur de tourelle ou simplement pour eviter de mettre une tourelle sur la grille involontairement.
     }
 }
