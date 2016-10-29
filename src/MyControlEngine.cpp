@@ -35,16 +35,19 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
                         case 1: m_TowerDefenseList->push_back(new TowerDefenseYellow((m_grilleDeJeu[x][y])));//on rajoute une tourelle jaune sur la case correspondante
                                 (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
+                                (m_grilleDeJeu[x][y]).setm_colorTowerID(1);//on met l'attribut m_colorTowerID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle jaune
                                 cout<<"Vous avez depose une tourelle jaune!"<<endl<<endl;
                                 break;
 
                         case 2: m_TowerDefenseList->push_back(new TowerDefenseOrange((m_grilleDeJeu[x][y])));//on rajoute une tourelle orange sur la case correspondante
                                 (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
+                                (m_grilleDeJeu[x][y]).setm_colorTowerID(2);//on met l'attribut m_colorTowerID de la case correspondante a 2, ce qui veut dire que cette case est occupeé par une tourelle orange
                                 cout<<"Vous avez depose une tourelle orange!"<<endl<<endl;
                                 break;
 
                         case 3: m_TowerDefenseList->push_back(new TowerDefensePurple((m_grilleDeJeu[x][y])));//on rajoute une tourelle violette sur la case correspondante
                                 (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
+                                (m_grilleDeJeu[x][y]).setm_colorTowerID(3);//on met l'attribut m_colorTowerID de la case correspondante a 3, ce qui veut dire que cette case est occupeé par une tourelle violette
                                 cout<<"Vous avez deposer une tourelle viollette!"<<endl<<endl;
                                 break;
 
@@ -52,20 +55,26 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                     }
                 }
                 else{//Sinon
-                    if(((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).getm_colorBlockID() == 1)){//Si la souris appuie sur un block appartenant au chemin emprunte par les Monstres
-                        cout<<"Attention: Vous ne pouvez pas depose une tourelle sur le chemin emprunte par les Monstres!"<<endl<<endl;
-                    }
-                    else{//Sinon
-                        if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower != 0)){//Si la souris appuie sur un block deja occupe par une tourelle
-                            cout<<"Attention: Vous ne pouvez pas depose une tourelle sur une tourelle existante!"<<endl<<endl;
+                        if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower != 0) && (m_stockColorTower == (m_grilleDeJeu[x][y]).getm_colorTowerID())){//Si la souris appuie sur un block deja occupe par une tourelle de meme couleur que celle stockee dans la souris
+                            cout<<"Evolution des tourelles en cours d'implementaion: Vous ne pouvez pas encore faire monter de niveau une tourelle."<<endl<<endl;
                         }
                         else{//Sinon
-                            if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower == 0)){//Si la souris appuie sur un block deja occupe par une tourelle mais qu'elle n'a pas de couleur stockee dans celle-ci
-                                cout<<"-Vous n'avez plus de tourelles stockees dans votre souris!"<<endl;
-                                cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+                            if(((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).getm_colorBlockID() == 1)){//Si la souris appuie sur un block appartenant au chemin emprunte par les Monstres
+                                cout<<"Attention: Vous ne pouvez pas depose une tourelle sur le chemin emprunte par les Monstres!"<<endl<<endl;
+                            }
+                            else{//Sinon
+                                if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower != 0) && (m_stockColorTower != (m_grilleDeJeu[x][y]).getm_colorTowerID())){//Si la souris appuie sur un block deja occupe par une tourelle de couleur differente de celle stockee dans la souris
+                                    cout<<"Attention: Vous ne pouvez pas depose une tourelle sur une tourelle existante!"<<endl<<endl;
+                                }
+                                else{//Sinon
+                                    if(((m_grilleDeJeu[x][y]).pointIsInBlock(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 0) && (m_stockColorTower == 0)){//Si la souris appuie sur un block deja occupe par une tourelle mais qu'elle n'a pas de couleur stockee dans celle-ci
+                                        cout<<"-Vous n'avez plus de tourelles stockees dans votre souris!"<<endl;
+                                        cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+                                    }
+                                }
                             }
                         }
-                    }
+
                 }
             }
         }
