@@ -26,6 +26,11 @@ public:
     grilleInit.loadGrille("Files_Levels/Level_1.txt",m_grilleDeJeu);//Load la matrice m_grilleDeJeu
     }
 
+    /******DESTRUCTEUR******/
+    virtual ~MyControlEngine() {
+        delete m_TowerDefenseList;
+    }
+
     /******PROTOTYPES DES METHODES******/
     virtual void MouseCallback(int button, int state, int x, int y) ;
 };

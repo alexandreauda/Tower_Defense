@@ -20,6 +20,11 @@ public:
     /******CONSTRUCTEUR******/
     MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList): m_TowerDefenseList(TowerDefenseList){}
 
+    /******DESTRUCTEUR******/
+    virtual ~MyGraphicEngine() {
+        delete m_TowerDefenseList;
+    }
+
     /******PROTOTYPES DES METHODES******/
 
     virtual void Draw();
