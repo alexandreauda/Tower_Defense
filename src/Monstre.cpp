@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 /******IMPLEMENTATION DES METHODES******/
 
 void Monstre::init(string nomIA){
@@ -51,3 +52,29 @@ void Monstre::moveSmoothly(){
 void Monstre::walk(){
 
 }
+
+/******METHODE DE CLASSE: OPERATEURS******/
+Monstre& Monstre::operator=(Monstre const& monstreAcopier){
+    if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopié reçu en argument
+        //on copie tous les attributs qui ne sont pas des objets membres
+        m_m1= monstreAcopier.m_m1;
+        //traitements des pointeurs objets membres
+        delete m_monstreIA;//on détruit l'objet membre pour ensuite le recréé avec l'objet membre de l'objet copié
+
+        if((monstreAcopier.m_monstreIA)->getClass() == "IAOnePath"){//si l'IA du monstre à copier est une IA IAOnePath
+          m_monstreIA= new IAOnePath(); //on initialise l'IA du monstre avec l'IA IAOnePath puisque c'est celle du monstreAcopier
+        }
+        else if((monstreAcopier.m_monstreIA)->getClass() == "IASeveralPaths"){//si l'IA du monstre à copier est une IA IASeveralPaths
+             m_monstreIA= new IASeveralPaths(); //on initialise l'IA du monstre avec l'IA IASeveralPaths puisque c'est celle du monstreAcopier
+        }
+        else if((monstreAcopier.m_monstreIA)->getClass() == "IAClever"){//si l'IA du monstre à copier est une IA IAClever
+             m_monstreIA= new IAClever(); //on initialise l'IA du monstre avec l'IA IAClever puisque c'est celle du monstreAcopier
+        }
+        else{
+            m_monstreIA= new IAClever(); //par défaut, on initialise l'IA du monstre avec l'IA IAClever si l'IA du monstreAcopier n'est pas lisible
+        }
+        
+    }
+    return *this;
+}
+

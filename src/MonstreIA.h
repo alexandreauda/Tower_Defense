@@ -1,6 +1,7 @@
 #pragma once
 #include "Grille.h"
 
+using namespace std;
 
 class MonstreIA{
 
@@ -23,5 +24,7 @@ public:
     virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const = 0; //Methode virtuelle pure
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const = 0; //Methode virtuelle pure
+
+    virtual string getClass() const = 0; //Methode virtuelle pure
 
 };

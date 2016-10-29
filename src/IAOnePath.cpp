@@ -189,3 +189,19 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
     }
 
  }
+
+
+
+
+
+
+
+/*
+@description:
+Renvoie un string avec le nom de la classe actuelle (à savoir ici: "IAOnePath")
+
+@param: null
+*/
+string IAOnePath::getClass() const {
+    return "IAOnePath";
+}

@@ -2,6 +2,7 @@
 #include "Grille.h"
 #include "MonstreIA.h"
 
+using namespace std;
 
 //La Class IAOnePath herite de la Class MonstreIA
 class IAOnePath: public MonstreIA{
@@ -23,4 +24,5 @@ public:
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;//Renvoie le prochain block sur lequel un monstre devra se rendre sur une grille avec un seul chemin
 
+    virtual string getClass() const;//Renvoie un string avec le nom de la classe actuelle (à savoir ici: "IAOnePath")
 };
