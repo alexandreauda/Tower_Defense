@@ -16,7 +16,7 @@ private:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    Monstre(): m_m1(0) {}
+    Monstre(): m_monstreIA(new IAOnePath()), m_m1(0) {}
 
     /******CONSTRUCTEUR A PARAMETRES******/
 	Monstre(MonstreIA* monstreIA, int m1=0): m_monstreIA(monstreIA), m_m1(m1) {}
@@ -57,6 +57,8 @@ public:
     void moveSmoothly(BlockGrille nextPosition);
 
     void walk();
+
+    MonstreIA* getm_monstreIA() const;//Accesseur de l'attribut m_monstreIA
 
 
     /******PROTOTYPE OPERATEURS******/

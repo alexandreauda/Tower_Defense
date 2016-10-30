@@ -59,6 +59,16 @@ void Monstre::walk(){
 
 }
 
+/*
+@description:
+Accesseur de l'attribut m_monstreIA.
+
+@param: null
+*/
+MonstreIA* Monstre::getm_monstreIA() const{
+    return m_monstreIA;
+}
+
 /******METHODE DE CLASSE: OPERATEURS******/
 Monstre& Monstre::operator=(Monstre const& monstreAcopier){
     if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopié reçu en argument

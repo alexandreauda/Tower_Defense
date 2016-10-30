@@ -31,10 +31,10 @@ La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel
 */
 BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
-    int const actualPosxIDMonstre=m_actualPosition.getm_posxID();
-    int const actualPosyIDMonstre=m_actualPosition.getm_posyID();
-    int const previousPosxIDMonstre=m_previousPosition.getm_posxID();
-    int const previousPosyIDMonstre=m_previousPosition.getm_posyID();
+    int const actualPosxIDMonstre=m_actualPosition.getm_posyID();
+    int const actualPosyIDMonstre=m_actualPosition.getm_posxID();
+    int const previousPosxIDMonstre=m_previousPosition.getm_posyID();
+    int const previousPosyIDMonstre=m_previousPosition.getm_posxID();
 
     BlockGrille const nextBlockRight=grilleDeJeu[actualPosxIDMonstre][actualPosyIDMonstre+1];
     BlockGrille const nextBlockLeft=grilleDeJeu[actualPosxIDMonstre][actualPosyIDMonstre-1];
