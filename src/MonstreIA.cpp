@@ -6,23 +6,6 @@ using namespace std;
 
 /*
 @description:
-La methode isEndWay renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon.
-
-@param: null
-*/
-int MonstreIA::isEndWay() const{
-    //Si le monstre se trouve sur la derniere colonne de grille
-    if(m_actualPosition.getm_posyID() == 11){
-        return 1;//Renvoi 1
-    }
-    //Sinon
-    else{
-        return 0;//Renvoi 0
-    }
-}
-
-/*
-@description:
 Accesseur de l'attribut m_actualPosition.
 
 @param: null

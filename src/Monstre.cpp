@@ -31,8 +31,14 @@ La methode isEndPath renvoie 1 si le monstre est sur la derniere colonne de la g
 @param: null
 */
 int Monstre::isEndPath() const{
-int endPathBool = m_monstreIA->isEndWay();
-return endPathBool;
+    //Si le monstre se trouve sur la derniere colonne de grille
+    if(((((*this).m_monstreIA)->getm_actualPosition()).getm_posyID()) == 11){
+        return 1;//Renvoi 1
+    }
+    //Sinon
+    else{
+        return 0;//Renvoi 0
+    }
 }
 
 BlockGrille Monstre::searchInitPath(BlockGrille grilleDeJeu[12][12]) const{
