@@ -53,9 +53,9 @@ public:
 
     void setm_colorBlockID (int const& colorBlockID);//Setteur de l'attribut m_colorBlockID
 
-    void setm_isFreeID (int const& m_isFreeID);//Setteur de l'attribut m_isFreeID
+    void setm_isFreeID (int const& isFreeID);//Setteur de l'attribut m_isFreeID
 
-    void setm_colorTowerID (int const& m_colorTowerID);//Setteur de l'attribut m_colorTowerID
+    void setm_colorTowerID (int const& colorTowerID);//Setteur de l'attribut m_colorTowerID
 
 };
 

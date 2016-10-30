@@ -27,4 +27,12 @@ public:
 
     virtual string getClass() const = 0; //Methode virtuelle pure
 
+    BlockGrille getm_actualPosition() const;//Accesseur de l'attribut m_actualPosition
+
+    BlockGrille getm_previousPosition() const;//Accesseur de l'attribut m_previousPosition
+
+    void setm_actualPosition (BlockGrille const& actualPosition);//Setteur de l'attribut m_actualPosition
+
+    void setm_previousPosition (BlockGrille const& previousPosition);//Setteur de l'attribut m_previousPosition
+
 };
