@@ -7,11 +7,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     //Si le bouton gauche de la souris est enfoncé alors...
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 
-        float widthWindows;
-        float heigthWindows;
-
-        Windows gameWindows;
-        gameWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
+        float widthWindows=glutGet(GLUT_WINDOW_WIDTH);
+        float heigthWindows=glutGet(GLUT_WINDOW_HEIGHT);
 
         widthWindows/=2.0;
         heigthWindows/=2.0;
