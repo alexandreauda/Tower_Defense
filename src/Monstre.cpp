@@ -45,7 +45,7 @@ BlockGrille Monstre::searchInitPath(BlockGrille grilleDeJeu[12][12]) const{
     return nextBlockPath;
  }
 
-void Monstre::moveSmoothly(){
+void Monstre::moveSmoothly(BlockGrille nextPosition){
 
 }
 
@@ -73,7 +73,7 @@ Monstre& Monstre::operator=(Monstre const& monstreAcopier){
         else{
             m_monstreIA= new IAClever(); //par défaut, on initialise l'IA du monstre avec l'IA IAClever si l'IA du monstreAcopier n'est pas lisible
         }
-        
+
     }
     return *this;
 }

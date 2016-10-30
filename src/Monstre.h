@@ -35,7 +35,7 @@ public:
         else{
             m_monstreIA= new IAClever(); //par défaut, on initialise l'IA du monstre avec l'IA IAClever si l'IA du monstreAcopier n'est pas lisible
         }
-       
+
     }
 
     /******DESTRUCTEUR******/
@@ -54,7 +54,7 @@ public:
 
     BlockGrille searchPath(BlockGrille grilleDeJeu[12][12]) const;
 
-    void moveSmoothly();
+    void moveSmoothly(BlockGrille nextPosition);
 
     void walk();
 
