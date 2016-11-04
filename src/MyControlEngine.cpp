@@ -21,9 +21,6 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         Store shop;
         shop.loadStore(stockStore);//Load le Store
 
-        //On cree le bouton qui sert a lancer les vagues de Monstres
-		BlockStartMonstre buttonStartMonstre;
-
         //on parcourt la grille
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
@@ -114,7 +111,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         }
 
         //On verifie le bouton qui lance les Monstres
-        if(buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
+        if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
             m_MonstreList->push_back(new Monstre());
             BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));

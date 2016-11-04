@@ -17,14 +17,15 @@ private:
 
     /******ATTRIBUT******/
     std::vector <TowerDefense *> *m_TowerDefenseList;
-    std::vector <Monstre *> *m_MonstreList;//NEW
+    std::vector <Monstre *> *m_MonstreList;
     int m_stockColorTower; //Permet de stocker une couleur de tourelle dans la souris
     BlockGrille m_grilleDeJeu[12][12];
+    BlockStartMonstre m_buttonStartMonstre;
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1){//NEW
+    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(){
     Grille grilleInit;
     grilleInit.loadGrille("Files_Levels/Level_1.txt",m_grilleDeJeu);//Load la matrice m_grilleDeJeu
     }
@@ -32,7 +33,7 @@ public:
     /******DESTRUCTEUR******/
     virtual ~MyControlEngine() {
         delete m_TowerDefenseList;
-        delete m_MonstreList;//NEW
+        delete m_MonstreList;
     }
 
     /******PROTOTYPES DES METHODES******/
