@@ -17,8 +17,14 @@ public:
     /******CONSTRUCTEUR PAR DEFAUT******/
 	Windows():m_w1(0){}
 
-    /******PROTOTYPES DES METHODES******/
 
+    /******ACCESSEURS******/
+    //null
+
+    /******MUTATEURS******/
+    //null
+
+    /******PROTOTYPES DES METHODES******/
     void loadDimensionWindows(string const& stringWindows, float &windowsWidth, float &windowsHeight) const;
 
 };

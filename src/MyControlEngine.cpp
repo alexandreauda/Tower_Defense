@@ -21,6 +21,10 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         Store shop;
         shop.loadStore(stockStore);//Load le Store
 
+        //On cree le bouton qui sert a lancer les vagues de Monstres
+		BlockStartMonstre buttonStartMonstre;
+
+        //on parcourt la grille
         for(int x=0;x<12;x++){
             for(int y=0;y<12;y++){
                 if(((m_grilleDeJeu[x][y]).pointIsInBlockFree(mousePosx,mousePosy) == 1) && ((m_grilleDeJeu[x][y]).getm_colorBlockID() == 0)){ //Si la souris appuie sur un block libre de la grille
@@ -76,6 +80,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
         }
 
+        //On parcourt le Store
         for(int i=0; i<12;i++){
             if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
                     switch((stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
@@ -108,6 +113,29 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
         }
 
+        //On verifie le bouton qui lance les Monstres
+        if(buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
+
+            m_MonstreList->push_back(new Monstre());
+            BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
+
+            float const initBlockPosx= initBlock.getm_posx();
+            float const initBlockPosy= initBlock.getm_posy();
+            float const initBlockWidth= initBlock.getm_width();
+            float const initBlockHeight= initBlock.getm_height();
+
+            ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
+            ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
+
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
+            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
+
+        }
+
     }
 
     //Si le bouton droit de la souris est enfoncé alors...
@@ -117,5 +145,30 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         cout<<"Vous avez clique avec le bouton droit de la souris:"<<endl;
         cout<<"-Vous n'avez donc plus de tourelles stockees dans votre souris!"<<endl;
         cout<<"-Pour pouvoir redeposer une tourelle, veuillez choisir une tourelle dans le Store!"<<endl<<endl;
+
     }
 }
+
+
+void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
+    if(key == 'g'){
+        m_MonstreList->push_back(new Monstre());
+        BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
+
+        float const initBlockPosx= initBlock.getm_posx();
+        float const initBlockPosy= initBlock.getm_posy();
+        float const initBlockWidth= initBlock.getm_width();
+        float const initBlockHeight= initBlock.getm_height();
+
+        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
+        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
+
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
+    }
+}
+

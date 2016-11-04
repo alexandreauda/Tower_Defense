@@ -2,12 +2,101 @@
 
 using namespace std;
 
+/******IMPLEMENTATION DES ACCESSEURS******/
+
+/*
+@description:
+Accesseur de l'attribut m_posxID.
+
+@param: null
+*/
+int BlockGrille::getm_posxID() const{
+    return m_posxID;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_posyID.
+
+@param: null
+*/
+int BlockGrille::getm_posyID() const{
+    return m_posyID;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_isFreeID.
+
+@param: null
+*/
+int BlockGrille::getm_isFreeID() const{
+    return m_isFreeID;
+}
+
+/*
+@description:
+Accesseur de l'attribut m_colorTowerID.
+
+@param: null
+*/
+int BlockGrille::getm_colorTowerID() const{
+    return m_colorTowerID;
+}
+
+
+/******IMPLEMENTATION DES MUTATEURS******/
+
+/*
+@description:
+Mutateur de l'attribut m_posxID.
+
+@param: La methode setm_posxID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_posxID
+*/
+void BlockGrille::setm_posxID (int const& posxID){
+ m_posxID=posxID;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_posyID.
+
+@param: La methode setm_posyID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_posyID
+*/
+void BlockGrille::setm_posyID (int const& posyID){
+ m_posyID=posyID;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_isFreeID.
+
+@param: La methode setm_isFreeID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_isFreeID
+*/
+void BlockGrille::setm_isFreeID (int const& isFreeID){
+ m_isFreeID=isFreeID;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_colorTowerID.
+
+@param: La methode setm_isFreeID prend un parametre obligatoire: un int
+-param1: le nouvel id pour m_colorTowerID
+*/
+void BlockGrille::setm_colorTowerID (int const& colorTowerID){
+ m_colorTowerID=colorTowerID;
+}
+
 
 /******IMPLEMENTATION DES METHODES******/
 
 /*
 @description:
-La methode draw de la classe BlockGrille permet de dessiner des blocs de maniere graphique.
+La methode draw de la classe BlockGrille permet de dessiner des blocks de la grille de maniere graphique.
 
 @param: null
 */
@@ -39,29 +128,11 @@ void BlockGrille::draw() const
     }
 }
 
-/*
-@description:
-La methode pointIsInBlock renvoi 1 si les coordonnées (x,y) sont dans le block et 0 sinon.
-
-@param:  La methode pointIsInBlock prend deux parametres obligatoires: un float, un float.
--param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
--param2: Ce deuxieme parametre designe l'ordonnee du point que l'on veut tester.
-*/
-int BlockGrille::pointIsInBlock(float const& x, float const& y) const{
-    //Si le point se trouve dans le block
-    if((m_posx <= x) && (x <= m_posx+m_width) && (m_posy <= y) && (y <= m_posy+m_height)){
-        return 1;//renvoi 1
-    }
-    //Sinon
-    else{
-        return 0;//renvoi 0;
-    }
-}
 
 
 /*
 @description:
-La methode pointIsInBlockFree renvoi 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon.
+La methode pointIsInBlockFree renvoie 1 si les coordonnées (x,y) sont dans le block et que ce dernier est libre et 0 sinon.
 
 @param:  La methode pointIsInBlockFree prend deux parametres obligatoires: un float, un float.
 -param1: Ce premier parametre designe l'abscisse du point que l'on veut tester.
@@ -77,151 +148,4 @@ int BlockGrille::pointIsInBlockFree(float const& x, float const& y) const{
     else{
         return 0;//renvoi 0;
     }
-}
-
-
-/*
-@description:
-Accesseur de l'attribut m_posx.
-
-@param: null
-*/
-float BlockGrille::getm_posx() const{
-    return m_posx;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_posy.
-
-@param: null
-*/
-float BlockGrille::getm_posy() const{
-    return m_posy;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_width.
-
-@param: null
-*/
-float BlockGrille::getm_width() const{
-    return m_width;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_height.
-
-@param: null
-*/
-float BlockGrille::getm_height() const{
-    return m_height;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_posxID.
-
-@param: null
-*/
-int BlockGrille::getm_posxID() const{
-    return m_posxID;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_posyID.
-
-@param: null
-*/
-int BlockGrille::getm_posyID() const{
-    return m_posyID;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_colorBlockID.
-
-@param: null
-*/
-int BlockGrille::getm_colorBlockID() const{
-    return m_colorBlockID;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_isFreeID.
-
-@param: null
-*/
-int BlockGrille::getm_isFreeID() const{
-    return m_isFreeID;
-}
-
-/*
-@description:
-Accesseur de l'attribut m_colorTowerID.
-
-@param: null
-*/
-int BlockGrille::getm_colorTowerID() const{
-    return m_colorTowerID;
-}
-
-
-/*
-@description:
-Mutateur de l'attribut m_posxID.
-
-@param: La methode setm_posxID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_posxID
-*/
-void BlockGrille::setm_posxID (int const& posxID){
- m_posxID=posxID;
-}
-
-/*
-@description:
-Mutateur de l'attribut m_posyID.
-
-@param: La methode setm_posyID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_posyID
-*/
-void BlockGrille::setm_posyID (int const& posyID){
- m_posyID=posyID;
-}
-
-/*
-@description:
-Mutateur de l'attribut m_colorBlockID.
-
-@param: La methode setm_colorBlockID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_colorBlockID
-*/
-void BlockGrille::setm_colorBlockID (int const& colorBlockID){
- m_colorBlockID=colorBlockID;
-}
-
-/*
-@description:
-Mutateur de l'attribut m_isFreeID.
-
-@param: La methode setm_isFreeID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_isFreeID
-*/
-void BlockGrille::setm_isFreeID (int const& isFreeID){
- m_isFreeID=isFreeID;
-}
-
-/*
-@description:
-Mutateur de l'attribut m_colorTowerID.
-
-@param: La methode setm_isFreeID prend un parametre obligatoire: un int
--param1: le nouvel id pour m_colorTowerID
-*/
-void BlockGrille::setm_colorTowerID (int const& colorTowerID){
- m_colorTowerID=colorTowerID;
 }

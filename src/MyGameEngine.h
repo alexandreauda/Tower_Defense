@@ -1,18 +1,24 @@
 #pragma once
 
 #include "Engine.h"
+#include "Monstre.h"//NEW
 
 class MyGameEngine:public GameEngine {
 
 private:
 
     /******ATTRIBUT******/
-    int m_g1;
+    std::vector <Monstre *> *m_MonstreList;//NEW
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGameEngine():m_g1(0){}
+    MyGameEngine(std::vector <Monstre *> *MonstreList): m_MonstreList(MonstreList){}//NEW
+
+    /******DESTRUCTEUR******/
+    virtual ~MyGameEngine() {
+        delete m_MonstreList;//NEW
+    }
 
     /******PROTOTYPES DES METHODES******/
     virtual void idle();

@@ -29,7 +29,7 @@ La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel
 @param: La methode searchWay de la classe IAOnePath prend un parametre obligatoire: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
 -param1: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
 */
-BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
+BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) {
 
     int const actualPosxIDMonstre=m_actualPosition.getm_posyID();
     int const actualPosyIDMonstre=m_actualPosition.getm_posxID();
@@ -46,12 +46,14 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
         //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
         if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+               m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
         }
         //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
         else{
             //Si le block en bas du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
             if((nextBlockBottom.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre+1)){
+               m_direction="DOWN";//met l'attribut m_direction egal a DOWN
                return nextBlockBottom;//retourne le block en bas du block ou se trouve actuellement le monstre
            }
         }
@@ -65,12 +67,14 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
                 //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                 if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+                    m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                     return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
                 }
                 //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                 else{
                     //Si le block en haut du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                     if((nextBlockTop.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre-1)){
+                        m_direction="UP";//met l'attribut m_direction egal a UP
                         return nextBlockTop;//retourne le block en haut du block ou se trouve actuellement le monstre
                     }
                 }
@@ -84,18 +88,21 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
                     //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                     if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+                        m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                         return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
                     }
                     //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                     else{
                         //Si le block en bas du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                         if((nextBlockBottom.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre+1)){
+                            m_direction="DOWN";//met l'attribut m_direction egal a DOWN
                             return nextBlockBottom;//retourne le block en bas du block ou se trouve actuellement le monstre
                         }
                         //Si le block en bas du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                         else{
                                 //Si le block a gauche du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                 if((nextBlockLeft.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre-1)){
+                                    m_direction="LEFT";//met l'attribut m_direction egal a LEFT
                                     return nextBlockLeft;//retourne le block a gauche du block ou se trouve actuellement le monstre
                                 }
                         }
@@ -110,18 +117,21 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
                         //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                         if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+                            m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                             return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
                         }
                         //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                         else{
                             //Si le block en haut du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                             if((nextBlockTop.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre-1)){
+                                m_direction="UP";//met l'attribut m_direction egal a UP
                                 return nextBlockTop;//retourne le block en haut du block ou se trouve actuellement le monstre
                             }
                             //Si le block en haut du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                             else{
                                 //Si le block a gauche du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                 if((nextBlockLeft.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre-1)){
+                                    m_direction="LEFT";//met l'attribut m_direction egal a LEFT
                                     return nextBlockLeft;//retourne le block a gauche du block ou se trouve actuellement le monstre
                                 }
                             }
@@ -136,18 +146,21 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
                               //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                             if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+                                m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                                 return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
                             }
                             //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                             else{
                                 //Si le block en bas du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                 if((nextBlockBottom.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre+1)){
+                                    m_direction="DOWN";//met l'attribut m_direction egal a DOWN
                                     return nextBlockBottom;//retourne le block en bas du block ou se trouve actuellement le monstre
                                 }
                                 //Si le block en bas du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                                 else{
                                      //Si le block en haut du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                      if((nextBlockTop.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre-1)){
+                                        m_direction="UP";//met l'attribut m_direction egal a UP
                                         return nextBlockTop;//retourne le block en haut du block ou se trouve actuellement le monstre
                                     }
                                 }
@@ -159,24 +172,28 @@ BlockGrille IAOnePath::searchWay(BlockGrille grilleDeJeu[12][12]) const {
 
                             //Si le block a droite du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                             if((nextBlockRight.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre+1)){
+                                m_direction="RIGHT";//met l'attribut m_direction egal a RIGHT
                                 return nextBlockRight;//retourne le block a droite du block ou se trouve actuellement le monstre
                             }
                             //Si le block a droite du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                             else{
                                 //Si le block en bas du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                 if((nextBlockBottom.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre+1)){
+                                    m_direction="DOWN";//met l'attribut m_direction egal a DOWN
                                     return nextBlockBottom;//retourne le block en bas du block ou se trouve actuellement le monstre
                                 }
                                 //Si le block en bas du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                                 else{
                                     //Si le block en haut du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                     if((nextBlockTop.getm_colorBlockID() == 1) && (previousPosxIDMonstre != actualPosxIDMonstre-1)){
+                                        m_direction="UP";//met l'attribut m_direction egal a UP
                                         return nextBlockTop;//retourne le block en haut du block ou se trouve actuellement le monstre
                                     }
                                     //Si le block en haut du block ou se trouve actuellement le monstre ne fait pas parti du chemin ou que le monstre y etait avant
                                     else{
                                         //Si le block a gauche du block ou se trouve actuellement le monstre fait parti du chemin et que le monstre n'y etait pas avant
                                         if((nextBlockLeft.getm_colorBlockID() == 1) && (previousPosyIDMonstre != actualPosyIDMonstre-1)){
+                                            m_direction="LEFT";//met l'attribut m_direction egal a LEFT
                                             return nextBlockLeft;//retourne le block a gauche du block ou se trouve actuellement le monstre
                                         }
                                     }

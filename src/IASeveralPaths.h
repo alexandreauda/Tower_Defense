@@ -21,8 +21,8 @@ public:
 
     virtual BlockGrille searchInitWay(BlockGrille grilleDeJeu[12][12]) const;
 
-    virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) const;
+    virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]);
 
-    virtual string getClass() const;//Renvoie un string avec le nom de la classe actuelle (à savoir ici: "IASeveralPaths")
+    virtual std::string getClass() const;//Renvoie un string avec le nom de la classe actuelle (à savoir ici: "IASeveralPaths")
 
 };

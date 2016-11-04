@@ -26,7 +26,7 @@ void Grille::loadGrille(string const& stringLevel, BlockGrille grilleBlock[12][1
 		for(int y=0;y<12;y++){
 			for(int x=0;x<12;x++){
 
-				grilleBlock[11-y][11-x]= BlockGrille(-x*m_blockWidth-0.004*x+0.67, -y*m_blockHeight+0.266*y-0.638, m_blockWidth, m_blockHeight);//on initialise la matrice block[][] avec des blocs
+				grilleBlock[11-y][11-x]= BlockGrille(-x*m_blockWidth-0.000*x+0.67, -y*m_blockHeight+0.26*y-0.638, m_blockWidth, m_blockHeight);//on initialise la matrice block[][] avec des blocs
 
                     (grilleBlock[11-y][11-x]).setm_posxID(11-x);//on set le m_posxID des blocs en fonction de leurs numeros en abscisse
 

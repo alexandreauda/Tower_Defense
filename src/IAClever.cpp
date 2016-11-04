@@ -10,7 +10,7 @@ BlockGrille IAClever::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
   //return
 }
 
- BlockGrille IAClever::searchWay(BlockGrille grilleDeJeu[12][12]) const{
+ BlockGrille IAClever::searchWay(BlockGrille grilleDeJeu[12][12]){
     //TODO
     //return
  }

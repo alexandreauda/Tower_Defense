@@ -24,6 +24,16 @@ BlockGrille MonstreIA::getm_previousPosition() const{
     return m_previousPosition;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_direction.
+
+@param: null
+*/
+string MonstreIA::getm_direction() const{
+    return m_direction;
+}
+
 
 /*
 @description:
