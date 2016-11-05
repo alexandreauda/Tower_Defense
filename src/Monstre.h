@@ -51,9 +51,29 @@ public:
         delete m_monstreIA;
     }
 
+    /******ACCESSEURS******/
+    MonstreIA* getm_monstreIA() const;//Accesseur de l'attribut m_monstreIA
+
+    float getm_speed() const;//Accesseur de l'attribut m_speed
+
+    int getm_isArrive() const;//Accesseur de l'attribut m_isArrive
+
+
+    /******MUTATEURS******/
+    void setm_posx1(float posx1);//Setteur de l'attribut m_posx1
+
+    void setm_posy1(float posy1);//Setteur de l'attribut m_posy1
+
+    void setm_posx2(float posx2);//Setteur de l'attribut m_posx2
+
+    void setm_posy2(float posy2);//Setteur de l'attribut m_posy2
+
+    void setm_posx3(float posx3);//Setteur de l'attribut m_posx3
+
+    void setm_posy3(float posy3);//Setteur de l'attribut m_posy3
+
 
     /******PROTOTYPES DES METHODES******/
-
     void draw() const;
 
     void init(std::string nomIA="IAOnePath");
@@ -68,27 +88,8 @@ public:
 
     void walk();
 
-    MonstreIA* getm_monstreIA() const;//Accesseur de l'attribut m_monstreIA
-
-    float getm_speed() const;//Accesseur de l'attribut m_speed
-
-    int getm_isArrive() const;//Accesseur de l'attribut m_isArrive
-
-    void setm_posx1(float posx1);//Setteur de l'attribut m_posx1
-
-    void setm_posy1(float posy1);//Setteur de l'attribut m_posy1
-
-    void setm_posx2(float posx2);//Setteur de l'attribut m_posx2
-
-    void setm_posy2(float posy2);//Setteur de l'attribut m_posy2
-
-    void setm_posx3(float posx3);//Setteur de l'attribut m_posx3
-
-    void setm_posy3(float posy3);//Setteur de l'attribut m_posy3
-
 
     /******PROTOTYPE OPERATEURS******/
-
     Monstre& operator=(Monstre const& monstreAcopier);
 
 };

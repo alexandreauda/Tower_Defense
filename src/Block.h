@@ -6,7 +6,7 @@ class Block {
 
 protected:
 
-    /******ATTRIBUT******/
+    /******ATTRIBUTS******/
 	float m_posx;
 	float m_posy;
 	float m_width;
@@ -15,7 +15,7 @@ protected:
 
 public:
 
-    /******CONSTRUCTEUR A PARAMETRE******/
+    /******CONSTRUCTEUR A PARAMETRES******/
 	Block(float posx=0, float posy=0, float width=0.13, float height=0.13, int colorBlockID=0):m_posx(posx), m_posy(posy), m_width(width), m_height(height), m_colorBlockID(colorBlockID){}//constructeur a parametre
 
 

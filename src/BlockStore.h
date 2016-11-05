@@ -1,16 +1,17 @@
 #pragma once
 #include "Block.h"
 
+//La Class BlockStore herite de la Class Block
 class BlockStore : public Block {
 
 private:
 
-    /******ATTRIBUT******/
+    /******ATTRIBUTS******/
     int m_posID;//ID de position en abscisse sur la grille
 
 public:
 
-    /******CONSTRUCTEUR A PARAMETRE******/
+    /******CONSTRUCTEUR A PARAMETRES******/
 	BlockStore(float posx=0, float posy=0, float width=0.13, float height=0.13, float posID=0, int colorBlockID=2): Block(posx,posy,width,height,colorBlockID), m_posID(posID){}//constructeur a parametre
 
 

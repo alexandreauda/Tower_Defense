@@ -8,7 +8,7 @@ class Grille{
 
 private:
 
-    /******ATTRIBUT******/
+    /******ATTRIBUTS******/
     float m_worldWidth;
 	float m_worldHeight;
 	float m_blockWidth;
@@ -16,7 +16,7 @@ private:
 
 public:
 
-    /******CONSTRUCTEUR PAR DEFAUT******/
+    /******CONSTRUCTEUR A PARAMETRES******/
 	Grille(float worldWidth=12.0, float worldHeight=12.0, float blockWidth=0.13, float blockHeight=0.13):m_worldWidth(worldWidth), m_worldHeight(worldHeight), m_blockWidth(blockWidth), m_blockHeight(blockHeight){}
 
 

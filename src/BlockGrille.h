@@ -1,6 +1,7 @@
 #pragma once
 #include "Block.h"
 
+//La Class BlockGrille herite de la Class Block
 class BlockGrille : public Block {
 
 private:

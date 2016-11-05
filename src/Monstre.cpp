@@ -2,136 +2,7 @@
 
 using namespace std;
 
-
-/******IMPLEMENTATION DES METHODES******/
-
-/*
-@description:
-La methode draw de la classe Monstre permet de dessiner des Monstres bleus de maniere graphique.
-
-@param: null
-*/
-void Monstre::draw() const{
-
-    //Met les valeurs RGB dans la couleur bleue
-    float const r=0.0;
-    float const g=0.0;
-    float const b=1.0;
-    float const alpha = 1.0;
-
-
-    //Dessine les monstres
-    GraphicPrimitives::drawFillTriangle2D(m_posx1, m_posy1, m_posx2, m_posy2, m_posx3, m_posy3, r, g, b, alpha);
-
-}
-
-
-void Monstre::init(string nomIA){
-    if(nomIA=="IAOnePath"){
-            m_monstreIA = new IAOnePath();
-    }
-    else{
-            if(nomIA=="IASeveralPaths"){
-                m_monstreIA = new IASeveralPaths();
-            }
-            else{
-               if(nomIA=="IAClever"){
-                m_monstreIA = new IAClever();
-                }
-                else{
-                    m_monstreIA = new IAOnePath();
-                }
-            }
-    }
-}
-
-/*
-@description:
-La methode isEndPath renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon.
-
-@param: null
-*/
-int Monstre::isEndPath() const{
-    //Si le monstre se trouve sur la derniere colonne de grille
-    if(((((*this).m_monstreIA)->getm_actualPosition()).getm_posxID()) == 11){
-        return 1;//Renvoi 1
-    }
-    //Sinon
-    else{
-        return 0;//Renvoi 0
-    }
-}
-
-BlockGrille Monstre::searchInitPath(BlockGrille grilleDeJeu[12][12]) const{
-  BlockGrille blockInitPath =  m_monstreIA->searchInitWay(grilleDeJeu);
-  return blockInitPath;
-}
-
- BlockGrille Monstre::searchPath(BlockGrille grilleDeJeu[12][12]) const{
-    BlockGrille nextBlockPath = m_monstreIA->searchWay(grilleDeJeu);
-    return nextBlockPath;
- }
-
-void Monstre::moveSmoothly(BlockGrille nextBlock){
-
-    float const blockWidth=nextBlock.getm_width();
-    float const blockHeight=nextBlock.getm_height();
-
-    if(((this->getm_monstreIA())->getm_direction()) == "RIGHT"){
-        m_posx1+=blockWidth/(m_speed);
-        m_posx2+=blockWidth/(m_speed);
-        m_posx3+=blockWidth/(m_speed);
-    }
-    else{
-        if(((this->getm_monstreIA())->getm_direction()) == "DOWN"){
-            m_posy1-=blockHeight/(m_speed);
-            m_posy2-=blockHeight/(m_speed);
-            m_posy3-=blockHeight/(m_speed);
-        }
-        else{
-            if(((this->getm_monstreIA())->getm_direction()) == "UP"){
-                m_posy1+=blockHeight/(m_speed);
-                m_posy2+=blockHeight/(m_speed);
-                m_posy3+=blockHeight/(m_speed);
-            }
-            else{
-                if(((this->getm_monstreIA())->getm_direction()) == "LEFT"){
-                    m_posx1-=blockWidth/(m_speed);
-                    m_posx2-=blockWidth/(m_speed);
-                    m_posx3-=blockWidth/(m_speed);
-                }
-            }
-        }
-    }
-
-}
-
-void Monstre::walk(){
-    //TEST
-    BlockGrille grilleDeJeu[12][12];
-    Grille grilleInit;
-    grilleInit.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice m_grilleDeJeu
-    //FIN TEST
-
-    BlockGrille nextBlock;
-
-    if(m_timer%(int)m_speed == 0){
-        if(this->isEndPath() == 1){
-           m_isArrive=1;
-        }
-        else{
-            nextBlock=this->searchPath(grilleDeJeu);
-            (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());
-            (this->getm_monstreIA())->setm_actualPosition(nextBlock);
-            this->moveSmoothly(nextBlock);
-            m_timer++;
-        }
-    }
-    else{
-        this->moveSmoothly(nextBlock);
-        m_timer++;
-    }
-}
+/******IMPLEMENTATION DES ACCESSEURS******/
 
 /*
 @description:
@@ -163,6 +34,8 @@ int Monstre::getm_isArrive() const{
     return m_isArrive;
 }
 
+
+/******IMPLEMENTATION DES MUTATEURS******/
 
 /*
 @description:
@@ -231,9 +104,187 @@ void Monstre::setm_posy3 (float posy3){
 }
 
 
+/******IMPLEMENTATION DES METHODES******/
+
+/*
+@description:
+La methode draw de la classe Monstre permet de dessiner des Monstres bleus de maniere graphique.
+
+@param: null
+*/
+void Monstre::draw() const{
+
+    //Met les valeurs RGB dans la couleur bleue
+    float const r=0.0;
+    float const g=0.0;
+    float const b=1.0;
+    float const alpha = 1.0;
+
+
+    //Dessine les monstres
+    GraphicPrimitives::drawFillTriangle2D(m_posx1, m_posy1, m_posx2, m_posy2, m_posx3, m_posy3, r, g, b, alpha);
+
+}
+
+/*
+@description:
+La methode init de la classe Monstre permet d'initialiser l'IA d'un Monstre en IAOnePath, IASeveralPaths ou en IAClever.
+
+@param: La methode init prend un parametre obligatoire: un string
+-param1: Le string qui doit etre soit "IAOnePath", soit "IASeveralPaths", soit "IAClever" et qui permet de specifier quelle IA on souhaite donner au Monstre. Si le parametre ne prend pas les valeurs citees precedemment, l'IA est initialisee en IAOnePath par defaut.
+*/
+void Monstre::init(string nomIA){
+    if(nomIA=="IAOnePath"){
+            m_monstreIA = new IAOnePath();
+    }
+    else{
+            if(nomIA=="IASeveralPaths"){
+                m_monstreIA = new IASeveralPaths();
+            }
+            else{
+               if(nomIA=="IAClever"){
+                m_monstreIA = new IAClever();
+                }
+                else{
+                    m_monstreIA = new IAOnePath();
+                }
+            }
+    }
+}
+
+/*
+@description:
+La methode isEndPath renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon.
+
+@param: null
+*/
+int Monstre::isEndPath() const{
+    //Si le monstre se trouve sur la derniere colonne de grille
+    if(((((*this).m_monstreIA)->getm_actualPosition()).getm_posxID()) == 11){
+        return 1;//Renvoi 1
+    }
+    //Sinon
+    else{
+        return 0;//Renvoi 0
+    }
+}
+
+
+/*
+@description:
+La methode searchInitPath de la classe Monstre permet de trouver l'entree du labyrinthe sur la grille.
+
+@param: La methode searchInitPath prend un parametre obligatoire: une matrice de BlockGrille 12*12.
+-param1: La matrice de BlockGrille 12*12 doit etre la grille de jeu.
+*/
+BlockGrille Monstre::searchInitPath(BlockGrille grilleDeJeu[12][12]) const{
+  BlockGrille blockInitPath =  m_monstreIA->searchInitWay(grilleDeJeu);
+  return blockInitPath;
+}
+
+/*
+@description:
+La methode searchPath de la classe Monstre permet au Monstre de trouver son chemin dans le labyrinthe sur la grille.
+
+@param: La methode searchPath prend un parametre obligatoire: une matrice de BlockGrille 12*12.
+-param1: La matrice de BlockGrille 12*12 doit etre la grille de jeu.
+*/
+ BlockGrille Monstre::searchPath(BlockGrille grilleDeJeu[12][12]) const{
+    BlockGrille nextBlockPath = m_monstreIA->searchWay(grilleDeJeu);
+    return nextBlockPath;
+ }
+
+
+/*
+@description:
+La methode moveSmoothly de la classe Monstre permet au Monstre de se deplacer d'un block a un autre de maniere continue.
+
+@param: La methode moveSmoothly prend un parametre obligatoire: un BlockGrille.
+-param1: Le BlockGrille doit etre le prochain block sur lequel le Monstre souhaite se deplacer. Typiquement, le block renvoye par la methode searchPath.
+*/
+void Monstre::moveSmoothly(BlockGrille nextBlock){
+
+    float const blockWidth=nextBlock.getm_width();
+    float const blockHeight=nextBlock.getm_height();
+
+    //Si l'IA du Monstre a un attribut m_direction egal a "RIGHT"
+    if(((this->getm_monstreIA())->getm_direction()) == "RIGHT"){
+        m_posx1+=blockWidth/(m_speed);
+        m_posx2+=blockWidth/(m_speed);
+        m_posx3+=blockWidth/(m_speed);
+    }
+    //Sinon
+    else{
+        //Si l'IA du Monstre a un attribut m_direction egal a "DOWN"
+        if(((this->getm_monstreIA())->getm_direction()) == "DOWN"){
+            m_posy1-=blockHeight/(m_speed);
+            m_posy2-=blockHeight/(m_speed);
+            m_posy3-=blockHeight/(m_speed);
+        }
+    //Sinon
+        else{
+            //Si l'IA du Monstre a un attribut m_direction egal a "UP"
+            if(((this->getm_monstreIA())->getm_direction()) == "UP"){
+                m_posy1+=blockHeight/(m_speed);
+                m_posy2+=blockHeight/(m_speed);
+                m_posy3+=blockHeight/(m_speed);
+            }
+        //Sinon
+            else{
+                //Si l'IA du Monstre a un attribut m_direction egal a "LEFT"
+                if(((this->getm_monstreIA())->getm_direction()) == "LEFT"){
+                    m_posx1-=blockWidth/(m_speed);
+                    m_posx2-=blockWidth/(m_speed);
+                    m_posx3-=blockWidth/(m_speed);
+                }
+            }
+        }
+    }
+}
+
+
+/*
+@description:
+La methode walk de la classe Monstre permet au Monstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence du block ou se trouve le Monstre initialement au prochain block de maniere continue.
+
+@param: null
+*/
+void Monstre::walk(){
+    //TEST
+    BlockGrille grilleDeJeu[12][12];
+    Grille grilleInit;
+    grilleInit.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice m_grilleDeJeu
+    //FIN TEST
+
+    //Variable qui contiendra le prochain BlockGrille ou ira le Monstre
+    BlockGrille nextBlock;
+
+    //Si m_timer%(int)m_speed == 0
+    if(m_timer%(int)m_speed == 0){
+        //Si le Monstre est arrive au bout du labyrinthe
+        if(this->isEndPath() == 1){
+           m_isArrive=1;//Mettre l'attribut m_isArrive a 1
+        }
+        //Si le Monstre n'est pas arrive au bout du labyrinthe
+        else{
+            nextBlock=this->searchPath(grilleDeJeu);//Le Monstre trouve son chemin dans le labyrinthe et connait donc le prochain block ou il doit se rendre. On stock donc ce block dans la variable nextBlock.
+            (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());//on met l'attribut m_previousPosition egal a m_actualPosition.
+            (this->getm_monstreIA())->setm_actualPosition(nextBlock);//on met l'attribut m_actualPosition egal a nextBlock qui contient la prochaine destination du Monstre.
+            this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
+            m_timer++;//on incremente l'attribut m_timer.
+        }
+    }
+    //Si m_timer%(int)m_speed != 0
+    else{
+        this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
+        m_timer++;//on incremente l'attribut m_timer.
+    }
+}
+
+
 /******METHODE DE CLASSE: OPERATEURS******/
 Monstre& Monstre::operator=(Monstre const& monstreAcopier){
-    if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopié reçu en argument
+    if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopier reçu en argument
         //on copie tous les attributs qui ne sont pas des objets membres
         m_posx1= monstreAcopier.m_posx1;
         m_posy1= monstreAcopier.m_posy1;
@@ -258,7 +309,7 @@ Monstre& Monstre::operator=(Monstre const& monstreAcopier){
              m_monstreIA= new IAClever(); //on initialise l'IA du monstre avec l'IA IAClever puisque c'est celle du monstreAcopier
         }
         else{
-            m_monstreIA= new IAClever(); //par défaut, on initialise l'IA du monstre avec l'IA IAClever si l'IA du monstreAcopier n'est pas lisible
+            m_monstreIA= new IAClever(); //par defaut, on initialise l'IA du monstre avec l'IA IAClever si l'IA du monstreAcopier n'est pas lisible
         }
 
     }
