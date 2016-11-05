@@ -16,6 +16,16 @@ MonstreIA* Monstre::getm_monstreIA() const{
 
 /*
 @description:
+Accesseur de l'attribut m_vie.
+
+@param: null
+*/
+int Monstre::getm_vie() const{
+    return m_vie;
+}
+
+/*
+@description:
 Accesseur de l'attribut m_speed.
 
 @param: null
@@ -101,6 +111,17 @@ Mutateur de l'attribut m_posy3.
 */
 void Monstre::setm_posy3 (float posy3){
  m_posy3=posy3;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_vie.
+
+@param: La methode setm_vie prend un parametre obligatoire: un int
+-param1: le nouveau int pour m_vie
+*/
+void Monstre::setm_vie (int vie){
+ m_vie=vie;
 }
 
 
@@ -281,6 +302,18 @@ void Monstre::walk(){
     }
 }
 
+/*
+@description:
+La methode receiveDamage de la classe Monstre prend un int en parametre et fait baisser la vie du Monstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode receiveDamage prend un parametre obligatoire: un int.
+-param1: Le int doit etre representer la valeur du dommage subis par le Monstre.
+*/
+void Monstre::receiveDamage(int const& damage){
+    m_vie-=damage;
+}
+
+
 
 /******METHODE DE CLASSE: OPERATEURS******/
 Monstre& Monstre::operator=(Monstre const& monstreAcopier){
@@ -292,6 +325,7 @@ Monstre& Monstre::operator=(Monstre const& monstreAcopier){
         m_posy2= monstreAcopier.m_posy2;
         m_posx3= monstreAcopier.m_posx3;
         m_posy3= monstreAcopier.m_posy3;
+        m_vie= monstreAcopier.m_vie;
         m_speed= monstreAcopier.m_speed;
         m_timer= monstreAcopier.m_timer;
         m_isArrive= monstreAcopier.m_isArrive;

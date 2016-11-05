@@ -7,7 +7,7 @@
 
 class Monstre{
 
-private:
+protected:
 
     /******ATTRIBUTS******/
 	MonstreIA* m_monstreIA=NULL;//initialisation (objet membre)
@@ -17,6 +17,7 @@ private:
 	float m_posy2;
 	float m_posx3;
 	float m_posy3;
+	int m_vie;
 	float m_speed;
 	int m_timer;
 	int m_isArrive;
@@ -24,13 +25,13 @@ private:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    Monstre(): m_monstreIA(new IAOnePath()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_speed(100.0), m_timer(0), m_isArrive(0){}
+    Monstre(): m_monstreIA(new IAOnePath()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_vie(100), m_speed(100.0), m_timer(0), m_isArrive(0){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	Monstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, float speed=100.0, int timer=0, int isArrive=0): m_monstreIA(monstreIA), m_posx1(posx1), m_posy1(posy1), m_posx2(posx2), m_posy2(posy2), m_posx3(posx3), m_posy3(posy3), m_speed(speed), m_timer(timer), m_isArrive(isArrive) {}
+	Monstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0): m_monstreIA(monstreIA), m_posx1(posx1), m_posy1(posy1), m_posx2(posx2), m_posy2(posy2), m_posx3(posx3), m_posy3(posy3), m_vie(vie), m_speed(speed), m_timer(timer), m_isArrive(isArrive) {}
 
     /******CONSTRUCTEUR DE COPIE******/
-    Monstre(Monstre const& monstreAcopier): m_posx1(monstreAcopier.m_posx1), m_posy1(monstreAcopier.m_posy1), m_posx2(monstreAcopier.m_posx2), m_posy2(monstreAcopier.m_posy2), m_posx3(monstreAcopier.m_posx3), m_posy3(monstreAcopier.m_posy3), m_speed(monstreAcopier.m_speed), m_timer(monstreAcopier.m_timer), m_isArrive(monstreAcopier.m_isArrive) {
+    Monstre(Monstre const& monstreAcopier): m_posx1(monstreAcopier.m_posx1), m_posy1(monstreAcopier.m_posy1), m_posx2(monstreAcopier.m_posx2), m_posy2(monstreAcopier.m_posy2), m_posx3(monstreAcopier.m_posx3), m_posy3(monstreAcopier.m_posy3), m_vie(monstreAcopier.m_vie), m_speed(monstreAcopier.m_speed), m_timer(monstreAcopier.m_timer), m_isArrive(monstreAcopier.m_isArrive) {
         if((monstreAcopier.m_monstreIA)->getClass() == "IAOnePath"){//si l'IA du monstre à copier est une IA IAOnePath
           m_monstreIA= new IAOnePath(); //on initialise l'IA du monstre avec l'IA IAOnePath puisque c'est celle du monstreAcopier
         }
@@ -54,6 +55,8 @@ public:
     /******ACCESSEURS******/
     MonstreIA* getm_monstreIA() const;//Accesseur de l'attribut m_monstreIA
 
+    int getm_vie() const;//Accesseur de l'attribut m_vie
+
     float getm_speed() const;//Accesseur de l'attribut m_speed
 
     int getm_isArrive() const;//Accesseur de l'attribut m_isArrive
@@ -72,6 +75,8 @@ public:
 
     void setm_posy3(float posy3);//Setteur de l'attribut m_posy3
 
+    void setm_vie(int vie);//Setteur de l'attribut m_vie
+
 
     /******PROTOTYPES DES METHODES******/
     void draw() const;
@@ -87,6 +92,8 @@ public:
     void moveSmoothly(BlockGrille nextBlock);
 
     void walk();
+
+    void receiveDamage(int const& damage);
 
 
     /******PROTOTYPE OPERATEURS******/
