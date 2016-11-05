@@ -2,7 +2,11 @@
 
 using namespace std;
 
-/******IMPLEMENTATION DES METHODES******/
+/******IMPLEMENTATION DES ACCESSEURS******/
+//null
+
+
+/******IMPLEMENTATION DES MUTATEURS******/
 
 /*
 @description:
@@ -14,3 +18,7 @@ Mutateur de l'attribut m_blockBase.
 void TowerDefense::setm_blockBase (BlockGrille blockBase){
  m_blockBase=blockBase;
 }
+
+
+/******IMPLEMENTATION DES METHODES******/
+//methode virtuelle pure

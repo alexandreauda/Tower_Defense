@@ -16,8 +16,15 @@ public:
 	TowerDefenseYellow(BlockGrille blockBase): TowerDefense(blockBase), m_tdy1(0){}
 
 
-    /******PROTOTYPES DES METHODES******/
+    /******ACCESSEURS******/
+    //null
 
+
+    /******MUTATEURS******/
+    //null
+
+
+    /******PROTOTYPES DES METHODES******/
     virtual void draw() const; //Dessine la tourelle
 
 

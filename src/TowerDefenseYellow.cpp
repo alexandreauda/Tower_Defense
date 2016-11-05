@@ -2,6 +2,16 @@
 
 using namespace std;
 
+
+/******IMPLEMENTATION DES ACCESSEURS******/
+//null
+
+
+/******IMPLEMENTATION DES MUTATEURS******/
+//null
+
+
+
 /******IMPLEMENTATION DES METHODES******/
 
 /*

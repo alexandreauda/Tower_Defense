@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
 
 class Windows{
 
@@ -25,6 +24,6 @@ public:
     //null
 
     /******PROTOTYPES DES METHODES******/
-    void loadDimensionWindows(string const& stringWindows, float &windowsWidth, float &windowsHeight) const;
+    void loadDimensionWindows(std::string const& stringWindows, float &windowsWidth, float &windowsHeight) const;
 
 };

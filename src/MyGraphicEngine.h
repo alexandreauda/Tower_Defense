@@ -10,6 +10,7 @@
 #include "Monstre.h"
 #include "BlockStartMonstre.h"
 
+//La Class MyGraphicEngine herite de la Class GraphicEngine
 class MyGraphicEngine:public GraphicEngine {
 
 private:
@@ -30,8 +31,16 @@ public:
         delete m_MonstreList;
     }
 
-    /******PROTOTYPES DES METHODES******/
 
+    /******ACCESSEURS******/
+    //null
+
+
+    /******MUTATEURS******/
+    //null
+
+
+    /******PROTOTYPES DES METHODES******/
     virtual void Draw();
 
 };

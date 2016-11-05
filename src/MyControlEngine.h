@@ -11,6 +11,7 @@
 #include "Monstre.h"
 #include "BlockStartMonstre.h"
 
+//La Class MyControlEngine herite de la Class ControlEngine
 class MyControlEngine:public ControlEngine {
 
 private:

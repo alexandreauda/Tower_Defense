@@ -2,7 +2,18 @@
 
 using namespace std;
 
+
+/******IMPLEMENTATION DES ACCESSEURS******/
+//null
+
+
+/******IMPLEMENTATION DES MUTATEURS******/
+//null
+
+
+
 /******IMPLEMENTATION DES METHODES******/
+
 /*
 @description:
 La methode loadDimensionWindows permet d'initialiser deux parametres avec les valeurs presents dans un fichier specifie.
@@ -46,5 +57,4 @@ void Windows::loadDimensionWindows(string const& stringWindows, float &windowsWi
     }
 
 }
-
 
