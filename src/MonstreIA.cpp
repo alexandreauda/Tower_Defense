@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/******IMPLEMENTATION DES METHODES******/
+/******IMPLEMENTATION DES ACCESSEURS******/
 
 /*
 @description:
@@ -35,6 +35,8 @@ string MonstreIA::getm_direction() const{
 }
 
 
+/******IMPLEMENTATION DES MUTATEURS******/
+
 /*
 @description:
 Mutateur de l'attribut m_actualPosition.
@@ -56,3 +58,8 @@ Mutateur de l'attribut m_previousPosition.
 void MonstreIA::setm_previousPosition (BlockGrille const& previousPosition){
  m_previousPosition=previousPosition;
 }
+
+
+/******IMPLEMENTATION DES METHODES******/
+//Methode virtuelle pure
+

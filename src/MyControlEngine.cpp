@@ -2,24 +2,40 @@
 
 using namespace std;
 
+/******IMPLEMENTATION DES ACCESSEURS******/
+//null
+
+
+/******IMPLEMENTATION DES MUTATEURS******/
+//null
+
+
+
+/******IMPLEMENTATION DES METHODES******/
+
+/*
+@description:
+La methode MouseCallback de la classe MyControlEngine permet d'effectuer des actions lors d'un clic de la souris.
+
+@param:  La methode MouseCallback prend quatre parametres obligatoires: un int, un int, un int, un int.
+-param1: Ce premier parametre designe la touche de la souris.
+-param2: Ce deuxieme parametre l'etat de la touche de la souris.
+-param3: Ce troisieme parametre designe l'abscisse ou l'on se trouve lors de l'evenement souris.
+-param4: Ce quatrieme parametre designe l'ordonne ou l'on se trouve lors de l'evenement souris.
+*/
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
     //Si le bouton gauche de la souris est enfoncé alors...
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 
-        float widthWindows=glutGet(GLUT_WINDOW_WIDTH);
-        float heigthWindows=glutGet(GLUT_WINDOW_HEIGHT);
+        float widthWindows=glutGet(GLUT_WINDOW_WIDTH);//on recupere la largeur de la grille
+        float heigthWindows=glutGet(GLUT_WINDOW_HEIGHT);//on recupere la hauteur de la grille
 
-        widthWindows/=2.0;
-        heigthWindows/=2.0;
+        widthWindows/=2.0;//on divise la largeur de la grille par 2.
+        heigthWindows/=2.0;//on divise la hauteur de la grille par 2.
 
         float mousePosx=(x-widthWindows)/widthWindows;//position en abscisse de la souris dans la fenetre GLUT
         float mousePosy=(-(y-heigthWindows)/heigthWindows);//position en ordonne de la souris dans la fenetre GLUT
-
-        //On load le Store
-        BlockStore stockStore[12];
-        Store shop;
-        shop.loadStore(stockStore);//Load le Store
 
         //on parcourt la grille
         for(int x=0;x<12;x++){
@@ -79,8 +95,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         //On parcourt le Store
         for(int i=0; i<12;i++){
-            if((stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
-                    switch((stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
+            if((m_stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
+                    switch((m_stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
 
                         case 0: m_stockColorTower=0;//on vide la couleur de la souris
                                 cout<<"Vous avez clique sur la corbeille du Store:"<<endl;
@@ -147,6 +163,15 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 }
 
 
+/*
+@description:
+La methode KeyboardCallback de la classe MyControlEngine permet d'effectuer des actions lors de la pression d'une touche du clavier.
+
+@param:  La methode KeyboardCallback prend trois parametres obligatoires: un unsigned char, un int, un int.
+-param1: Ce premier parametre designe la touche du clavier que l'on a pressee.
+-param2: Ce deuxieme parametre designe l'abscisse ou l'on se trouve lors de la pression de la touche du clavier.
+-param3: Ce troisieme parametre designe l'ordonne ou l'on se trouve lors de la pression de la touche du clavier.
+*/
 void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
     if(key == 'g'){
         m_MonstreList->push_back(new Monstre());

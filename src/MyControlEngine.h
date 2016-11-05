@@ -20,6 +20,7 @@ private:
     std::vector <Monstre *> *m_MonstreList;
     int m_stockColorTower; //Permet de stocker une couleur de tourelle dans la souris
     BlockGrille m_grilleDeJeu[12][12];
+    BlockStore m_stockStore[12];
     BlockStartMonstre m_buttonStartMonstre;
 
 public:
@@ -28,6 +29,8 @@ public:
     MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(){
     Grille grilleInit;
     grilleInit.loadGrille("Files_Levels/Level_1.txt",m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+    Store shop;
+    shop.loadStore(m_stockStore);//Load le Store
     }
 
     /******DESTRUCTEUR******/
@@ -35,6 +38,14 @@ public:
         delete m_TowerDefenseList;
         delete m_MonstreList;
     }
+
+    /******ACCESSEURS******/
+    //null
+
+
+    /******MUTATEURS******/
+    //null
+
 
     /******PROTOTYPES DES METHODES******/
     virtual void MouseCallback(int button, int state, int x, int y);
