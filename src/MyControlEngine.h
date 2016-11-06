@@ -9,6 +9,7 @@
 #include "TowerDefenseOrange.h"
 #include "TowerDefensePurple.h"
 #include "Monstre.h"
+#include "FastMonstre.h"
 #include "BlockStartMonstre.h"
 
 //La Class MyControlEngine herite de la Class ControlEngine

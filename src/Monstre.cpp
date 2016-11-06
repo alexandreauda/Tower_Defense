@@ -129,26 +129,6 @@ void Monstre::setm_vie (int vie){
 
 /*
 @description:
-La methode draw de la classe Monstre permet de dessiner des Monstres bleus de maniere graphique.
-
-@param: null
-*/
-void Monstre::draw() const{
-
-    //Met les valeurs RGB dans la couleur bleue
-    float const r=0.0;
-    float const g=0.0;
-    float const b=1.0;
-    float const alpha = 1.0;
-
-
-    //Dessine les monstres
-    GraphicPrimitives::drawFillTriangle2D(m_posx1, m_posy1, m_posx2, m_posy2, m_posx3, m_posy3, r, g, b, alpha);
-
-}
-
-/*
-@description:
 La methode init de la classe Monstre permet d'initialiser l'IA d'un Monstre en IAOnePath, IASeveralPaths ou en IAClever.
 
 @param: La methode init prend un parametre obligatoire: un string
@@ -307,12 +287,22 @@ void Monstre::walk(){
 La methode receiveDamage de la classe Monstre prend un int en parametre et fait baisser la vie du Monstre d'une valeur egale a la valeur du int pris en parametre.
 
 @param: La methode receiveDamage prend un parametre obligatoire: un int.
--param1: Le int doit etre representer la valeur du dommage subis par le Monstre.
+-param1: Le int doit representer la valeur du dommage subis par le Monstre.
 */
 void Monstre::receiveDamage(int const& damage){
     m_vie-=damage;
 }
 
+/*
+@description:
+La methode slowDown de la classe Monstre prend un int en parametre et fait baisser la vitesse du Monstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode slowDown prend un parametre obligatoire: un int.
+-param1: Le int doit representer la valeur du ralentissement subis par le Monstre.
+*/
+void Monstre::slowDown(int const& rateSlowDown){
+    m_speed-=rateSlowDown;
+}
 
 
 /******METHODE DE CLASSE: OPERATEURS******/

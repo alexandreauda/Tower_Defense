@@ -79,7 +79,7 @@ public:
 
 
     /******PROTOTYPES DES METHODES******/
-    void draw() const;
+    virtual void draw() const = 0;//methode virtuelle pure
 
     void init(std::string nomIA="IAOnePath");
 
@@ -94,6 +94,8 @@ public:
     void walk();
 
     void receiveDamage(int const& damage);
+
+    void slowDown(int const& rateSlowDown);
 
 
     /******PROTOTYPE OPERATEURS******/

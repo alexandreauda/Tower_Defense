@@ -129,7 +129,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         //On verifie le bouton qui lance les Monstres
         if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-            m_MonstreList->push_back(new Monstre());
+            m_MonstreList->push_back(new FastMonstre());
             BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
 
             float const initBlockPosx= initBlock.getm_posx();
@@ -174,7 +174,7 @@ La methode KeyboardCallback de la classe MyControlEngine permet d'effectuer des 
 */
 void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
     if(key == 'g'){
-        m_MonstreList->push_back(new Monstre());
+        m_MonstreList->push_back(new FastMonstre());
         BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
 
         float const initBlockPosx= initBlock.getm_posx();
