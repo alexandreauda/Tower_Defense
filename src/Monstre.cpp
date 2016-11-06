@@ -301,7 +301,7 @@ La methode slowDown de la classe Monstre prend un int en parametre et fait baiss
 -param1: Le int doit representer la valeur du ralentissement subis par le Monstre.
 */
 void Monstre::slowDown(int const& rateSlowDown){
-    m_speed-=rateSlowDown;
+    m_speed+=rateSlowDown;
 }
 
 

@@ -18,7 +18,7 @@ protected:
 	float m_posx3;
 	float m_posy3;
 	int m_vie;
-	float m_speed;
+	float m_speed;//Attention: plus la valeur est elevee plus le monstre est lent! Et inversement, plus la valeur est faible plus le monstre est rapide.
 	int m_timer;
 	int m_isArrive;
 
