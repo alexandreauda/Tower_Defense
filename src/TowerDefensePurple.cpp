@@ -38,3 +38,32 @@ void TowerDefensePurple::draw() const{
     GraphicPrimitives::drawFillRect2D(posx+width/6, posy+height/6, width*2/3, height*2/3, r, g, b, alpha);
 
 }
+
+
+/*
+@description:
+La methode drawTir de la classe TowerDefensePurple permet de dessiner les tirs des tourelles viollettes de maniere graphique.
+
+@param: null
+*/
+void TowerDefensePurple::drawTir() const{
+
+    //Met les valeurs RGB dans la couleur violette
+    float const r=1.0;
+    float const g=0.1;
+    float const b=0.9;
+    float const alpha = 1.0;
+
+ GraphicPrimitives:: drawLine2D(m_centerTowerx, m_centerTowery, m_targetx, m_targety, r, g, b, alpha);
+}
+
+/*
+@description:
+La methode attaque de la classe TowerDefensePurple prend un pointeur de monstre en parametre et fait baisser la vitesse du monstre pointe par le pointeur.
+
+@param: La methode attaque prend un parametre obligatoire: un pointeur de Monstre.
+-param1: un pointeur pointant sur le Monstre que la tourelle attaque
+*/
+void TowerDefensePurple::attaque(Monstre* monstreEnnemi){
+monstreEnnemi->slowDown(10);//Le monstre ralentit
+}

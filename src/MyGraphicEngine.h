@@ -4,9 +4,6 @@
 #include "Grille.h"
 #include "Store.h"
 #include "TowerDefense.h"
-#include "TowerDefenseYellow.h"
-#include "TowerDefenseOrange.h"
-#include "TowerDefensePurple.h"
 #include "Monstre.h"
 #include "BlockStartMonstre.h"
 

@@ -184,6 +184,22 @@ matrixRot90(matrix);//On effectue une rotation de la matrice de 90° dans le sens
 matrixRot90(matrix);//On effectue une nouvelle fois une rotation de la matrice de 90° dans le sens horaire. On obtient donc une matrice transforme en sa rotation de 180° dans le sens horaire.
 }
 
+/*
+@description:
+La methode distanceBetweenPoint prend les coordonnes de deux points en parametre et renvoie la distance qui separe ces deux points sur le plan cartesien.
+
+@param: La methode distanceBetweenPoint prend 4 parametres obligatoires: un float, un float, un float, un float.
+-param1: un float qui correspond a l'abscisse du premier point
+-param2: un float qui correspond a l'ordonne du premier point
+-param3: un float qui correspond a l'abscisse du deuxieme point
+-param4: un float qui correspond a l'ordonne du deuxieme point
+*/
+float LibMatrix::distanceBetweenPoint(float const& pointx1, float const& pointy1, float const& pointx2, float const& pointy2){
+float distance;
+distance = sqrt((pointx2-pointx1)*(pointx2-pointx1) + (pointy2-pointy1)*(pointy2-pointy1));
+return distance;
+}
+
 
 /*
 @description:

@@ -13,7 +13,7 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	TowerDefensePurple(BlockGrille blockBase): TowerDefense(blockBase), m_tdy1(0){}
+	TowerDefensePurple(BlockGrille blockBase, int portee=1, int cadence=10, int timer=0): TowerDefense(blockBase,blockBase.getm_posx()+blockBase.getm_width()/2,blockBase.getm_posy()+blockBase.getm_height()/2,blockBase.getm_posx()+blockBase.getm_width()/2,blockBase.getm_posy()+blockBase.getm_height()/2,portee,cadence,timer), m_tdy1(0){}
 
 
     /******ACCESSEURS******/
@@ -26,6 +26,10 @@ public:
 
     /******PROTOTYPES DES METHODES******/
     virtual void draw() const; //Dessine la tourelle
+
+    virtual void drawTir() const;//Dessine les tirs des tourelles
+
+    virtual void attaque(Monstre* monstreEnnemi);
 
 
 };

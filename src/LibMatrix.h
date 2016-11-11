@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <math.h>
 #include "Level.h"
 #include "BlockGrille.h"
 #include "BlockStore.h"
@@ -39,6 +40,8 @@ public:
     static void matrixRot90(int matrix[12][12]);
 
     static void matrixRot180(int matrix[12][12]);
+
+    static float distanceBetweenPoint(float const& pointx1, float const& pointy1, float const& pointx2, float const& pointy2);
 
     static void loadLevel(std::string const& stringLevel, int matLevel[12][12]);
 

@@ -129,6 +129,28 @@ void Monstre::setm_vie (int vie){
 
 /*
 @description:
+La methode monsterCenterx de la classe Monstre renvoi l'abscisse du barycentre du Monstre.
+
+@param: null
+*/
+float Monstre::monsterCenterx() const{
+    float const centerx=(m_posx1+m_posx2+m_posx3)/3;
+    return centerx;
+}
+
+/*
+@description:
+La methode monsterCentery de la classe Monstre renvoi l'ordonne du barycentre du Monstre.
+
+@param: null
+*/
+float Monstre::monsterCentery() const{
+    float const centery=(m_posy1+m_posy2+m_posy3)/3;
+    return centery;
+}
+
+/*
+@description:
 La methode init de la classe Monstre permet d'initialiser l'IA d'un Monstre en IAOnePath, IASeveralPaths ou en IAClever.
 
 @param: La methode init prend un parametre obligatoire: un string

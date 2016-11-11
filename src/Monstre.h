@@ -81,6 +81,10 @@ public:
     /******PROTOTYPES DES METHODES******/
     virtual void draw() const = 0;//methode virtuelle pure
 
+    float monsterCenterx() const;//Renvoi l'abscisse du barycentre du Monstre
+
+    float monsterCentery() const;//Renvoi l'ordonne du barycentre du Monstre
+
     void init(std::string nomIA="IAOnePath");
 
     int isEndPath() const; //Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
