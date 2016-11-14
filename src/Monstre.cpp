@@ -36,6 +36,16 @@ float Monstre::getm_speed() const{
 
 /*
 @description:
+Accesseur de l'attribut m_timer.
+
+@param: null
+*/
+int Monstre::getm_timer() const{
+    return m_timer;
+}
+
+/*
+@description:
 Accesseur de l'attribut m_isArrive.
 
 @param: null
@@ -317,13 +327,14 @@ void Monstre::receiveDamage(int const& damage){
 
 /*
 @description:
-La methode slowDown de la classe Monstre prend un int en parametre et fait baisser la vitesse du Monstre d'une valeur egale a la valeur du int pris en parametre.
+La methode slowDown de la classe Monstre prend un int en parametre et fait divise la vitesse du Monstre d'une valeur egale a la valeur du int pris en parametre.
 
 @param: La methode slowDown prend un parametre obligatoire: un int.
 -param1: Le int doit representer la valeur du ralentissement subis par le Monstre.
 */
 void Monstre::slowDown(int const& rateSlowDown){
-    m_speed+=rateSlowDown;
+    m_speed*=rateSlowDown;
+    m_timer*=rateSlowDown;
 }
 
 

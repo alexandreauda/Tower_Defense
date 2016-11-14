@@ -16,6 +16,16 @@ using namespace std;
 
 /*
 @description:
+Renvoie un string avec le nom de la classe actuelle (à savoir ici: "TowerDefensePurple")
+
+@param: null
+*/
+string TowerDefensePurple::getClass() const {
+    return "TowerDefensePurple";
+}
+
+/*
+@description:
 La methode draw de la classe TowerDefensePurple permet de dessiner des tourelles violettes de maniere graphique dans le m_blockBase.
 
 @param: null
@@ -48,10 +58,10 @@ La methode drawTir de la classe TowerDefensePurple permet de dessiner les tirs d
 */
 void TowerDefensePurple::drawTir() const{
 
-    //Met les valeurs RGB dans la couleur violette
+    //Met les valeurs RGB dans la couleur blanche
     float const r=1.0;
-    float const g=0.1;
-    float const b=0.9;
+    float const g=1.0;
+    float const b=1.0;
     float const alpha = 1.0;
 
  GraphicPrimitives:: drawLine2D(m_centerTowerx, m_centerTowery, m_targetx, m_targety, r, g, b, alpha);
@@ -65,5 +75,5 @@ La methode attaque de la classe TowerDefensePurple prend un pointeur de monstre 
 -param1: un pointeur pointant sur le Monstre que la tourelle attaque
 */
 void TowerDefensePurple::attaque(Monstre* monstreEnnemi){
-monstreEnnemi->slowDown(10);//Le monstre ralentit
+monstreEnnemi->slowDown(2);//Le monstre ralentit
 }

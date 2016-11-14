@@ -59,6 +59,8 @@ public:
 
     float getm_speed() const;//Accesseur de l'attribut m_speed
 
+    int getm_timer() const;//Accesseur de l'attribut m_timer
+
     int getm_isArrive() const;//Accesseur de l'attribut m_isArrive
 
 

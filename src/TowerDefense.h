@@ -55,6 +55,8 @@ public:
 
 
     /******PROTOTYPES DES METHODES******/
+    virtual std::string getClass() const = 0; //Methode virtuelle pure
+
     virtual void draw() const = 0; //Methode virtuelle pure
 
     virtual void drawTir() const = 0;//Methode virtuelle pure

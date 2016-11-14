@@ -16,6 +16,16 @@ using namespace std;
 
 /*
 @description:
+Renvoie un string avec le nom de la classe actuelle (à savoir ici: "TowerDefenseOrange")
+
+@param: null
+*/
+string TowerDefenseOrange::getClass() const {
+    return "TowerDefenseOrange";
+}
+
+/*
+@description:
 La methode draw de la classe TowerDefenseOrange permet de dessiner des tourelles oranges de maniere graphique dans le m_blockBase.
 
 @param: null
@@ -47,10 +57,10 @@ La methode drawTir de la classe TowerDefenseOrange permet de dessiner les tirs d
 */
 void TowerDefenseOrange::drawTir() const{
 
-    //Met les valeurs RGB dans la couleur orange
+    //Met les valeurs RGB dans la couleur blanche
     float const r=1.0;
-    float const g=0.4;
-    float const b=0.0;
+    float const g=1.0;
+    float const b=1.0;
     float const alpha = 1.0;
 
  GraphicPrimitives:: drawLine2D(m_centerTowerx, m_centerTowery, m_targetx, m_targety, r, g, b, alpha);

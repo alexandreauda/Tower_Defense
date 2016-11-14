@@ -25,6 +25,8 @@ public:
 
 
     /******PROTOTYPES DES METHODES******/
+    virtual std::string getClass() const;//Renvoie un string avec le nom de la classe actuelle (à savoir ici: "TowerDefenseOrange")
+
     virtual void draw() const; //Dessine la tourelle
 
     virtual void drawTir() const;//Dessine les tirs des tourelles

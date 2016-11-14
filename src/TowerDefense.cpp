@@ -177,10 +177,28 @@ void TowerDefense::watchdog(vector <Monstre *> *MonstreList){
         }//Fin de la boucle for
         //Si m_timer modulo m_cadence est egale a 0 et que la distance entre la tourelle et le monstre est inferieur a m_portee*(distance entre le centre de deux blocks positionnes en diagonnal) -> Formule donnee par l'application du theoreme de Pythagore en fonction de la largeur et de la hauteur des blocks.
         if(m_timer%m_cadence == 0 && currentDistanceTowerMonstre<=(m_portee*sqrt(m_blockBase.getm_width()*m_blockBase.getm_width()+m_blockBase.getm_height()*m_blockBase.getm_height()))){
-            m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
-            m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
-            this->attaque((*MonstreList)[index]);//La tourelle attaque le Monstre le plus proche d'elle
-            m_timer++;//On incremente le compteur
+            if(this->getClass() != "TowerDefensePurple"){
+                m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                this->attaque((*MonstreList)[index]);//La tourelle attaque le Monstre le plus proche d'elle
+                m_timer++;//On incremente le compteur
+            }
+            //Si la tourelle est une tourelle violette
+            else{
+                //Si le Monstre est au centre d'un block
+                if((*MonstreList)[index]->getm_timer()%(int)(*MonstreList)[index]->getm_speed() == 0){
+                    m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                    m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                    this->attaque((*MonstreList)[index]);//La tourelle attaque le Monstre le plus proche d'elle et ralenti donc le Monstre
+                    m_timer++;//On incremente le compteur
+                }
+                //Si le Monstre n'est pas au centre d'un block
+                else{
+                    //on trace un trait (c'est plus visuelle ainsi) mais on n'attaque pas!
+                    m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                    m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
+                }
+            }
         }
         //Sinon
         else{
