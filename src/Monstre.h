@@ -65,19 +65,19 @@ public:
 
 
     /******MUTATEURS******/
-    void setm_posx1(float posx1);//Setteur de l'attribut m_posx1
+    void setm_posx1(float const& posx1);//Setteur de l'attribut m_posx1
 
-    void setm_posy1(float posy1);//Setteur de l'attribut m_posy1
+    void setm_posy1(float const& posy1);//Setteur de l'attribut m_posy1
 
-    void setm_posx2(float posx2);//Setteur de l'attribut m_posx2
+    void setm_posx2(float const& posx2);//Setteur de l'attribut m_posx2
 
-    void setm_posy2(float posy2);//Setteur de l'attribut m_posy2
+    void setm_posy2(float const& posy2);//Setteur de l'attribut m_posy2
 
-    void setm_posx3(float posx3);//Setteur de l'attribut m_posx3
+    void setm_posx3(float const& posx3);//Setteur de l'attribut m_posx3
 
-    void setm_posy3(float posy3);//Setteur de l'attribut m_posy3
+    void setm_posy3(float const& posy3);//Setteur de l'attribut m_posy3
 
-    void setm_vie(int vie);//Setteur de l'attribut m_vie
+    void setm_vie(int const& vie);//Setteur de l'attribut m_vie
 
 
     /******PROTOTYPES DES METHODES******/

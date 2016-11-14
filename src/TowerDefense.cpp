@@ -83,7 +83,7 @@ Mutateur de l'attribut m_blockBase.
 @param: La methode setm_blockBase prend un parametre obligatoire: un BlockGrille
 -param1: le nouveau block pour m_blockBase
 */
-void TowerDefense::setm_blockBase (BlockGrille blockBase){
+void TowerDefense::setm_blockBase (BlockGrille const& blockBase){
  m_blockBase=blockBase;
 }
 
@@ -94,7 +94,7 @@ Mutateur de l'attribut m_targetx.
 @param: La methode setm_targetx prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_targetx
 */
-void TowerDefense::setm_targetx (float targetx){
+void TowerDefense::setm_targetx (float const& targetx){
  m_targetx=targetx;
 }
 
@@ -105,7 +105,7 @@ Mutateur de l'attribut m_targety.
 @param: La methode setm_targety prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_targety
 */
-void TowerDefense::setm_targety (float targety){
+void TowerDefense::setm_targety (float const& targety){
  m_targety=targety;
 }
 
@@ -116,7 +116,7 @@ Mutateur de l'attribut m_portee.
 @param: La methode setm_portee prend un parametre obligatoire: un int
 -param1: le nouveau int pour m_portee
 */
-void TowerDefense::setm_portee(int portee){
+void TowerDefense::setm_portee(int const& portee){
  m_portee=portee;
 }
 
@@ -127,7 +127,7 @@ Mutateur de l'attribut m_cadence.
 @param: La methode setm_cadence prend un parametre obligatoire: un int
 -param1: le nouveau int pour m_cadence
 */
-void TowerDefense::setm_cadence(int cadence){
+void TowerDefense::setm_cadence(int const& cadence){
  m_cadence=cadence;
 }
 
@@ -138,7 +138,7 @@ Mutateur de l'attribut m_timer.
 @param: La methode setm_timer prend un parametre obligatoire: un int
 -param1: le nouveau int pour m_timer
 */
-void TowerDefense::setm_timer(int timer){
+void TowerDefense::setm_timer(int const& timer){
  m_timer=timer;
 }
 

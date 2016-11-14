@@ -41,17 +41,17 @@ public:
     int getm_timer() const;//Accesseur de l'attribut m_timer
 
     /******MUTATEURS******/
-    void setm_blockBase(BlockGrille blockBase);//Setteur de l'attribut m_blockBase
+    void setm_blockBase(BlockGrille const& blockBase);//Setteur de l'attribut m_blockBase
 
-    void setm_targetx(float targetx);//Setteur de l'attribut m_targetx
+    void setm_targetx(float const& targetx);//Setteur de l'attribut m_targetx
 
-    void setm_targety(float targety);//Setteur de l'attribut m_targety
+    void setm_targety(float const& targety);//Setteur de l'attribut m_targety
 
-    void setm_portee(int portee);//Setteur de l'attribut m_portee
+    void setm_portee(int const& portee);//Setteur de l'attribut m_portee
 
-    void setm_cadence(int cadence);//Setteur de l'attribut m_cadence
+    void setm_cadence(int const& cadence);//Setteur de l'attribut m_cadence
 
-    void setm_timer(int timer);//Setteur de l'attribut m_timer
+    void setm_timer(int const& timer);//Setteur de l'attribut m_timer
 
 
     /******PROTOTYPES DES METHODES******/

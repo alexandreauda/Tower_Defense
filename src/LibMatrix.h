@@ -1,9 +1,11 @@
 #ifndef LIBMATRIX_H_INCLUDED
 #define LIBMATRIX_H_INCLUDED
 
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <vector>
 #include <math.h>
 #include "Level.h"
@@ -42,6 +44,8 @@ public:
     static void matrixRot180(int matrix[12][12]);
 
     static float distanceBetweenPoint(float const& pointx1, float const& pointy1, float const& pointx2, float const& pointy2);
+
+    static void loadLevelByInt(int const& intLevel, int matLevel[12][12], std::string const& stringNameDirectory="Files_Levels/");
 
     static void loadLevel(std::string const& stringLevel, int matLevel[12][12]);
 

@@ -64,7 +64,7 @@ Mutateur de l'attribut m_posx1.
 @param: La methode setm_posx1 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posx1
 */
-void Monstre::setm_posx1 (float posx1){
+void Monstre::setm_posx1 (float const& posx1){
  m_posx1=posx1;
 }
 
@@ -75,7 +75,7 @@ Mutateur de l'attribut m_posy1.
 @param: La methode setm_posy1 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posy1
 */
-void Monstre::setm_posy1 (float posy1){
+void Monstre::setm_posy1 (float const& posy1){
  m_posy1=posy1;
 }
 
@@ -86,7 +86,7 @@ Mutateur de l'attribut m_posx2.
 @param: La methode setm_posx2 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posx2
 */
-void Monstre::setm_posx2 (float posx2){
+void Monstre::setm_posx2 (float const& posx2){
  m_posx2=posx2;
 }
 
@@ -97,7 +97,7 @@ Mutateur de l'attribut m_posy2.
 @param: La methode setm_posy2 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posy2
 */
-void Monstre::setm_posy2 (float posy2){
+void Monstre::setm_posy2 (float const& posy2){
  m_posy2=posy2;
 }
 
@@ -108,7 +108,7 @@ Mutateur de l'attribut m_posx3.
 @param: La methode setm_posx3 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posx3
 */
-void Monstre::setm_posx3 (float posx3){
+void Monstre::setm_posx3 (float const& posx3){
  m_posx3=posx3;
 }
 
@@ -119,7 +119,7 @@ Mutateur de l'attribut m_posy3.
 @param: La methode setm_posy3 prend un parametre obligatoire: un float
 -param1: le nouveau float pour m_posy3
 */
-void Monstre::setm_posy3 (float posy3){
+void Monstre::setm_posy3 (float const& posy3){
  m_posy3=posy3;
 }
 
@@ -130,7 +130,7 @@ Mutateur de l'attribut m_vie.
 @param: La methode setm_vie prend un parametre obligatoire: un int
 -param1: le nouveau int pour m_vie
 */
-void Monstre::setm_vie (int vie){
+void Monstre::setm_vie (int const& vie){
  m_vie=vie;
 }
 
