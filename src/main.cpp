@@ -5,6 +5,7 @@
 #include "MyGameEngine.h"
 #include "MyControlEngine.h"
 
+#include "Joueur.h"
 #include "TowerDefense.h"
 #include "Monstre.h"
 
@@ -22,13 +23,14 @@ int main(int argc, char * argv[])
 
     vector <TowerDefense *> m_TowerDefenseList;
     vector <Monstre *> m_MonstreList;
+    Joueur m_player;
 
     Engine e(argc,argv,widthWindows,heigthWindows,title);//definition de la dimension de la fenetre et de son titre
 
     //Initialisation des objets
-    GraphicEngine * ge=new MyGraphicEngine(&m_TowerDefenseList, &m_MonstreList);
-    GameEngine * gme=new MyGameEngine(&m_TowerDefenseList, &m_MonstreList);
-    ControlEngine * ce=new MyControlEngine(&m_TowerDefenseList,&m_MonstreList);
+    GraphicEngine * ge=new MyGraphicEngine(&m_TowerDefenseList, &m_MonstreList, &m_player);
+    GameEngine * gme=new MyGameEngine(&m_TowerDefenseList, &m_MonstreList, &m_player);
+    ControlEngine * ce=new MyControlEngine(&m_TowerDefenseList,&m_MonstreList, &m_player);
 
     //parametrage des objets
     e.setGraphicEngine(ge);

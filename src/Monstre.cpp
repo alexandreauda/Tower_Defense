@@ -54,6 +54,16 @@ int Monstre::getm_isArrive() const{
     return m_isArrive;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_damageAttack.
+
+@param: null
+*/
+int Monstre::getm_damageAttack() const{
+    return m_damageAttack;
+}
+
 
 /******IMPLEMENTATION DES MUTATEURS******/
 
@@ -132,6 +142,17 @@ Mutateur de l'attribut m_vie.
 */
 void Monstre::setm_vie (int const& vie){
  m_vie=vie;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_damageAttack.
+
+@param: La methode setm_damageAttack prend un parametre obligatoire: un int
+-param1: le nouveau int pour m_damageAttack
+*/
+void Monstre::setm_damageAttack (int const& damageAttack){
+ m_damageAttack=damageAttack;
 }
 
 
@@ -278,7 +299,7 @@ void Monstre::moveSmoothly(BlockGrille nextBlock){
 
 /*
 @description:
-La methode walk de la classe Monstre permet au Monstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence du block ou se trouve le Monstre initialement au prochain block de maniere continue.
+La methode walk de la classe Monstre permet au Monstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence, du block ou se trouve le Monstre initialement au prochain block, le tout de maniere continue.
 
 @param: null
 */

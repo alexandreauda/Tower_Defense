@@ -12,6 +12,7 @@
 #include "FastMonstre.h"
 #include "StrongMonstre.h"
 #include "BlockStartMonstre.h"
+#include "Joueur.h"
 
 //La Class MyControlEngine herite de la Class ControlEngine
 class MyControlEngine:public ControlEngine {
@@ -25,11 +26,12 @@ private:
     BlockGrille m_grilleDeJeu[12][12];
     BlockStore m_stockStore[12];
     BlockStartMonstre m_buttonStartMonstre;
+    Joueur* m_player;
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(){
+    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(), m_player(player){
     Grille grilleInit;
     grilleInit.loadGrille("Files_Levels/Level_1.txt",m_grilleDeJeu);//Load la matrice m_grilleDeJeu
     Store shop;
@@ -40,6 +42,7 @@ public:
     virtual ~MyControlEngine() {
         delete m_TowerDefenseList;
         delete m_MonstreList;
+        delete m_player;
     }
 
     /******ACCESSEURS******/

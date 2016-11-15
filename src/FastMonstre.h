@@ -16,10 +16,10 @@ protected:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    FastMonstre(): Monstre(new IAOnePath(), 0, 0, 0, 0, 0, 0, 100, 100.0, 0, 0){}
+    FastMonstre(): Monstre(new IAOnePath(), 0, 0, 0, 0, 0, 0, 100, 100.0, 0, 0, 10){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	FastMonstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0): Monstre(monstreIA, posx1, posy1, posx2, posy2, posx3, posy3, vie, speed, timer, isArrive) {}
+	FastMonstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0, int damageAttack=10): Monstre(monstreIA, posx1, posy1, posx2, posy2, posx3, posy3, vie, speed, timer, isArrive, damageAttack) {}
 
 
     /******DESTRUCTEUR******/
