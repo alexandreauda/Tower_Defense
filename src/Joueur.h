@@ -40,4 +40,10 @@ public:
     /******PROTOTYPES DES METHODES******/
     void drawAttribut() const;
 
+    void receiveDamage(int const& damage);
+
+    void spendMoney(int const& cost);
+
+    void earnMoney(int const& gain);
+
 };

@@ -93,7 +93,7 @@ void Joueur::drawAttribut() const{
     sprintf(valueVie, "%d", m_vie);//Stock la valeur de l'attribut m_vie dans un tableau de char
     strcat(textVie,valueVie);//Concatene les deux chaines de caracteres
 
-    GraphicPrimitives::drawText2D(textVie,-0.96,0.90, r, g, b,alpha);
+    GraphicPrimitives::drawText2D(textVie,-0.96,0.90, r, g, b,alpha);//Draw le texte relatif a la vie du Joueur.
 
     //Affichage des informations concernant l'attribut m_argent
     char * textArgent=new char[20]{'A','r','g','e','n','t',':'};//Contient le texte immuable concernant l'attribut m_argent
@@ -101,7 +101,7 @@ void Joueur::drawAttribut() const{
     sprintf(valueArgent, "%d", m_argent);//Stock la valeur de l'attribut m_argent dans un tableau de char
     strcat(textArgent,valueArgent);//Concatene les deux chaines de caracteres
 
-    GraphicPrimitives::drawText2D(textArgent,-0.98,0.80, r, g, b,alpha);
+    GraphicPrimitives::drawText2D(textArgent,-0.98,0.80, r, g, b,alpha);//Draw le texte relatif a l'argent du Joueur.
 
     //Affichage des informations concernant l'attribut m_level
     char * textLevel=new char[20]{'L','e','v','e','l',':',' '};//Contient le texte immuable concernant l'attribut m_level
@@ -109,6 +109,39 @@ void Joueur::drawAttribut() const{
     sprintf(valueLevel, "%d", m_level);//Stock la valeur de l'attribut m_level dans un tableau de char
     strcat(textLevel,valueLevel);//Concatene les deux chaines de caracteres
 
-    GraphicPrimitives::drawText2D(textLevel,-0.97,0.70, r, g, b,alpha);
+    GraphicPrimitives::drawText2D(textLevel,-0.97,0.70, r, g, b,alpha);//Draw le texte relatif au niveau de la grille (Level).
 
+}
+
+/*
+@description:
+La methode receiveDamage de la classe Joueur prend un int en parametre et fait baisser la vie du Joueur d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode receiveDamage prend un parametre obligatoire: un int.
+-param1: Le int doit representer la valeur du dommage subis par le Joueur.
+*/
+void Joueur::receiveDamage(int const& damage){
+    m_vie-=damage;
+}
+
+/*
+@description:
+La methode spendMoney de la classe Joueur prend un int en parametre et fait baisser l'argent du Joueur d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode spendMoney prend un parametre obligatoire: un int.
+-param1: Le int doit representer la valeur de l'argent depense par le Joueur.
+*/
+void Joueur::spendMoney(int const& cost){
+    m_argent-=cost;
+}
+
+/*
+@description:
+La methode earnMoney de la classe Joueur prend un int en parametre et augmente l'argent du Joueur d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode earnMoney prend un parametre obligatoire: un int.
+-param1: Le int doit representer la valeur de l'argent gagne par le Joueur.
+*/
+void Joueur::earnMoney(int const& gain){
+    m_argent+=gain;
 }
