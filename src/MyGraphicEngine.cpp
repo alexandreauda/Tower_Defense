@@ -22,6 +22,10 @@ La methode Draw de la classe MyGraphicEngine permet de dessiner le damier graphi
 */
 void MyGraphicEngine::Draw(){
 
+        //On affiche les attributs du Joueur
+        Joueur player;
+        player.drawAttribut();
+
         //On affiche la grille de Jeu
         Grille grilleDeJeu;
         grilleDeJeu.draw("Files_Levels/Level_1.txt");

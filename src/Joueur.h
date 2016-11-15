@@ -17,7 +17,7 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie, int argent, int level=1): m_vie(vie), m_argent(argent), m_level(level){
+    Joueur(int vie=100, int argent=100, int level=1): m_vie(vie), m_argent(argent), m_level(level){
     //LibMatrix::loadLevelByInt(level,m_matLevel);
     }
 
@@ -38,14 +38,6 @@ public:
 
 
     /******PROTOTYPES DES METHODES******/
-    /*virtual std::string getClass() const = 0; //Methode virtuelle pure
-
-    virtual void draw() const = 0; //Methode virtuelle pure
-
-    virtual void drawTir() const = 0;//Methode virtuelle pure
-
-    virtual void attaque(Monstre* monstreEnnemi) = 0;//Methode virtuelle pure
-
-    void watchdog(std::vector <Monstre *> *MonstreList);//Etablie la procedure d'attaque des tourelles*/
+    void drawAttribut() const;
 
 };

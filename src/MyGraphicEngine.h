@@ -6,6 +6,7 @@
 #include "TowerDefense.h"
 #include "Monstre.h"
 #include "BlockStartMonstre.h"
+#include "Joueur.h"
 
 //La Class MyGraphicEngine herite de la Class GraphicEngine
 class MyGraphicEngine:public GraphicEngine {
