@@ -161,3 +161,39 @@ La methode earnMoney de la classe Joueur prend un int en parametre et augmente l
 void Joueur::earnMoney(int const& gain){
     m_argent+=gain;
 }
+
+/*
+@description:
+La methode isDead de la classe Joueur renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon.
+
+@param: null
+*/
+int Joueur::isDead() const{
+    if(m_vie <= 0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+/*
+@description:
+La methode gameOver de la classe Joueur permet d'afficher le message Game-Over de maniere graphique.
+
+@param: null
+*/
+void Joueur::gameOver() const{
+
+    //Met les valeurs RGB dans la couleur blanche
+    float const r=1.0;
+    float const g=1.0;
+    float const b=1.0;
+    float const alpha = 1.0;
+
+    //Affichage des informations concernant l'attribut m_vie
+    char * textGameOver=new char[20]{'G','A','M','E',' ','O','V','E','R'};//Contient le texte GAME OVER.
+
+    LibMatrix::drawLargeText2D(textGameOver,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textGameOver.
+
+}

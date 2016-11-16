@@ -186,6 +186,44 @@ matrixRot90(matrix);//On effectue une nouvelle fois une rotation de la matrice d
 
 /*
 @description:
+La methode drawLargeText2D ecrit du texte de differente facon en fonction des parametres.
+
+@param: La methode drawLargeText2D prend 8 parametres obligatoires: 1 pointeur de char, float, float, int, float, float, float, float.
+-param1: un pointeur de char parmettant de specifier le texte que l'on veut afficher.
+-param2: un float parmettant de specifier l'abscisse l'on veut afficher le texte.
+-param3: un float parmettant de specifier l'ordonne l'on veut afficher le texte.
+-param4: un int valant 0 ou 1 parmettant de specifier la police et donc la taille du texte que l'on veut afficher. Si ce parametre prend une autre valeur que 0 ou 1 alors cela revient a avoir ecrit 1.
+-param5: un float parmettant de specifier la couleur rouge des couleurs RGB.
+-param6: un float parmettant de specifier la couleur verte des couleurs RGB.
+-param7: un float parmettant de specifier la couleur bleu des couleurs RGB.
+-param8: un float parmettant de specifier l'apha qui correspond a la transparence.
+*/
+void LibMatrix::drawLargeText2D(char * str, float const& x, float const& y, int const& taille, float const& r, float const& g, float const& b, float const& alpha){
+    glPushMatrix();
+    glPushAttrib(GL_CURRENT_BIT);
+    //on doit definir la couleur avant la fonction RasterPos sinon elle ne sera pas prise en compte ...
+    glColor4f(r,g,b,alpha);
+    glRasterPos2f(x,y) ;
+    // Draw your text
+    for (unsigned int i=0;i<strlen(str);i++){
+            switch(taille){
+
+                case 0: glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,*(str+i));
+                        break;
+
+                case 1: glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*(str+i));
+                        break;
+
+                default: glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*(str+i));
+                         break;
+                    }
+    }
+    glPopAttrib(); // This sets the colour back to its original value
+    glPopMatrix();
+}
+
+/*
+@description:
 La methode distanceBetweenPoint prend les coordonnes de deux points en parametre et renvoie la distance qui separe ces deux points sur le plan cartesien.
 
 @param: La methode distanceBetweenPoint prend 4 parametres obligatoires: un float, un float, un float, un float.

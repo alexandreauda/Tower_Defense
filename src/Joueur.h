@@ -46,4 +46,8 @@ public:
 
     void earnMoney(int const& gain);
 
+    int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon
+
+    void gameOver() const;
+
 };
