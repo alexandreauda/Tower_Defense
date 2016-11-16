@@ -121,7 +121,16 @@ La methode receiveDamage de la classe Joueur prend un int en parametre et fait b
 -param1: Le int doit representer la valeur du dommage subis par le Joueur.
 */
 void Joueur::receiveDamage(int const& damage){
-    m_vie-=damage;
+    int const vieAfterDamage=m_vie-damage;
+    //Si la vie apres les degats recus est superieur ou egale a 0
+    if(vieAfterDamage >= 0){
+        m_vie-=damage;
+    }
+    //Sinon
+    else{
+        m_vie=0;//On met la vie a 0
+    }
+
 }
 
 /*
@@ -132,7 +141,14 @@ La methode spendMoney de la classe Joueur prend un int en parametre et fait bais
 -param1: Le int doit representer la valeur de l'argent depense par le Joueur.
 */
 void Joueur::spendMoney(int const& cost){
-    m_argent-=cost;
+    int const argentAfterSpend=m_argent-cost;
+    //Si l'argent apres la depense est superieur ou egale a 0
+    if(argentAfterSpend >= 0){
+       m_argent-=cost;
+    }
+    else{
+        m_argent=0;//On met l'argent a 0
+    }
 }
 
 /*
