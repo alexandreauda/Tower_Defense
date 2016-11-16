@@ -3,6 +3,7 @@
 #include "IAOnePath.h"
 #include "IASeveralPaths.h"
 #include "IAClever.h"
+#include "Joueur.h"
 
 
 class Monstre{
@@ -88,6 +89,8 @@ public:
     /******PROTOTYPES DES METHODES******/
     virtual void draw() const = 0;//methode virtuelle pure
 
+    virtual void walk(Joueur* player) = 0;//methode virtuelle pure
+
     float monsterCenterx() const;//Renvoi l'abscisse du barycentre du Monstre
 
     float monsterCentery() const;//Renvoi l'ordonne du barycentre du Monstre
@@ -101,8 +104,6 @@ public:
     BlockGrille searchPath(BlockGrille grilleDeJeu[12][12]) const;
 
     void moveSmoothly(BlockGrille nextBlock);
-
-    void walk();
 
     void receiveDamage(int const& damage);
 

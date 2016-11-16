@@ -299,44 +299,6 @@ void Monstre::moveSmoothly(BlockGrille nextBlock){
 
 /*
 @description:
-La methode walk de la classe Monstre permet au Monstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence, du block ou se trouve le Monstre initialement au prochain block, le tout de maniere continue.
-
-@param: null
-*/
-void Monstre::walk(){
-    //TEST
-    BlockGrille grilleDeJeu[12][12];
-    Grille grilleInit;
-    grilleInit.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice m_grilleDeJeu
-    //FIN TEST
-
-    //Variable qui contiendra le prochain BlockGrille ou ira le Monstre
-    BlockGrille nextBlock;
-
-    //Si m_timer%(int)m_speed == 0
-    if(m_timer%(int)m_speed == 0){
-        //Si le Monstre est arrive au bout du labyrinthe
-        if(this->isEndPath() == 1){
-           m_isArrive=1;//Mettre l'attribut m_isArrive a 1
-        }
-        //Si le Monstre n'est pas arrive au bout du labyrinthe
-        else{
-            nextBlock=this->searchPath(grilleDeJeu);//Le Monstre trouve son chemin dans le labyrinthe et connait donc le prochain block ou il doit se rendre. On stock donc ce block dans la variable nextBlock.
-            (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());//on met l'attribut m_previousPosition egal a m_actualPosition.
-            (this->getm_monstreIA())->setm_actualPosition(nextBlock);//on met l'attribut m_actualPosition egal a nextBlock qui contient la prochaine destination du Monstre.
-            this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
-            m_timer++;//on incremente l'attribut m_timer.
-        }
-    }
-    //Si m_timer%(int)m_speed != 0
-    else{
-        this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
-        m_timer++;//on incremente l'attribut m_timer.
-    }
-}
-
-/*
-@description:
 La methode receiveDamage de la classe Monstre prend un int en parametre et fait baisser la vie du Monstre d'une valeur egale a la valeur du int pris en parametre.
 
 @param: La methode receiveDamage prend un parametre obligatoire: un int.
@@ -373,6 +335,7 @@ Monstre& Monstre::operator=(Monstre const& monstreAcopier){
         m_speed= monstreAcopier.m_speed;
         m_timer= monstreAcopier.m_timer;
         m_isArrive= monstreAcopier.m_isArrive;
+        m_damageAttack= monstreAcopier.m_damageAttack;
 
         //traitements des pointeurs objets membres
         delete m_monstreIA;//on detruit l'objet membre pour ensuite le recree avec l'objet membre de l'objet copie

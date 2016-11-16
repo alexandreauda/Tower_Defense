@@ -4,6 +4,7 @@
 #include "IASeveralPaths.h"
 #include "IAClever.h"
 #include "Monstre.h"
+#include "Joueur.h"
 
 //La Class StrongMonstre herite de la Class Monstre
 class StrongMonstre: public Monstre{
@@ -37,6 +38,8 @@ public:
 
     /******PROTOTYPES DES METHODES******/
     virtual void draw() const;
+
+    virtual void walk(Joueur* player);
 
 
     /******PROTOTYPE OPERATEURS******/

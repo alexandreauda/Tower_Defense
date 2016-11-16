@@ -32,6 +32,46 @@ void StrongMonstre::draw() const{
 
 }
 
+/*
+@description:
+La methode walk de la classe StrongMonstre permet au StrongMonstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence, du block ou se trouve le StrongMonstre initialement au prochain block, le tout de maniere continue.
+
+@param: La methode walk prend un parametre obligatoire: un pointeur de type Joueur.
+-param1: un pointeur de type Joueur qui correspond au player
+*/
+void StrongMonstre::walk(Joueur* player){
+    //TEST
+    BlockGrille grilleDeJeu[12][12];
+    Grille grilleInit;
+    grilleInit.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice m_grilleDeJeu
+    //FIN TEST
+
+    //Variable qui contiendra le prochain BlockGrille ou ira le Monstre
+    BlockGrille nextBlock;
+
+    //Si m_timer%(int)m_speed == 0
+    if(m_timer%(int)m_speed == 0){
+        //Si le Monstre est arrive au bout du labyrinthe
+        if(this->isEndPath() == 1){
+           m_isArrive=1;//Mettre l'attribut m_isArrive a 1
+           player->receiveDamage(m_damageAttack);//On baisse la vie du Joueur
+        }
+        //Si le Monstre n'est pas arrive au bout du labyrinthe
+        else{
+            nextBlock=this->searchPath(grilleDeJeu);//Le Monstre trouve son chemin dans le labyrinthe et connait donc le prochain block ou il doit se rendre. On stock donc ce block dans la variable nextBlock.
+            (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());//on met l'attribut m_previousPosition egal a m_actualPosition.
+            (this->getm_monstreIA())->setm_actualPosition(nextBlock);//on met l'attribut m_actualPosition egal a nextBlock qui contient la prochaine destination du Monstre.
+            this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
+            m_timer++;//on incremente l'attribut m_timer.
+        }
+    }
+    //Si m_timer%(int)m_speed != 0
+    else{
+        this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
+        m_timer++;//on incremente l'attribut m_timer.
+    }
+}
+
 
 /******METHODE DE CLASSE: OPERATEURS******/
 StrongMonstre& StrongMonstre::operator=(StrongMonstre const& monstreAcopier){
@@ -67,4 +107,3 @@ StrongMonstre& StrongMonstre::operator=(StrongMonstre const& monstreAcopier){
     }
     return *this;
 }
-
