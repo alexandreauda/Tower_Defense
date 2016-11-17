@@ -197,3 +197,20 @@ void Joueur::gameOver() const{
     LibMatrix::drawLargeText2D(textGameOver,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textGameOver.
 
 }
+
+/*
+@description:
+Renvoie 1 si le Joueur a assez d'argent pour payer le cout pris en parametre et 0 sinon. Ainsi, si m_money-cost>=0 alors on renvoie 1 et 0 sinon.
+
+@param: La methode haveMoneyEnough prend un parametre obligatoire: un int.
+-param1: Le int doit representer la cout de la tourelle que le Joueur veut s'acheter.
+*/
+int Joueur::haveMoneyEnough(int const& cost) const{
+    int const argentAfterSpend= m_argent-cost;
+    if(argentAfterSpend >= 0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}

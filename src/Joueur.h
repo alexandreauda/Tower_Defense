@@ -50,4 +50,6 @@ public:
 
     void gameOver() const;
 
+    int haveMoneyEnough(int const& cost) const;//Renvoie 1 si le Joueur a assez d'argent pour payer le cout pris en parametre et 0 sinon. Ainsi, si m_money-cost>=0 alors on renvoie 1 et 0 sinon.
+
 };
