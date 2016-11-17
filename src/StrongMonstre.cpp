@@ -14,6 +14,16 @@ using namespace std;
 
 /*
 @description:
+La methode getClass de la classe StrongMonstre renvoie le nom de la Class (ici, le string "StrongMonstre").
+
+@param: null
+*/
+string StrongMonstre::getClass() const{
+    return "StrongMonstre";
+}
+
+/*
+@description:
 La methode draw de la classe StrongMonstre permet de dessiner des Monstres jaunes de maniere graphique.
 
 @param: null

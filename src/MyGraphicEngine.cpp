@@ -62,8 +62,22 @@ void MyGraphicEngine::Draw(){
                 }
                 //Si la vie d'un Monstre est inferieur ou egale a 0
                 if((*m_MonstreList)[i]->getm_vie() <= 0){
-                    //supprime l'element (ici, le Monstre)
-                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                        //Si le Monstre qui n'a plus de vie est un FastMonstre
+                        if((*m_MonstreList)[i]->getClass() == "FastMonstre"){
+                            m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
+                            //supprime l'element (ici, le Monstre)
+                            (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                        }
+                        else if((*m_MonstreList)[i]->getClass() == "StrongMonstre"){//Si le Monstre qui n'a plus de vie est un StrongMonstre
+                                m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
+                                //supprime l'element (ici, le Monstre)
+                                (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                        }
+                        else{
+                                m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
+                                //supprime l'element (ici, le Monstre)
+                                (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                        }
                 }
             }
         }

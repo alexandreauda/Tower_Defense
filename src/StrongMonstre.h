@@ -37,6 +37,8 @@ public:
 
 
     /******PROTOTYPES DES METHODES******/
+    virtual std::string getClass() const;//Renvoie le nom de la Class (ici, le string "StrongMonstre")
+
     virtual void draw() const;
 
     virtual void walk(Joueur* player);

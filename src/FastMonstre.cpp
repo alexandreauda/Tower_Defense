@@ -14,6 +14,16 @@ using namespace std;
 
 /*
 @description:
+La methode getClass de la classe FastMonstre renvoie le nom de la Class (ici, le string "FastMonstre").
+
+@param: null
+*/
+string FastMonstre::getClass() const{
+    return "FastMonstre";
+}
+
+/*
+@description:
 La methode draw de la classe FastMonstre permet de dessiner des Monstres bleus de maniere graphique.
 
 @param: null
