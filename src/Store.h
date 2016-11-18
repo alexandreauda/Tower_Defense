@@ -2,6 +2,7 @@
 #define STORE_H
 
 #include "BlockStore.h"
+#include "LibMatrix.h"
 
 class Store
 {

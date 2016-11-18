@@ -47,10 +47,32 @@ void Store::draw() const {
 BlockStore stockStore[12];//on definit un tableau vide de longueur 12 de type BlockStore
 loadStore(stockStore);//on initialise le vecteur statique stockStore pris en parametre avec des blocks de carasteristiques differentes
 
-//on parcourt le vecteur statique
-for(int i=0;i<12;i++){
 
-                   (stockStore[i]).draw();//on dessine le bloc correspondant (dependamment de son m_colorBlockID, il sera dessine dans une couleur specifique)
+char * textCorbeille=new char[5]{'B','I','N'};//Contient le texte pour indiquer la corbeille
 
-			}
+char * textCostTowerDefenseYellow=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle jaune
+char valueCostTowerDefenseYellow[10];//Contiendra la valeur du cout d'une tourelle jaune
+sprintf(valueCostTowerDefenseYellow, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseYellow.txt"));//Stock la valeur du cout d'une tourelle jaune dans un tableau de char
+strcat(textCostTowerDefenseYellow,valueCostTowerDefenseYellow);//Concatene les deux chaines de caracteres
+
+char * textCostTowerDefenseOrange=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle orange
+char valueCostTowerDefenseOrange[10];//Contiendra la valeur du cout d'une tourelle orange
+sprintf(valueCostTowerDefenseOrange, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseOrange.txt"));//Stock la valeur du cout d'une tourelle orange dans un tableau de char
+strcat(textCostTowerDefenseOrange,valueCostTowerDefenseOrange);//Concatene les deux chaines de caracteres
+
+char * textCostTowerDefensePurple=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle violette
+char valueCostTowerDefensePurple[10];//Contiendra la valeur du cout d'une tourelle violette
+sprintf(valueCostTowerDefensePurple, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefensePurple.txt"));//Stock la valeur du cout d'une tourelle violette dans un tableau de char
+strcat(textCostTowerDefensePurple,valueCostTowerDefensePurple);//Concatene les deux chaines de caracteres
+
+    //on parcourt le vecteur statique
+    for(int i=0;i<12;i++){
+
+        (stockStore[i]).draw();//on dessine le bloc correspondant (dependamment de son m_colorBlockID, il sera dessine dans une couleur specifique)
+
+    }
+LibMatrix::drawLargeText2D(textCorbeille,(stockStore[11]).getm_posx()+((stockStore[11]).getm_width()/2.0)-0.03,(stockStore[11]).getm_posy()+(stockStore[11]).getm_height()+0.01, 0, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer la corbeille.
+LibMatrix::drawLargeText2D(textCostTowerDefenseYellow,(stockStore[10]).getm_posx()+((stockStore[10]).getm_width()/2.0)-0.03,(stockStore[10]).getm_posy()+(stockStore[10]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle jaune.
+LibMatrix::drawLargeText2D(textCostTowerDefenseOrange,(stockStore[9]).getm_posx()+((stockStore[9]).getm_width()/2.0)-0.03,(stockStore[9]).getm_posy()+(stockStore[9]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle orange.
+LibMatrix::drawLargeText2D(textCostTowerDefensePurple,(stockStore[8]).getm_posx()+((stockStore[8]).getm_width()/2.0)-0.03,(stockStore[8]).getm_posy()+(stockStore[8]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle violette.
 }
