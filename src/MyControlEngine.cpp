@@ -39,9 +39,9 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         char* textNotEnoughMoney=new char[20]{'N','O','T',' ','E','N','O','U','G','T',' ','M','O','N','E','Y','!'};//Contient le texte NOT ENOUGH MONEY.
 
-        int const costTowerDefenseYellow(20);//Cout d'une tourelle jaune
-        int const costTowerDefenseOrange(50);//Cout d'une tourelle orange
-        int const costTowerDefensePurple(80);//Cout d'une tourelle violette
+        int const costTowerDefenseYellow(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseYellow.txt"));//Cout d'une tourelle jaune
+        int const costTowerDefenseOrange(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseOrange.txt"));//Cout d'une tourelle orange
+        int const costTowerDefensePurple(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefensePurple.txt"));//Cout d'une tourelle violette
 
         //on parcourt la grille
         for(int x=0;x<12;x++){

@@ -389,3 +389,28 @@ for(int i=0;i<12;i++){
 			}
 }
 
+/*
+@description:
+La methode loadIntInFile permet de retourner un int lu dans dans un fichier.
+
+@param: La methode loadIntInFile prend un parametre obligatoire: un string.
+-param1: le string permet de specifier le chemin du fichier contenant le int que l'on veut lire et retourner.
+*/
+int LibMatrix::loadIntInFile(string const& stringLevel) {
+
+    ifstream flux(stringLevel.c_str(),ios::app);//ouverture du flux de lecture
+    int valueInt;
+
+    if(flux)//si l'ouverture du fichier reussi
+    {
+        while(flux>>valueInt){//on lit le fichier mot par mot jusqu'a la fin de celui-ci
+            return valueInt;
+        }
+
+    }
+    else// En cas de probleme lors de l'ouverture du fichier
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;// on affiche un message d'erreur
+    }
+}
+

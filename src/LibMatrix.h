@@ -55,6 +55,8 @@ public:
 
     static void loadStore(BlockStore stockStore[12], float shopCellWidth, float shopCellHeight);
 
+    static int loadIntInFile(std::string const& stringLevel);
+
 };
 
 
