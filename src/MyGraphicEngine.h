@@ -5,6 +5,7 @@
 #include "Store.h"
 #include "TowerDefense.h"
 #include "Monstre.h"
+#include "ExplosedFastMonstre.h"
 #include "BlockStartMonstre.h"
 #include "Joueur.h"
 

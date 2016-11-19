@@ -49,7 +49,6 @@ La methode drawExplosion de la classe ExplosedFastMonstre permet de dessiner l'e
 
 @param: null
 */
-//TODO
 void ExplosedFastMonstre::drawExplosion() const{
 
      //Met les valeurs RGB dans la couleur blanche
@@ -72,67 +71,58 @@ void ExplosedFastMonstre::drawExplosion() const{
 
 /*
 @description:
-La methode watchdog de la classe ExplosedFastMonstre etablie la procedure d'attaque des tourelles.
+La methode watchdog de la classe ExplosedFastMonstre etablie la procedure d'attaque des Monstres lorsque l'ExplosedFastMonstre explose.
 
 @param: La methode watchdog prend un parametre obligatoire: un pointeur sur un vecteur de pointeur de type Monstre.
 -param1: Le pointeur sur un vecteur de pointeur de type Monstre qui contient la liste de tout les Monstres present sur la grille
 */
-/*void ExplosedFastMonstre::watchdog(vector <Monstre *> *MonstreList){
-    float distanceMonstreMonstre=10.0;
-    float currentDistanceTowerMonstre=0.0;
-    int index=0;
+void ExplosedFastMonstre::watchdog(vector <Monstre *> *MonstreList){
+    float currentDistanceMonstreMonstre=0.0;
+    vector<int> vectIndex;
 
-    //Si il n'y a pas de Monstre sur la grille
-    if(MonstreList->size() == 0){
-        m_targetx=m_centerTowerx;//On place le target sur le centre de la tourelle
-        m_targety=m_centerTowery;//On place le target sur le centre de la tourelle
-    }
-    //Sinon
-    else{
         //Pour chaque Monstre present sur la grille
         for(int i=0;i<MonstreList->size();i++){
-            //Mettre a jour la variable currentDistanceTowerMonstre qui est la distance entre le centre de la tourelle et le centre du Monstre courant
-            currentDistanceTowerMonstre=LibMatrix::distanceBetweenPoint(m_centerTowerx,m_centerTowery,(*MonstreList)[i]->monsterCenterx(),(*MonstreList)[i]->monsterCentery());
+            //Mettre a jour la variable currentDistanceMonstreMonstre qui est la distance entre le centre du Monstre explosif et le centre du Monstre courant
+            currentDistanceMonstreMonstre=LibMatrix::distanceBetweenPoint(this->monsterCenterx(),this->monsterCentery(),(*MonstreList)[i]->monsterCenterx(),(*MonstreList)[i]->monsterCentery());
 
-            //Si la distance entre le centre de la tourelle et le Monstre courant est inferieur strictement avec la plus petite distance entre le centre de la tourelle et un Monstre touvee jusqu'a present, et que cette distance est inferieur a m_portee*(distance entre le centre de deux blocks positionnes en diagonnal).
-            if((currentDistanceTowerMonstre<distanceTowerMonstre) && (currentDistanceTowerMonstre<=(m_portee*sqrt(m_blockBase.getm_width()*m_blockBase.getm_width()+m_blockBase.getm_height()*m_blockBase.getm_height())))){
-                distanceTowerMonstre=currentDistanceTowerMonstre;
-                index=i;//On retient l'index ou est situe le Monstre le plus proche de la tourelle
+            //Si la distance entre le centre du Monstre explosif est inferieur a m_portee*(distance entre le centre de deux blocks positionnes en diagonnal).
+            if(currentDistanceMonstreMonstre<=(m_portee*sqrt(0.13*0.13+0.13*0.13))){
+                vectIndex.push_back(i);//On retient l'index ou est situe le Monstre qui se trouve dans l'aire d'effet de l'explosion du Monstre explosif
             }
         }//Fin de la boucle for
-        //Si m_timer modulo m_cadence est egale a 0 et que la distance entre la tourelle et le monstre est inferieur a m_portee*(distance entre le centre de deux blocks positionnes en diagonnal) -> Formule donnee par l'application du theoreme de Pythagore en fonction de la largeur et de la hauteur des blocks.
-        if(m_timer%m_cadence == 0 && currentDistanceTowerMonstre<=(m_portee*sqrt(m_blockBase.getm_width()*m_blockBase.getm_width()+m_blockBase.getm_height()*m_blockBase.getm_height()))){
-            if(this->getClass() != "TowerDefensePurple"){
-                m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                this->attaque((*MonstreList)[index]);//La tourelle attaque le Monstre le plus proche d'elle
-                m_timer++;//On incremente le compteur
-            }
-            //Si la tourelle est une tourelle violette
-            else{
-                //Si le Monstre est au centre d'un block
-                if((*MonstreList)[index]->getm_timer()%(int)(*MonstreList)[index]->getm_speed() == 0){
-                    m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                    m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                    this->attaque((*MonstreList)[index]);//La tourelle attaque le Monstre le plus proche d'elle et ralenti donc le Monstre
-                    m_timer++;//On incremente le compteur
-                }
-                //Si le Monstre n'est pas au centre d'un block
-                else{
-                    //on trace un trait (c'est plus visuelle ainsi) mais on n'attaque pas!
-                    m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                    m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
-                }
-            }
+
+        //Pour chaque Monstre present dans l'aire d'effet de l'explosion du Monstre explosif
+        for(int i=0;i<vectIndex.size();i++){
+                int const index=vectIndex[i];
+                this->injuredWhenExplosed((*MonstreList)[index]);//Le Monstre explosif blesse les Monstres les plus proche d'eux
         }
-        //Sinon
-        else{
-            m_targetx=m_centerTowerx;//On place le target sur le centre de la tourelle
-            m_targety=m_centerTowery;//On place le target sur le centre de la tourelle
-            m_timer++;//On incremente le compteur
-        }
+}
+
+/*
+@description:
+La methode injuredWhenExplosed de la classe ExplosedFastMonstre prend un pointeur de Monstre en parametre et fait baisser la vie du monstre pointe par le pointeur.
+
+@param: La methode injuredWhenExplosed prend un parametre obligatoire: un pointeur de Monstre.
+-param1: un pointeur pointant sur le Monstre que le Monstre explosif blesse
+*/
+void ExplosedFastMonstre::injuredWhenExplosed(Monstre* monstreEnnemi){
+    monstreEnnemi->receiveDamage(m_damageExplosed);//Le monstre recoit des dommages
+}
+
+/*
+@description:
+La methode explosed de la classe ExplosedFastMonstre effectue la procedure d'explosion de l'ExplosedFastMonstre. Ainsi, si l'ExplosedFastMonstre n'a plus de vie alors il explose en blessant les Monstres a proximite.
+
+@param: La methode explosed prend un parametre obligatoire: un pointeur sur un vecteur de pointeur de type Monstre.
+-param1: Le pointeur sur un vecteur de pointeur de type Monstre qui contient la liste de tout les Monstres present sur la grille
+*/
+void ExplosedFastMonstre::explosed(vector <Monstre *> *MonstreList){
+    //Si l'ExplosedFastMonstre n'a plus de vie
+    if(m_vie <= 0){
+        watchdog(MonstreList);//Il blesse tout les monstres dans l'aire de l'explosion
     }
-}*/
+}
+
 
 /******METHODE DE CLASSE: OPERATEURS******/
 ExplosedFastMonstre& ExplosedFastMonstre::operator=(ExplosedFastMonstre const& monstreAcopier){

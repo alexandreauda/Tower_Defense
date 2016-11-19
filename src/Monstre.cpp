@@ -320,6 +320,22 @@ void Monstre::slowDown(int const& rateSlowDown){
     m_timer*=rateSlowDown;
 }
 
+/*
+@description:
+Methode qui sera override si le Monstre est du type explosif.
+*/
+void Monstre::explosed(vector <Monstre *> *MonstreList){
+
+}
+
+/*
+@description:
+Methode qui sera override si le Monstre est du type explosif.
+*/
+void Monstre::drawExplosion() const{
+
+}
+
 
 /******METHODE DE CLASSE: OPERATEURS******/
 Monstre& Monstre::operator=(Monstre const& monstreAcopier){

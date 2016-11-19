@@ -11,6 +11,7 @@
 #include "Monstre.h"
 #include "FastMonstre.h"
 #include "StrongMonstre.h"
+#include "ExplosedFastMonstre.h"
 #include "BlockStartMonstre.h"
 #include "Joueur.h"
 
