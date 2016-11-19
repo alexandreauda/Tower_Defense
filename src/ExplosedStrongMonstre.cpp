@@ -1,39 +1,39 @@
-#include "ExplosedFastMonstre.h"
+#include "ExplosedStrongMonstre.h"
 
 using namespace std;
 
 /******IMPLEMENTATION DES ACCESSEURS******/
-//Les accesseurs de la Class FastMonstre
+//Les accesseurs de la Class StrongMonstre
 
 
 /******IMPLEMENTATION DES MUTATEURS******/
-//Les mutateurs de la Class FastMonstre
+//Les mutateurs de la Class StrongMonstre
 
 
 /******IMPLEMENTATION DES METHODES******/
 
 /*
 @description:
-La methode getClass de la classe ExplosedFastMonstre renvoie le nom de la Class (ici, le string "ExplosedFastMonstre").
+La methode getClass de la classe ExplosedStrongMonstre renvoie le nom de la Class (ici, le string "ExplosedStrongMonstre").
 
 @param: null
 */
-string ExplosedFastMonstre::getClass() const{
-    return "ExplosedFastMonstre";
+string ExplosedStrongMonstre::getClass() const{
+    return "ExplosedStrongMonstre";
 }
 
 /*
 @description:
-La methode draw de la classe ExplosedFastMonstre permet de dessiner des Monstres vert de maniere graphique.
+La methode draw de la classe ExplosedStrongMonstre permet de dessiner des Monstres vert de maniere graphique.
 
 @param: null
 */
-void ExplosedFastMonstre::draw() const{
+void ExplosedStrongMonstre::draw() const{
 
     //Met les valeurs RGB dans la couleur verte
-    float const r=0.0;
-    float const g=1.0;
-    float const b=0.0;
+    float const r=1.0;
+    float const g=0.1;
+    float const b=0.9;
     float const alpha = 1.0;
 
 
@@ -45,11 +45,11 @@ void ExplosedFastMonstre::draw() const{
 
 /*
 @description:
-La methode drawExplosion de la classe ExplosedFastMonstre permet de dessiner l'explosion des monstres de maniere graphique.
+La methode drawExplosion de la classe ExplosedStrongMonstre permet de dessiner l'explosion des monstres de maniere graphique.
 
 @param: null
 */
-void ExplosedFastMonstre::drawExplosion() const{
+void ExplosedStrongMonstre::drawExplosion() const{
 
      //Met les valeurs RGB dans la couleur blanche
     float const r=1.0;
@@ -71,12 +71,12 @@ void ExplosedFastMonstre::drawExplosion() const{
 
 /*
 @description:
-La methode watchdog de la classe ExplosedFastMonstre etablie la procedure d'attaque des Monstres lorsque l'ExplosedFastMonstre explose.
+La methode watchdog de la classe ExplosedStrongMonstre etablie la procedure d'attaque des Monstres lorsque l'ExplosedStrongMonstre explose.
 
 @param: La methode watchdog prend un parametre obligatoire: un pointeur sur un vecteur de pointeur de type Monstre.
 -param1: Le pointeur sur un vecteur de pointeur de type Monstre qui contient la liste de tout les Monstres present sur la grille
 */
-void ExplosedFastMonstre::watchdog(vector <Monstre *> *MonstreList){
+void ExplosedStrongMonstre::watchdog(vector <Monstre *> *MonstreList){
     float currentDistanceMonstreMonstre=0.0;
     vector<int> vectIndex;
 
@@ -100,23 +100,23 @@ void ExplosedFastMonstre::watchdog(vector <Monstre *> *MonstreList){
 
 /*
 @description:
-La methode injuredWhenExplosed de la classe ExplosedFastMonstre prend un pointeur de Monstre en parametre et fait baisser la vie du monstre pointe par le pointeur.
+La methode injuredWhenExplosed de la classe ExplosedStrongMonstre prend un pointeur de Monstre en parametre et fait baisser la vie du monstre pointe par le pointeur.
 
 @param: La methode injuredWhenExplosed prend un parametre obligatoire: un pointeur de Monstre.
 -param1: un pointeur pointant sur le Monstre que le Monstre explosif blesse
 */
-void ExplosedFastMonstre::injuredWhenExplosed(Monstre* monstreEnnemi){
+void ExplosedStrongMonstre::injuredWhenExplosed(Monstre* monstreEnnemi){
     monstreEnnemi->receiveDamage(m_damageExplosed);//Le monstre recoit des dommages
 }
 
 /*
 @description:
-La methode explosed de la classe ExplosedFastMonstre effectue la procedure d'explosion de l'ExplosedFastMonstre. Ainsi, si l'ExplosedFastMonstre n'a plus de vie alors il explose en blessant les Monstres a proximite.
+La methode explosed de la classe ExplosedStrongMonstre effectue la procedure d'explosion de l'ExplosedStrongMonstre. Ainsi, si l'ExplosedStrongMonstre n'a plus de vie alors il explose en blessant les Monstres a proximite.
 
 @param: La methode explosed prend un parametre obligatoire: un pointeur sur un vecteur de pointeur de type Monstre.
 -param1: Le pointeur sur un vecteur de pointeur de type Monstre qui contient la liste de tout les Monstres present sur la grille
 */
-void ExplosedFastMonstre::explosed(vector <Monstre *> *MonstreList){
+void ExplosedStrongMonstre::explosed(vector <Monstre *> *MonstreList){
     //Si l'ExplosedFastMonstre n'a plus de vie
     if(m_vie <= 0){
         watchdog(MonstreList);//Il blesse tout les monstres dans l'aire de l'explosion
@@ -125,7 +125,7 @@ void ExplosedFastMonstre::explosed(vector <Monstre *> *MonstreList){
 
 
 /******METHODE DE CLASSE: OPERATEURS******/
-ExplosedFastMonstre& ExplosedFastMonstre::operator=(ExplosedFastMonstre const& monstreAcopier){
+ExplosedStrongMonstre& ExplosedStrongMonstre::operator=(ExplosedStrongMonstre const& monstreAcopier){
     if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopier reçu en argument
         //on copie tous les attributs qui ne sont pas des objets membres
         m_posx1= monstreAcopier.m_posx1;

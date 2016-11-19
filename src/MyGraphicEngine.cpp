@@ -79,6 +79,12 @@ void MyGraphicEngine::Draw(){
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
+                        else if((*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre"){//Si le Monstre qui n'a plus de vie est un ExplosedStrongMonstre
+                                m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
+                                (*m_MonstreList)[i]->drawExplosion();//Le ExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                //supprime l'element (ici, le Monstre)
+                                (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                        }
                         else{
                                 m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                 //supprime l'element (ici, le Monstre)

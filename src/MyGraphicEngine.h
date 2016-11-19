@@ -6,6 +6,7 @@
 #include "TowerDefense.h"
 #include "Monstre.h"
 #include "ExplosedFastMonstre.h"
+#include "ExplosedStrongMonstre.h"
 #include "BlockStartMonstre.h"
 #include "Joueur.h"
 

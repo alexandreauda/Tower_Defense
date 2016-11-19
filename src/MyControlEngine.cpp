@@ -241,5 +241,24 @@ void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
         (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
         (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
     }
+    else if(key == 's'){
+        m_MonstreList->push_back(new ExplosedStrongMonstre());
+        BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
+
+        float const initBlockPosx= initBlock.getm_posx();
+        float const initBlockPosy= initBlock.getm_posy();
+        float const initBlockWidth= initBlock.getm_width();
+        float const initBlockHeight= initBlock.getm_height();
+
+        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
+        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
+
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
+        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
+    }
 }
 
