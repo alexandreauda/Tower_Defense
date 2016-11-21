@@ -65,6 +65,11 @@ char valueCostTowerDefensePurple[10];//Contiendra la valeur du cout d'une tourel
 sprintf(valueCostTowerDefensePurple, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefensePurple.txt"));//Stock la valeur du cout d'une tourelle violette dans un tableau de char
 strcat(textCostTowerDefensePurple,valueCostTowerDefensePurple);//Concatene les deux chaines de caracteres
 
+char * textCostTowerDefenseRicochet=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle rouge
+char valueCostTowerDefenseRicochet[10];//Contiendra la valeur du cout d'une tourelle rouge
+sprintf(valueCostTowerDefenseRicochet, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseRicochet.txt"));//Stock la valeur du cout d'une tourelle rouge dans un tableau de char
+strcat(textCostTowerDefenseRicochet,valueCostTowerDefenseRicochet);//Concatene les deux chaines de caracteres
+
     //on parcourt le vecteur statique
     for(int i=0;i<12;i++){
 
@@ -75,4 +80,5 @@ LibMatrix::drawLargeText2D(textCorbeille,(stockStore[11]).getm_posx()+((stockSto
 LibMatrix::drawLargeText2D(textCostTowerDefenseYellow,(stockStore[10]).getm_posx()+((stockStore[10]).getm_width()/2.0)-0.03,(stockStore[10]).getm_posy()+(stockStore[10]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle jaune.
 LibMatrix::drawLargeText2D(textCostTowerDefenseOrange,(stockStore[9]).getm_posx()+((stockStore[9]).getm_width()/2.0)-0.03,(stockStore[9]).getm_posy()+(stockStore[9]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle orange.
 LibMatrix::drawLargeText2D(textCostTowerDefensePurple,(stockStore[8]).getm_posx()+((stockStore[8]).getm_width()/2.0)-0.03,(stockStore[8]).getm_posy()+(stockStore[8]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle violette.
+LibMatrix::drawLargeText2D(textCostTowerDefenseRicochet,(stockStore[7]).getm_posx()+((stockStore[7]).getm_width()/2.0)-0.05,(stockStore[7]).getm_posy()+(stockStore[7]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle rouge.
 }

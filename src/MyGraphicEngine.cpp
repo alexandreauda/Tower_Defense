@@ -49,6 +49,14 @@ void MyGraphicEngine::Draw(){
                 (*m_TowerDefenseList)[i]->drawTir();
             }
 
+            //On affiche les ricochets des tirs des tourelles Ricochet
+            for(int i=0;i<m_TowerDefenseList->size();i++){
+                //Si les tourelles sont des tourelles ricochet
+                if((*m_TowerDefenseList)[i]->getClass() == "TowerDefenseRicochet"){
+                    (*m_TowerDefenseList)[i]->drawTirRicochet(m_MonstreList);
+                }
+            }
+
             //On affiche les Monstres
             for(int i=0;i<m_MonstreList->size();i++){
                 //Si le Monstre en question n'est pas arrive sur la derniere colonne

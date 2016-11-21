@@ -88,6 +88,14 @@ void BlockStore::draw() const
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle violette
                     break;
 
+            case 4: //La cinquieme case qui correspond au stock de tourelles ricochet dans le Store
+                    //on met un carre rouge pour signifier qu'il s'agit du stock de tourelles de couleur rouge
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
             default: break;
         }
      }
@@ -138,6 +146,14 @@ void BlockStore::draw() const
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle violette
                     break;
 
+            case 4: //La cinquieme case qui correspond au stock de tourelles ricochet dans le Store
+                    //on met un carre rouge pour signifier qu'il s'agit du stock de tourelles de couleur rouge
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
             default: break;
         }
          }
@@ -186,6 +202,14 @@ void BlockStore::draw() const
                     tG=0.1;
                     tB=0.9;
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle violette
+                    break;
+
+            case 4: //La cinquieme case qui correspond au stock de tourelles ricochet dans le Store
+                    //on met un carre rouge pour signifier qu'il s'agit du stock de tourelles de couleur rouge
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
                     break;
 
             default: break;

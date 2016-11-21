@@ -4,6 +4,7 @@
 #include "Grille.h"
 #include "Store.h"
 #include "TowerDefense.h"
+#include "TowerDefenseRicochet.h"
 #include "Monstre.h"
 #include "ExplosedFastMonstre.h"
 #include "ExplosedStrongMonstre.h"

@@ -177,6 +177,7 @@ void TowerDefense::watchdog(vector <Monstre *> *MonstreList){
         }//Fin de la boucle for
         //Si m_timer modulo m_cadence est egale a 0 et que la distance entre la tourelle et le monstre est inferieur a m_portee*(distance entre le centre de deux blocks positionnes en diagonnal) -> Formule donnee par l'application du theoreme de Pythagore en fonction de la largeur et de la hauteur des blocks.
         if(m_timer%m_cadence == 0 && distanceTowerMonstre<=(m_portee*sqrt(m_blockBase.getm_width()*m_blockBase.getm_width()+m_blockBase.getm_height()*m_blockBase.getm_height()))){
+            //Si la tourelle n'est pas une tourelle violette
             if(this->getClass() != "TowerDefensePurple"){
                 m_targetx=(*MonstreList)[index]->monsterCenterx();//On met a jour le target de la tourelle qui se place au centre du Monstre
                 m_targety=(*MonstreList)[index]->monsterCentery();//On met a jour le target de la tourelle qui se place au centre du Monstre
@@ -207,4 +208,12 @@ void TowerDefense::watchdog(vector <Monstre *> *MonstreList){
             m_timer++;//On incremente le compteur
         }
     }
+}
+
+/*
+@description:
+Methode qui sera override si la Tower Defense est du type TowerDefenseRicochet.
+*/
+void TowerDefense::drawTirRicochet(std::vector <Monstre *> *MonstreList) const{
+
 }
