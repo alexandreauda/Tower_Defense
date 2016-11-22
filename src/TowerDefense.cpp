@@ -162,7 +162,7 @@ void TowerDefense::watchdog(vector <Monstre *> *MonstreList){
         m_targetx=m_centerTowerx;//On place le target sur le centre de la tourelle
         m_targety=m_centerTowery;//On place le target sur le centre de la tourelle
     }
-    //Sinon
+    //Sinon si il y a des Monstres sur la grille
     else{
         //Pour chaque Monstre present sur la grille
         for(int i=0;i<MonstreList->size();i++){

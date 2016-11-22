@@ -186,6 +186,22 @@ matrixRot90(matrix);//On effectue une nouvelle fois une rotation de la matrice d
 
 /*
 @description:
+La methode puissance prend deux int x et y en parametre et retourne x^y.
+
+@param: La methode puissance prend 2 parametres obligatoires: un int et un int.
+-param1: Le int que l'on veut mettre a la puissanse.
+-param2: Le int specifiant la puissance a laquelle est mise le param1.
+*/
+int LibMatrix::puissance(int const& x, int const& y){
+    int curentPuissance=1;
+    for(int i;i<y;i++){
+        curentPuissance*=x;
+    }
+    return curentPuissance;//Retourne x^y
+}
+
+/*
+@description:
 La methode drawLargeText2D ecrit du texte de differente facon en fonction des parametres.
 
 @param: La methode drawLargeText2D prend 8 parametres obligatoires: 1 pointeur de char, float, float, int, float, float, float, float.

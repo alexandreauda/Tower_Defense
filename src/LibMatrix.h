@@ -43,6 +43,8 @@ public:
 
     static void matrixRot180(int matrix[12][12]);
 
+    static int puissance(int const& x, int const& y);//Retourne x^y
+
     static void drawLargeText2D(char * str, float const& x, float const& y, int const& taille=1, float const& r=1.0, float const& g=1.0, float const& b=1.0, float const& alpha=1.0);
 
     static float distanceBetweenPoint(float const& pointx1, float const& pointy1, float const& pointx2, float const& pointy2);
