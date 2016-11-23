@@ -45,7 +45,7 @@ public:
 
     static int puissance(int const& x, int const& y);//Retourne x^y
 
-    static int isContained(std::vector<float> const& vectorTest, int const& x);//Retourne 1 si x se trouve dans le vecteur et 0 sinon
+    static int isContained(std::vector<float> const& vectorTest, float const& x);//Retourne 1 si x se trouve dans le vecteur et 0 sinon
 
     static void drawLargeText2D(char * str, float const& x, float const& y, int const& taille=1, float const& r=1.0, float const& g=1.0, float const& b=1.0, float const& alpha=1.0);
 

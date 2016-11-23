@@ -67,6 +67,4 @@ public:
 
     virtual void drawTirRicochet(std::vector <Monstre *> *MonstreList) const;//Dessine les tirs des tourelles les ricochets des tirs des tourelles Ricochet
 
-
-
 };

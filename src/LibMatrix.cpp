@@ -194,7 +194,7 @@ La methode puissance prend deux int x et y en parametre et retourne x^y.
 */
 int LibMatrix::puissance(int const& x, int const& y){
     int curentPuissance=1;
-    for(int i;i<y;i++){
+    for(int i=0;i<y;i++){
         curentPuissance*=x;
     }
     return curentPuissance;//Retourne x^y
@@ -202,13 +202,13 @@ int LibMatrix::puissance(int const& x, int const& y){
 
 /*
 @description:
-La methode puissance retourne 1 si le float pris en second parametre se trouve dans le vecteur specifie par le premier parametre et 0 sinon.
+La methode isContained retourne 1 si le float pris en second parametre se trouve dans le vecteur specifie par le premier parametre et 0 sinon.
 
-@param: La methode puissance prend 2 parametres obligatoires: un vector de float et un float.
+@param: La methode isContained prend 2 parametres obligatoires: un vector de float et un float.
 -param1: Le vector de float ou l'on veut effectuer la recherche.
 -param2: Le float que l'on veut savoir s'il se trouve dans le vector pris en premier parametre.
 */
-int isContained(std::vector<float> const& vectorTest, float const& x){
+int LibMatrix::isContained(vector<float> const& vectorTest, float const& x){
     //Pour chaque element du vector
     for(int i=0;i<vectorTest.size();i++){
         //On verifie si l'element du vecteur est egal au param2 specifie
