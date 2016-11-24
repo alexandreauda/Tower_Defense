@@ -9,9 +9,10 @@ using namespace std;
 La methode loadGrille permet d'initialiser une matrice prise en parametre avec la matrice presente dans un fichier.
 La matrice en parametre est modifiee par la methode car elle est passee par reference.
 
-@param: La methode loadGrille prend deux parametres obligatoires: un string, et une matrice statique de BlockGrille 12*12.
--param1: le string permet de specifier le chemin du fichier contenant la matrice qui sert a initialiser la matrice passee en second parametre
--param2: une matrice de BlockGrille 12*12 qui va etre modifiee pour etre initialisee avec les donnees lues dans le fichier.
+@param: La methode loadGrille prend deux parametres obligatoires et un parametre facultatif: un int, une matrice statique de BlockGrille 12*12 et un string facultatif specifiant le nom du repertoire dans lequel se trouve le fichier. Par defaut, ce dernier parametre vaut "Files_Levels/".
+-param1: Le int permet de specifier le niveau et donc le chemin du fichier contenant la matrice qui sert a initialiser la matrice passee en second parametre
+-param2: Une matrice de BlockGrille 12*12 qui va etre modifiee pour etre initialisee avec les donnees lues dans le fichier.
+-param3: Un string facultatif specifiant le nom du repertoire dans lequel se trouve le fichier. Par defaut, ce dernier parametre vaut "Files_Levels/".
 */
 void Grille::loadGrille(int const& intLevel, BlockGrille grilleBlock[12][12], string const& stringNameDirectory) const{
 
@@ -56,8 +57,9 @@ void Grille::loadGrille(int const& intLevel, BlockGrille grilleBlock[12][12], st
 @description:
 La methode draw permet d'afficher la Grille de Jeu en fonction de la matrice presente dans un fichier.
 
-@param: La methode draw prend un parametre obligatoire: un string.
--param1: le string permet de specifier le chemin du fichier contenant la matrice spécifiant le trace de la grille de Jeu.
+@param: La methode draw prend un parametre obligatoire et un parametre facultatif: un int et un string facultatif specifiant le nom du repertoire dans lequel se trouve le fichier. Par defaut, ce dernier parametre vaut "Files_Levels/"..
+-param1: Le int permet de specifier le niveau et donc le chemin du fichier contenant la matrice spécifiant le trace de la grille de Jeu.
+-param2: Un string facultatif specifiant le nom du repertoire dans lequel se trouve le fichier. Par defaut, ce dernier parametre vaut "Files_Levels/".
 */
 void Grille::draw(int const& intLevel, string const& stringNameDirectory) const{
 
