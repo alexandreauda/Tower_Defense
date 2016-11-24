@@ -13,7 +13,19 @@ La matrice en parametre est modifiee par la methode car elle est passee par refe
 -param1: le string permet de specifier le chemin du fichier contenant la matrice qui sert a initialiser la matrice passee en second parametre
 -param2: une matrice de BlockGrille 12*12 qui va etre modifiee pour etre initialisee avec les donnees lues dans le fichier.
 */
-void Grille::loadGrille(string const& stringLevel, BlockGrille grilleBlock[12][12]) const{
+void Grille::loadGrille(int const& intLevel, BlockGrille grilleBlock[12][12], string const& stringNameDirectory) const{
+
+    //On construit petit a petit l'arborescence du chemin pour trouver les fichiers
+    string stringLevel=stringNameDirectory;
+    stringLevel+="Level_";
+
+    string numberLevel;
+    stringstream convertToString;
+    convertToString << intLevel;
+    numberLevel=convertToString.str();
+    stringLevel+=numberLevel;
+
+    stringLevel+=".txt";
 
     Level level;
     int matLevel[12][12]; //on definit une matrice vide 12*12 nommee matLevel
@@ -47,10 +59,10 @@ La methode draw permet d'afficher la Grille de Jeu en fonction de la matrice pre
 @param: La methode draw prend un parametre obligatoire: un string.
 -param1: le string permet de specifier le chemin du fichier contenant la matrice spécifiant le trace de la grille de Jeu.
 */
-void Grille::draw(string const& stringLevel) const{
+void Grille::draw(int const& intLevel, string const& stringNameDirectory) const{
 
 BlockGrille grilleBlock[12][12];
-loadGrille(stringLevel, grilleBlock);//on initialise la matrice grilleBlock prise en parametre avec la matrice presente dans le fichier, specifie par le chemin stringLevel.
+loadGrille(intLevel, grilleBlock, stringNameDirectory);//on initialise la matrice grilleBlock prise en parametre avec la matrice presente dans le fichier, specifie par le chemin stringLevel.
 
         //on parcourt la grille
 		for(int y=0;y<12;y++){

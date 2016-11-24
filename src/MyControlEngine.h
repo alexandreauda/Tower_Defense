@@ -35,7 +35,7 @@ public:
     /******CONSTRUCTEUR A PARAMETRES******/
     MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(), m_player(player){
     Grille grilleInit;
-    grilleInit.loadGrille("Files_Levels/Level_1.txt",m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+    grilleInit.loadGrille(player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
     Store shop;
     shop.loadStore(m_stockStore);//Load le Store
     }

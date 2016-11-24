@@ -25,6 +25,9 @@ La methode MouseCallback de la classe MyControlEngine permet d'effectuer des act
 */
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
+    Grille grilleInit;
+    grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+
     //Si le bouton gauche de la souris est enfoncé alors...
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 
@@ -203,6 +206,10 @@ La methode KeyboardCallback de la classe MyControlEngine permet d'effectuer des 
 -param3: Ce troisieme parametre designe l'ordonne ou l'on se trouve lors de la pression de la touche du clavier.
 */
 void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
+
+    Grille grilleInit;
+    grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+
     if(key == 'g'){
         m_MonstreList->push_back(new StrongMonstre());
         BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));

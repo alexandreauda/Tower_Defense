@@ -23,8 +23,8 @@ public:
 
     /******PROTOTYPES DES METHODES******/
 
-    void loadGrille(std::string const& stringLevel, BlockGrille grilleBlock[12][12]) const;
+    void loadGrille(int const& intLevel, BlockGrille grilleBlock[12][12], std::string const& stringNameDirectory="Files_Levels/") const;
 
-    void draw(std::string const& stringLevel) const;
+    void draw(int const& intLevel, std::string const& stringNameDirectory="Files_Levels/") const;
 
 };

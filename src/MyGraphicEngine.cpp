@@ -30,7 +30,7 @@ void MyGraphicEngine::Draw(){
 
             //On affiche la grille de Jeu
             Grille grilleDeJeu;
-            grilleDeJeu.draw("Files_Levels/Level_1.txt");
+            grilleDeJeu.draw(m_player->getm_level());
 
             //On affiche le Store
             Store shop;

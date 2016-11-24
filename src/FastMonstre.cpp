@@ -50,11 +50,10 @@ La methode walk de la classe FastMonstre permet au FastMonstre de trouver son ch
 -param1: un pointeur de type Joueur qui correspond au player
 */
 void FastMonstre::walk(Joueur* player){
-    //TEST
+
     BlockGrille grilleDeJeu[12][12];
     Grille grilleInit;
-    grilleInit.loadGrille("Files_Levels/Level_1.txt",grilleDeJeu);//Load la matrice m_grilleDeJeu
-    //FIN TEST
+    grilleInit.loadGrille(player->getm_level(),grilleDeJeu);//Load la matrice m_grilleDeJeu
 
     //Variable qui contiendra le prochain BlockGrille ou ira le Monstre
     BlockGrille nextBlock;

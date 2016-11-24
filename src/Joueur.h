@@ -11,14 +11,12 @@ private:
     int m_vie;
     int m_argent;
     int m_level;
-    //int m_matLevel[12][12];
 
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
     Joueur(int vie=100, int argent=100, int level=1): m_vie(vie), m_argent(argent), m_level(level){
-    //LibMatrix::loadLevelByInt(level,m_matLevel);
     }
 
 
