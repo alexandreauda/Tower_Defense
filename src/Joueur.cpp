@@ -121,6 +121,14 @@ void Joueur::drawAttribut() const{
 
     GraphicPrimitives::drawText2D(textNumberMonstreKilled,-0.97,0.43, r, g, b,alpha);//Draw le texte relatif au nombre de Monstre elimines par le Joueur.
 
+    //Affichage des informations concernant l'attribut m_score
+    char * textScore=new char[20]{'S','c','o','r','e',':'};//Contient le texte immuable concernant l'attribut m_score
+    char valueScore[10];//Contiendra la valeur du score du Joueur
+    sprintf(valueScore, "%d", m_score);//Stock la valeur de l'attribut m_score dans un tableau de char
+    strcat(textScore,valueScore);//Concatene les deux chaines de caracteres
+
+    GraphicPrimitives::drawText2D(textScore,-0.97,0.33, r, g, b,alpha);//Draw le texte relatif au score du Joueur.
+
 }
 
 /*

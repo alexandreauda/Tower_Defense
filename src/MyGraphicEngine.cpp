@@ -67,12 +67,14 @@ void MyGraphicEngine::Draw(){
                         if((*m_MonstreList)[i]->getClass() == "FastMonstre"){
                             m_player->earnMoney(m_rewardFastMonstre);//Le Joueur gagne une certaine somme d'argent
                             m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                            m_player->increaseScore(m_rewardFastMonstre);//On augmente le score du player
                             //supprime l'element (ici, le Monstre)
                             (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
                         else if((*m_MonstreList)[i]->getClass() == "StrongMonstre"){//Si le Monstre qui n'a plus de vie est un StrongMonstre
                                 m_player->earnMoney(m_rewardStrongMonstre);//Le Joueur gagne une certaine somme d'argent
                                 m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                m_player->increaseScore(m_rewardStrongMonstre);//On augmente le score du player
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
@@ -80,6 +82,7 @@ void MyGraphicEngine::Draw(){
                                 m_player->earnMoney(m_rewardExplosedFastMonstre);//Le Joueur gagne une certaine somme d'argent
                                 (*m_MonstreList)[i]->drawExplosion();//Le ExplosedFastMonstre trace l'explosion lorsqu'il n'a plus de vie
                                 m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                m_player->increaseScore(m_rewardExplosedFastMonstre);//On augmente le score du player
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
@@ -87,12 +90,14 @@ void MyGraphicEngine::Draw(){
                                 m_player->earnMoney(m_rewardExplosedStrongMonstre);//Le Joueur gagne une certaine somme d'argent
                                 (*m_MonstreList)[i]->drawExplosion();//Le ExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
                                 m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                m_player->increaseScore(m_rewardExplosedStrongMonstre);//On augmente le score du player
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
                         else{
                                 m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                 m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                m_player->increaseScore(5);//On augmente le score du player
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
