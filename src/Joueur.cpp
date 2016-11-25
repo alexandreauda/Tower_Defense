@@ -111,6 +111,16 @@ void Joueur::drawAttribut() const{
 
     GraphicPrimitives::drawText2D(textLevel,-0.97,0.70, r, g, b,alpha);//Draw le texte relatif au niveau de la grille (Level).
 
+    //Affichage des informations concernant l'attribut m_numberMonstreKilled
+    char * textNumberMonstreKilledPart1=new char[20]{'M','O','N','S','T','E','R'};//Contient le texte immuable concernant l'attribut m_numberMonstreKilled
+    GraphicPrimitives::drawText2D(textNumberMonstreKilledPart1,-0.98,0.50, r, g, b,alpha);//Draw le texte immuable relatif au nombre de Monstre elimines par le Joueur.
+    char * textNumberMonstreKilled=new char[10]{'K','I','L','L','E','D',':'};//Contient le texte immuable concernant l'attribut m_numberMonstreKilled
+    char valueNumberMonstreKilled[10];//Contiendra le nombre de Monstre elimines par le Joueur
+    sprintf(valueNumberMonstreKilled, "%d", m_numberMonstreKilled);//Stock la valeur de l'attribut m_numberMonstreKilled dans un tableau de char
+    strcat(textNumberMonstreKilled,valueNumberMonstreKilled);//Concatene les deux chaines de caracteres
+
+    GraphicPrimitives::drawText2D(textNumberMonstreKilled,-0.97,0.43, r, g, b,alpha);//Draw le texte relatif au nombre de Monstre elimines par le Joueur.
+
 }
 
 /*

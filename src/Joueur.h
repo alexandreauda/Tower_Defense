@@ -45,7 +45,7 @@ public:
 
     void earnMoney(int const& gain);
 
-    void oneMoreKilled();
+    void oneMoreKilled();//Incremente l'attribut m_numberMonstreKilled
 
     int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon
 
