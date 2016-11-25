@@ -184,6 +184,17 @@ void Joueur::oneMoreKilled(){
 
 /*
 @description:
+La methode increaseScore de la classe Joueur prend un int en parametre et augmente le score du Joueur d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode increaseScore prend un parametre obligatoire: un int.
+-param1: Le int doit representer la valeur du score gagne par le Joueur.
+*/
+void Joueur::increaseScore(int const& award){
+    m_score+=award;
+}
+
+/*
+@description:
 La methode isDead de la classe Joueur renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon.
 
 @param: null

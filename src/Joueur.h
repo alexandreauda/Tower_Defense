@@ -12,12 +12,13 @@ private:
     int m_argent;
     int m_level;
     int m_numberMonstreKilled;
+    int m_score;
 
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled){
+    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score){
     }
 
 
@@ -46,6 +47,8 @@ public:
     void earnMoney(int const& gain);
 
     void oneMoreKilled();//Incremente l'attribut m_numberMonstreKilled
+
+    void increaseScore(int const& award);//Augmente l'attribut m_score d'une valeur egale a la valeur du int pris en parametre
 
     int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon
 
