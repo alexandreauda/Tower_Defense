@@ -45,7 +45,7 @@ public:
 
     void earnMoney(int const& gain);
 
-    void oneMoreKilled()
+    void oneMoreKilled();
 
     int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon
 
