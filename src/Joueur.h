@@ -11,12 +11,13 @@ private:
     int m_vie;
     int m_argent;
     int m_level;
+    int m_numberMonstreKilled;
 
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie=100, int argent=100, int level=1): m_vie(vie), m_argent(argent), m_level(level){
+    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled){
     }
 
 
@@ -43,6 +44,8 @@ public:
     void spendMoney(int const& cost);
 
     void earnMoney(int const& gain);
+
+    void oneMoreKilled()
 
     int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon
 

@@ -164,6 +164,16 @@ void Joueur::earnMoney(int const& gain){
 
 /*
 @description:
+La methode oneMoreKilled de la classe Joueur augmente de 1 le nombre de Monstre elimines par le Joueur.
+
+@param: null
+*/
+void Joueur::oneMoreKilled(){
+    m_numberMonstreKilled++;
+}
+
+/*
+@description:
 La methode isDead de la classe Joueur renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon.
 
 @param: null
