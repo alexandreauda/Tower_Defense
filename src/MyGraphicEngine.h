@@ -21,11 +21,20 @@ private:
     std::vector <TowerDefense *> *m_TowerDefenseList;
     BlockStartMonstre m_buttonStartMonstre;
     Joueur* m_player;
+    int m_rewardFastMonstre;
+    int m_rewardStrongMonstre;
+    int m_rewardExplosedFastMonstre;
+    int m_rewardExplosedStrongMonstre;
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_player(player){}
+    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_player(player){
+        m_rewardFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardFastMonstre.txt");
+        m_rewardStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardStrongMonstre.txt");
+        m_rewardExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedFastMonstre.txt");
+        m_rewardExplosedStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedStrongMonstre.txt");
+    }
 
     /******DESTRUCTEUR******/
     virtual ~MyGraphicEngine() {
