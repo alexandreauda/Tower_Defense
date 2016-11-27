@@ -22,6 +22,23 @@ La methode Draw de la classe MyGraphicEngine permet de dessiner le damier graphi
 */
 void MyGraphicEngine::Draw(){
 
+    //Si le score du Joueur atteint une valeur egale a 500*(la valeur du niveau de la grille)
+    if(m_player->getm_score() == m_currentDrawLevel*500){
+       m_player->increaseLevel();//On incremente le niveau du Joueur
+    }
+
+    //Si l'attribut m_currentDrawLevel est different du niveau du Joueur
+    if(m_currentDrawLevel != m_player->getm_level()){
+        //Supprime tous les Monstre present sur la grille de jeu
+        (*m_MonstreList).clear();
+
+        //Supprime toutes les Tourelles present sur la grille de jeu
+        (*m_TowerDefenseList).clear();
+
+        m_currentDrawLevel=m_player->getm_level();//On set la valeur de l'attribut m_currentDrawLevel a la valeur du niveau du Joueur
+    }
+    else{
+
         //Si le player n'est pas mort
         if(m_player->isDead() == 0){
 
@@ -71,6 +88,7 @@ void MyGraphicEngine::Draw(){
                             //supprime l'element (ici, le Monstre)
                             (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
+                        //Sinon, si le Monstre qui n'a plus de vie est un StrongMonstre
                         else if((*m_MonstreList)[i]->getClass() == "StrongMonstre"){//Si le Monstre qui n'a plus de vie est un StrongMonstre
                                 m_player->earnMoney(m_rewardStrongMonstre);//Le Joueur gagne une certaine somme d'argent
                                 m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
@@ -78,6 +96,7 @@ void MyGraphicEngine::Draw(){
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
+                        //Sinon, si le Monstre qui n'a plus de vie est un ExplosedFastMonstre
                         else if((*m_MonstreList)[i]->getClass() == "ExplosedFastMonstre"){//Si le Monstre qui n'a plus de vie est un ExplosedFastMonstre
                                 m_player->earnMoney(m_rewardExplosedFastMonstre);//Le Joueur gagne une certaine somme d'argent
                                 (*m_MonstreList)[i]->drawExplosion();//Le ExplosedFastMonstre trace l'explosion lorsqu'il n'a plus de vie
@@ -86,6 +105,7 @@ void MyGraphicEngine::Draw(){
                                 //supprime l'element (ici, le Monstre)
                                 (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                         }
+                        //Sinon, si le Monstre qui n'a plus de vie est un ExplosedStrongMonstre
                         else if((*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre"){//Si le Monstre qui n'a plus de vie est un ExplosedStrongMonstre
                                 m_player->earnMoney(m_rewardExplosedStrongMonstre);//Le Joueur gagne une certaine somme d'argent
                                 (*m_MonstreList)[i]->drawExplosion();//Le ExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
@@ -108,5 +128,6 @@ void MyGraphicEngine::Draw(){
         else{
             m_player->gameOver();//On affiche le menu du Game Over
         }
+    }
 }
 

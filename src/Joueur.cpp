@@ -34,6 +34,16 @@ int Joueur::getm_level() const{
     return m_level;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_score.
+
+@param: null
+*/
+int Joueur::getm_score() const{
+    return m_score;
+}
+
 
 /******IMPLEMENTATION DES MUTATEURS******/
 
@@ -188,6 +198,16 @@ La methode oneMoreKilled de la classe Joueur augmente de 1 le nombre de Monstre 
 */
 void Joueur::oneMoreKilled(){
     m_numberMonstreKilled++;
+}
+
+/*
+@description:
+La methode increaseLevel de la classe Joueur augmente de 1 l'attribut m_level.
+
+@param: null
+*/
+void Joueur::increaseLevel(){
+    m_level++;
 }
 
 /*

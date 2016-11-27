@@ -29,6 +29,8 @@ public:
 
     int getm_level() const;//Accesseur de l'attribut m_level
 
+    int getm_score() const;//Accesseur de l'attribut m_score
+
     /******MUTATEURS******/
     void setm_vie(int const& vie);//Setteur de l'attribut m_vie
 
@@ -47,6 +49,8 @@ public:
     void earnMoney(int const& gain);
 
     void oneMoreKilled();//Incremente l'attribut m_numberMonstreKilled
+
+    void increaseLevel();//Incremente l'attribut m_level
 
     void increaseScore(int const& award);//Augmente l'attribut m_score d'une valeur egale a la valeur du int pris en parametre
 
