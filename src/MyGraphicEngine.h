@@ -31,11 +31,12 @@ private:
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_player(player), m_currentDrawLevel(player->getm_level()), m_stepLevel(500){
+    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_player(player), m_currentDrawLevel(player->getm_level()){
         m_rewardFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardFastMonstre.txt");
         m_rewardStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardStrongMonstre.txt");
         m_rewardExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedFastMonstre.txt");
         m_rewardExplosedStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedStrongMonstre.txt");
+        m_stepLevel=LibMatrix::loadIntInFile("StepLevel/StepLevel.txt");
     }
 
     /******DESTRUCTEUR******/
