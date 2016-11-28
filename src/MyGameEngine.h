@@ -2,6 +2,7 @@
 
 #include "Engine.h"
 #include "Monstre.h"
+#include "Grille.h"
 #include "TowerDefense.h"
 #include "Joueur.h"
 #include "ExplosedFastMonstre.h"

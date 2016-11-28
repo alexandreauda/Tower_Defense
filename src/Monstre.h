@@ -105,6 +105,8 @@ public:
 
     BlockGrille searchPath(BlockGrille grilleDeJeu[12][12]) const;
 
+    int searchIfPath(BlockGrille grilleDeJeu[12][12]) const;
+
     void moveSmoothly(BlockGrille nextBlock);
 
     void receiveDamage(int const& damage);

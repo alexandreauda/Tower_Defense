@@ -248,6 +248,18 @@ La methode searchPath de la classe Monstre permet au Monstre de trouver son chem
     return nextBlockPath;
  }
 
+ /*
+@description:
+La methode searchIfPath de la classe Monstre permet au Monstre de savoir s'il existe un block pour qu'il puisse continuer son chemin dans le labyrinthe sur la grille.
+
+@param: La methode searchIfPath prend un parametre obligatoire: une matrice de BlockGrille 12*12.
+-param1: La matrice de BlockGrille 12*12 doit etre la grille de jeu.
+*/
+ int Monstre::searchIfPath(BlockGrille grilleDeJeu[12][12]) const{
+    int const boolNextBlockPath = m_monstreIA->searchIfWay(grilleDeJeu);
+    return boolNextBlockPath;
+ }
+
 
 /*
 @description:

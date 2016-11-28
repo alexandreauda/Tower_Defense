@@ -38,4 +38,6 @@ public:
 
     virtual BlockGrille searchWay(BlockGrille grilleDeJeu[12][12]) = 0; //Methode virtuelle pure
 
+    virtual int searchIfWay(BlockGrille grilleDeJeu[12][12]) const = 0;//Methode virtuelle pure
+
 };
