@@ -22,8 +22,8 @@ La methode Draw de la classe MyGraphicEngine permet de dessiner le damier graphi
 */
 void MyGraphicEngine::Draw(){
 
-    //Si le score du Joueur atteint une valeur egale a 500*(la valeur du niveau de la grille)
-    if(m_player->getm_score() == m_currentDrawLevel*500){
+    //Si le score du Joueur atteint une valeur superieur ou egale a m_stepLevel*(la valeur du niveau de la grille)
+    if(m_currentDrawLevel*m_stepLevel <= m_player->getm_score()){
        m_player->increaseLevel();//On incremente le niveau du Joueur
     }
 
