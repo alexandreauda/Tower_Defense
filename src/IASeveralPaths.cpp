@@ -4,9 +4,27 @@ using namespace std;
 
 /******IMPLEMENTATION DES METHODES******/
 
+/*
+@description:
+La methode searchInitWay de la classe IASeveralPaths renvoie au hazard le premier block du chemin de la grille en considerant que celle-ci peut comporter plusieurs chemins.
+
+@param: La methode searchInitWay de la classe IASeveralPaths prend un parametre obligatoire: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
+-param1: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
+*/
 BlockGrille IASeveralPaths::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
-  //TODO
-  //return
+  vector<int> vectListInitBlock;
+  int xEntryWay;
+  for(int i=0;i<12;i++){
+    if((grilleDeJeu[i][0]).getm_colorBlockID() == 1){
+        vectListInitBlock.push_back(i);
+    }
+  }
+    int nombre_aleatoire = 0;
+	srand(time(NULL)); // initialisation de rand
+    nombre_aleatoire = rand()%vectListInitBlock.size();//Nombre pris aleatoirement entre 0 et le nombre de block qui initialise un chemin dans la grille - 1.
+    xEntryWay=vectListInitBlock[nombre_aleatoire];
+
+  return grilleDeJeu[xEntryWay][0];//retourne le block qui est une dalle du chemin et qui est sur la premiere colonne
 }
 
  BlockGrille IASeveralPaths::searchWay(BlockGrille grilleDeJeu[12][12]){

@@ -27,7 +27,7 @@ void MyGameEngine::idle(){
         //Pour chaque Monstre
         for(int i=0;i<m_MonstreList->size();i++){
             //Si il existe un chemin pour que le Monstre puisse continuer (i.e: le Monstre n'est pas dans une impasse)
-            if((*m_MonstreList)[i]->searchIfPath(grilleBlock) == 1){
+            if((*m_MonstreList)[i]->searchIfPath(grilleBlock) == 1 || ((*m_MonstreList)[i]->getm_monstreIA()->getm_previousPosition()).getm_posxID() != 11 && ((*m_MonstreList)[i]->getm_isLock() == 0)){
                 (*m_MonstreList)[i]->walk(m_player);
             }
             //Si il n'existe pas de chemin pour que le Monstre puisse continuer (i.e: le Monstre est dans une impasse)

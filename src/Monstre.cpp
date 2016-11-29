@@ -64,6 +64,16 @@ int Monstre::getm_damageAttack() const{
     return m_damageAttack;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_isLock.
+
+@param: null
+*/
+int Monstre::getm_isLock() const{
+    return m_isLock;
+}
+
 
 /******IMPLEMENTATION DES MUTATEURS******/
 
@@ -364,6 +374,7 @@ Monstre& Monstre::operator=(Monstre const& monstreAcopier){
         m_timer= monstreAcopier.m_timer;
         m_isArrive= monstreAcopier.m_isArrive;
         m_damageAttack= monstreAcopier.m_damageAttack;
+        m_isLock= monstreAcopier.m_isLock;
 
         //traitements des pointeurs objets membres
         delete m_monstreIA;//on detruit l'objet membre pour ensuite le recree avec l'objet membre de l'objet copie

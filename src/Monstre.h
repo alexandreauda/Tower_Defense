@@ -23,17 +23,18 @@ protected:
 	int m_timer;
 	int m_isArrive;
 	int m_damageAttack;
+	int m_isLock;
 
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    Monstre(): m_monstreIA(new IAOnePath()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_vie(100), m_speed(100.0), m_timer(0), m_isArrive(0), m_damageAttack(10){}
+    Monstre(): m_monstreIA(new IAOnePath()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_vie(100), m_speed(100.0), m_timer(0), m_isArrive(0), m_damageAttack(10), m_isLock(0){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	Monstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0, int damageAttack=10): m_monstreIA(monstreIA), m_posx1(posx1), m_posy1(posy1), m_posx2(posx2), m_posy2(posy2), m_posx3(posx3), m_posy3(posy3), m_vie(vie), m_speed(speed), m_timer(timer), m_isArrive(isArrive), m_damageAttack(damageAttack) {}
+	Monstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0, int damageAttack=10): m_monstreIA(monstreIA), m_posx1(posx1), m_posy1(posy1), m_posx2(posx2), m_posy2(posy2), m_posx3(posx3), m_posy3(posy3), m_vie(vie), m_speed(speed), m_timer(timer), m_isArrive(isArrive), m_damageAttack(damageAttack), m_isLock(0) {}
 
     /******CONSTRUCTEUR DE COPIE******/
-    Monstre(Monstre const& monstreAcopier): m_posx1(monstreAcopier.m_posx1), m_posy1(monstreAcopier.m_posy1), m_posx2(monstreAcopier.m_posx2), m_posy2(monstreAcopier.m_posy2), m_posx3(monstreAcopier.m_posx3), m_posy3(monstreAcopier.m_posy3), m_vie(monstreAcopier.m_vie), m_speed(monstreAcopier.m_speed), m_timer(monstreAcopier.m_timer), m_isArrive(monstreAcopier.m_isArrive), m_damageAttack(monstreAcopier.m_damageAttack) {
+    Monstre(Monstre const& monstreAcopier): m_posx1(monstreAcopier.m_posx1), m_posy1(monstreAcopier.m_posy1), m_posx2(monstreAcopier.m_posx2), m_posy2(monstreAcopier.m_posy2), m_posx3(monstreAcopier.m_posx3), m_posy3(monstreAcopier.m_posy3), m_vie(monstreAcopier.m_vie), m_speed(monstreAcopier.m_speed), m_timer(monstreAcopier.m_timer), m_isArrive(monstreAcopier.m_isArrive), m_damageAttack(monstreAcopier.m_damageAttack), m_isLock(monstreAcopier.m_isLock) {
         if((monstreAcopier.m_monstreIA)->getClass() == "IAOnePath"){//si l'IA du monstre à copier est une IA IAOnePath
           m_monstreIA= new IAOnePath(); //on initialise l'IA du monstre avec l'IA IAOnePath puisque c'est celle du monstreAcopier
         }
@@ -66,6 +67,8 @@ public:
     int getm_isArrive() const;//Accesseur de l'attribut m_isArrive
 
     int getm_damageAttack() const;//Accesseur de l'attribut m_damageAttack
+
+    int getm_isLock() const;//Accesseur de l'attribut m_isLock
 
 
     /******MUTATEURS******/

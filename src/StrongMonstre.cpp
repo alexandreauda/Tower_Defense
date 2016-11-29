@@ -67,11 +67,18 @@ void StrongMonstre::walk(Joueur* player){
         }
         //Si le Monstre n'est pas arrive au bout du labyrinthe
         else{
-            nextBlock=this->searchPath(grilleDeJeu);//Le Monstre trouve son chemin dans le labyrinthe et connait donc le prochain block ou il doit se rendre. On stock donc ce block dans la variable nextBlock.
-            (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());//on met l'attribut m_previousPosition egal a m_actualPosition.
-            (this->getm_monstreIA())->setm_actualPosition(nextBlock);//on met l'attribut m_actualPosition egal a nextBlock qui contient la prochaine destination du Monstre.
-            this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
-            m_timer++;//on incremente l'attribut m_timer.
+            //Si le Monstre n'est pas dans une impasse
+            if(this->searchIfPath(grilleDeJeu) == 1){
+                nextBlock=this->searchPath(grilleDeJeu);//Le Monstre trouve son chemin dans le labyrinthe et connait donc le prochain block ou il doit se rendre. On stock donc ce block dans la variable nextBlock.
+                (this->getm_monstreIA())->setm_previousPosition((this->getm_monstreIA())->getm_actualPosition());//on met l'attribut m_previousPosition egal a m_actualPosition.
+                (this->getm_monstreIA())->setm_actualPosition(nextBlock);//on met l'attribut m_actualPosition egal a nextBlock qui contient la prochaine destination du Monstre.
+                this->moveSmoothly(nextBlock);//on deplace lentement le Monstre.
+                m_timer++;//on incremente l'attribut m_timer.
+            }
+            //Si le Monstre est dans une impasse
+            else{
+                m_isLock=1;
+            }
         }
     }
     //Si m_timer%(int)m_speed != 0

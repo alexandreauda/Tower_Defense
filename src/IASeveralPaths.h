@@ -1,4 +1,7 @@
 #pragma once
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
 #include "Grille.h"
 #include "MonstreIA.h"
 
