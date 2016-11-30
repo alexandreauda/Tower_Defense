@@ -7,6 +7,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <ctime>
 #include <math.h>
 #include "Level.h"
 #include "BlockGrille.h"
@@ -60,6 +61,8 @@ public:
     static void loadStore(BlockStore stockStore[12], float shopCellWidth, float shopCellHeight);
 
     static int loadIntInFile(std::string const& stringLevel);
+
+    static int varAleatoire(int const& nbMax);
 
 };
 

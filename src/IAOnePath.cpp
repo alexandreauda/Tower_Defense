@@ -30,7 +30,7 @@ BlockGrille IAOnePath::searchInitWay(BlockGrille grilleDeJeu[12][12]) const{
 
 /*
 @description:
-La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel un monstre devra se rendre sur une grille en considerant que celle-ci ne comporte qu' un seul chemin.
+La methode searchWay de la classe IAOnePath renvoie le prochain block sur lequel un monstre devra se rendre sur une grille en considerant que celle-ci ne comporte qu' un seul chemin. Si il y a plusieurs chemins (i.e: une intersection), les Monstres choisissent un chemin en suivant la regle de priorite suivant: RIGHT; DOWN; UP; LEFT.
 
 @param: La methode searchWay de la classe IAOnePath prend un parametre obligatoire: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.
 -param1: une matrice de BlockGrille de dimension 12*12 dans lequel l'IA effectura sa recherche.

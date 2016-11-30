@@ -449,3 +449,11 @@ int LibMatrix::loadIntInFile(string const& stringLevel) {
     }
 }
 
+
+int LibMatrix::varAleatoire(int const& nbMax){
+    int nombre_aleatoire=0;
+    srand(time(NULL));
+    nombre_aleatoire=rand()%nbMax+1;
+    return nombre_aleatoire;
+}
+
