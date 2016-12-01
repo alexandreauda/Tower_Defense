@@ -62,7 +62,7 @@ void MyGameEngine::idle(){
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
 
-                m_varAleatoire=LibMatrix::varAleatoire(50);
+                m_varAleatoire=LibMatrix::varAleatoire(500);
             }
 
             m_timer++;//On incremente le timer

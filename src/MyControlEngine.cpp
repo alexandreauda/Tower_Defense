@@ -162,23 +162,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         //On verifie le bouton qui lance les Monstres
         if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-            m_MonstreList->push_back(new FastMonstre());
-            BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));//Le dernier Monstre qui a ete cree cherche l'entree de la grille. La facon dont il cherche l'entree de la grille depend de l'IA du Monstre.
-
-            float const initBlockPosx= initBlock.getm_posx();
-            float const initBlockPosy= initBlock.getm_posy();
-            float const initBlockWidth= initBlock.getm_width();
-            float const initBlockHeight= initBlock.getm_height();
-
-            ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
-            ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
-
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
-            (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
+            m_player->setm_isAttack();
 
         }
 
@@ -207,65 +191,8 @@ La methode KeyboardCallback de la classe MyControlEngine permet d'effectuer des 
 */
 void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
 
-    Grille grilleInit;
-    grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
-
     if(key == 'g'){
-        m_MonstreList->push_back(new StrongMonstre());
-        BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
-
-        float const initBlockPosx= initBlock.getm_posx();
-        float const initBlockPosy= initBlock.getm_posy();
-        float const initBlockWidth= initBlock.getm_width();
-        float const initBlockHeight= initBlock.getm_height();
-
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
-
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
-    }
-    else if(key == 'e'){
-        m_MonstreList->push_back(new ExplosedFastMonstre());
-        BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
-
-        float const initBlockPosx= initBlock.getm_posx();
-        float const initBlockPosy= initBlock.getm_posy();
-        float const initBlockWidth= initBlock.getm_width();
-        float const initBlockHeight= initBlock.getm_height();
-
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
-
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
-    }
-    else if(key == 's'){
-        m_MonstreList->push_back(new ExplosedStrongMonstre());
-        BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
-
-        float const initBlockPosx= initBlock.getm_posx();
-        float const initBlockPosy= initBlock.getm_posy();
-        float const initBlockWidth= initBlock.getm_width();
-        float const initBlockHeight= initBlock.getm_height();
-
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_actualPosition(initBlock);
-        ((*m_MonstreList)[m_MonstreList->size()-1]->getm_monstreIA())->setm_previousPosition(initBlock);
-
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx1(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy1(initBlockPosy+initBlockHeight/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx2(initBlockPosx+initBlockWidth*5/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy2(initBlockPosy+initBlockHeight/2);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
-        (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
+        m_player->setm_isAttack();
     }
 }
 
