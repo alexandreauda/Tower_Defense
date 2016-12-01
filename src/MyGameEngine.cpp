@@ -23,7 +23,7 @@ void MyGameEngine::idle(){
         if(m_player->getm_isAttack() == 1){
 
             //Si le timer modulo (le temps de latance aleatoire) est egal a 0
-            if(m_timer%m_varAleatoire == 0){
+            if(m_timer%m_tempsLatanceAleatoire == 0){
 
                 int const monstreAleatoire=LibMatrix::varAleatoire(4);//Variable permettant d'avoir une creation aleatoire de type de Monstre
 
@@ -65,7 +65,7 @@ void MyGameEngine::idle(){
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
 
-                m_varAleatoire=LibMatrix::varAleatoireBetweenTwoNumbers(100,300);//Definit le temps de latance entre deux creations de Monstres
+                m_tempsLatanceAleatoire=LibMatrix::varAleatoireBetweenTwoNumbers(100,300);//Definit le temps de latance entre deux creations de Monstres
 
             }
 
