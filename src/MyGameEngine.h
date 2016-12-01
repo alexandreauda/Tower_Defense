@@ -17,11 +17,13 @@ private:
     std::vector <Monstre *> *m_MonstreList;
     std::vector <TowerDefense *> *m_TowerDefenseList;
     Joueur* m_player;
+    int m_timer;
+    int m_varAleatoire;
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    MyGameEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_player(player){}
+    MyGameEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_player(player), m_timer(0), m_varAleatoire(1){}
 
     /******DESTRUCTEUR******/
     virtual ~MyGameEngine() {
