@@ -25,8 +25,12 @@ La methode MouseCallback de la classe MyControlEngine permet d'effectuer des act
 */
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
-    Grille grilleInit;
-    grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+    //Si l'attribut m_currentDrawLevel est different du niveau du Joueur
+    if(m_currentDrawLevel != m_player->getm_level()){
+        Grille grilleInit;
+        grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+        m_currentDrawLevel=m_player->getm_level();//On set la valeur de l'attribut m_currentDrawLevel a la valeur du niveau du Joueur
+    }
 
     //Si le bouton gauche de la souris est enfoncé alors...
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
