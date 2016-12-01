@@ -20,7 +20,7 @@ protected:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    ExplosedStrongMonstre(): StrongMonstre(new IAOnePath(), 0, 0, 0, 0, 0, 0, 200, 200.0, 0, 0, 20), m_portee(3), m_damageExplosed(10){}
+    ExplosedStrongMonstre(): StrongMonstre(new IASeveralPaths(), 0, 0, 0, 0, 0, 0, 200, 200.0, 0, 0, 20), m_portee(3), m_damageExplosed(10){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
 	ExplosedStrongMonstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=200, float speed=200.0, int timer=0, int isArrive=0, int damageAttack=20, int portee=3, int damageExplosed=10): StrongMonstre(monstreIA, posx1, posy1, posx2, posy2, posx3, posy3, vie, speed, timer, isArrive, damageAttack), m_portee(portee), m_damageExplosed(damageExplosed) {}

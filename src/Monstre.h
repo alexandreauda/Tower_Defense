@@ -28,7 +28,7 @@ protected:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    Monstre(): m_monstreIA(new IAOnePath()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_vie(100), m_speed(100.0), m_timer(0), m_isArrive(0), m_damageAttack(10), m_isLock(0){}
+    Monstre(): m_monstreIA(new IASeveralPaths()), m_posx1(0), m_posy1(0), m_posx2(0), m_posy2(0), m_posx3(0), m_posy3(0), m_vie(100), m_speed(100.0), m_timer(0), m_isArrive(0), m_damageAttack(10), m_isLock(0){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
 	Monstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=100, float speed=100.0, int timer=0, int isArrive=0, int damageAttack=10): m_monstreIA(monstreIA), m_posx1(posx1), m_posy1(posy1), m_posx2(posx2), m_posy2(posy2), m_posx3(posx3), m_posy3(posy3), m_vie(vie), m_speed(speed), m_timer(timer), m_isArrive(isArrive), m_damageAttack(damageAttack), m_isLock(0) {}
@@ -100,7 +100,7 @@ public:
 
     float monsterCentery() const;//Renvoi l'ordonne du barycentre du Monstre
 
-    void init(std::string nomIA="IAOnePath");
+    void init(std::string nomIA="IASeveralPaths");
 
     int isEndPath() const; //Renvoie 1 si le monstre est sur la derniere colonne de la grille et 0 sinon
 

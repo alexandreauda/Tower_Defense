@@ -210,7 +210,7 @@ void Monstre::init(string nomIA){
                 m_monstreIA = new IAClever();
                 }
                 else{
-                    m_monstreIA = new IAOnePath();
+                    m_monstreIA = new IASeveralPaths();
                 }
             }
     }
