@@ -22,31 +22,34 @@ void MyGameEngine::idle(){
         //Si le Joueur a lance une vague de Monstre
         if(m_player->getm_isAttack() == 1){
 
+            //Si le timer modulo (le temps de latance aleatoire) est egal a 0
             if(m_timer%m_varAleatoire == 0){
 
-                int const monstreAleatoire=LibMatrix::varAleatoire(4);
+                int const monstreAleatoire=LibMatrix::varAleatoire(4);//Variable permettant d'avoir une creation aleatoire de type de Monstre
 
+                //Suivant le nombre aleatoire
                 switch(monstreAleatoire){
 
-                    case 1: m_MonstreList->push_back(new FastMonstre());
+                    case 1: m_MonstreList->push_back(new FastMonstre());//On cree un Monstre de type FastMonstre
                             break;
 
-                    case 2: m_MonstreList->push_back(new StrongMonstre());
+                    case 2: m_MonstreList->push_back(new StrongMonstre());//On cree un Monstre de type StrongMonstre
                             break;
 
-                    case 3: m_MonstreList->push_back(new ExplosedFastMonstre());
+                    case 3: m_MonstreList->push_back(new ExplosedFastMonstre());//On cree un Monstre de type ExplosedFastMonstre
                             break;
 
-                    case 4: m_MonstreList->push_back(new ExplosedStrongMonstre());
+                    case 4: m_MonstreList->push_back(new ExplosedStrongMonstre());//On cree un Monstre de type ExplosedStrongMonstre
                             break;
 
-                    default: m_MonstreList->push_back(new FastMonstre());
+                    default: m_MonstreList->push_back(new FastMonstre());//On cree un Monstre de type FastMonstre
                              break;
 
                 }//Fin du switch
 
                 BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(grilleBlock));//Le dernier Monstre qui a ete cree cherche l'entree de la grille. La facon dont il cherche l'entree de la grille depend de l'IA du Monstre.
 
+                //Block d'instruction permettant de positionner correctement les Monstres a leur creation
                 float const initBlockPosx= initBlock.getm_posx();
                 float const initBlockPosy= initBlock.getm_posy();
                 float const initBlockWidth= initBlock.getm_width();
@@ -62,7 +65,7 @@ void MyGameEngine::idle(){
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
 
-                m_varAleatoire=LibMatrix::varAleatoireBetweenTwoNumbers(100,300);
+                m_varAleatoire=LibMatrix::varAleatoireBetweenTwoNumbers(100,300);//Definit le temps de latance entre deux creations de Monstres
 
             }
 
