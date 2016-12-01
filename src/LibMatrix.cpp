@@ -449,7 +449,13 @@ int LibMatrix::loadIntInFile(string const& stringLevel) {
     }
 }
 
+/*
+@description:
+La methode varAleatoire permet de retourner un int aleatoire entre 1 et le nombre pris en parametre compris.
 
+@param: La methode varAleatoire prend un parametre obligatoire: un int.
+-param1: le int permet de specifier le nombre maximum que peut prendre le nombre aleatoire.
+*/
 int LibMatrix::varAleatoire(int const& nbMax){
     int nombre_aleatoire=0;
     srand(time(NULL));
@@ -457,3 +463,17 @@ int LibMatrix::varAleatoire(int const& nbMax){
     return nombre_aleatoire;
 }
 
+/*
+@description:
+La methode varAleatoireBetweenTwoNumbers permet de retourner un int aleatoire entre le premier nombre pris en parametre et le deuxieme nombre pris en parametre.
+
+@param: La methode varAleatoireBetweenTwoNumbers prend deux parametres obligatoires: un int, un int.
+-param1: Le premier int permet de specifier le nombre minimum que peut prendre le nombre aleatoire.
+-param2: Le deuxieme int permet de specifier le nombre maximum que peut prendre le nombre aleatoire.
+*/
+int LibMatrix::varAleatoireBetweenTwoNumbers(int const& nbMin, int const& nbMax){
+    int nombre_aleatoire=0;
+    srand(time(NULL));
+    nombre_aleatoire = (rand() % (nbMax - nbMin + 1)) + nbMin;
+    return nombre_aleatoire;
+}

@@ -64,6 +64,8 @@ public:
 
     static int varAleatoire(int const& nbMax);
 
+    static int varAleatoireBetweenTwoNumbers(int const& nbMin, int const& nbMax);
+
 };
 
 
