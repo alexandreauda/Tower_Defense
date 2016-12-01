@@ -16,7 +16,7 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-    char * title=new char[40]{'T','o','w','e','r',' ','D','e','f','e','n','c','e',' ','P','r','o','j','e','c','t',' ','B','y',' ','A','l','e','x','a','n','d','r','e',' ','A','U','D','A','\0'};
+    char * title=new char[40]{'T','o','w','e','r',' ','D','e','f','e','n','s','e',' ','P','r','o','j','e','c','t',' ','B','y',' ','A','l','e','x','a','n','d','r','e',' ','A','U','D','A','\0'};
     float widthWindows,heigthWindows;
     Windows dimensionWindows;
     dimensionWindows.loadDimensionWindows("Files_Levels/DimensionWindows.txt",widthWindows, heigthWindows);//on initialise les variables widthWindows et heigthWindows avec les valeurs lues dans le fichier
