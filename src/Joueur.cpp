@@ -44,6 +44,16 @@ int Joueur::getm_score() const{
     return m_score;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_isAttack.
+
+@param: null
+*/
+int Joueur::getm_isAttack() const{
+    return m_isAttack;
+}
+
 
 /******IMPLEMENTATION DES MUTATEURS******/
 
@@ -78,6 +88,16 @@ Mutateur de l'attribut m_level.
 */
 void Joueur::setm_level(int const& level){
  m_level=level;
+}
+
+/*
+@description:
+Mutateur de l'attribut m_isAttack.
+
+@param: null
+*/
+void Joueur::setm_isAttack(){
+ m_isAttack=1;
 }
 
 

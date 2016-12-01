@@ -13,12 +13,13 @@ private:
     int m_level;
     int m_numberMonstreKilled;
     int m_score;
+    int m_isAttack;
 
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score){
+    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score), m_isAttack(0){
     }
 
 
@@ -31,12 +32,16 @@ public:
 
     int getm_score() const;//Accesseur de l'attribut m_score
 
+    int getm_isAttack() const;//Accesseur de l'attribut m_isAttack
+
     /******MUTATEURS******/
     void setm_vie(int const& vie);//Setteur de l'attribut m_vie
 
     void setm_argent(int const& argent);//Setteur de l'attribut m_argent
 
     void setm_level(int const& level);//Setteur de l'attribut m_level
+
+    void setm_isAttack();//Setteur de l'attribut m_isAttack
 
 
     /******PROTOTYPES DES METHODES******/
