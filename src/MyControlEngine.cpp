@@ -163,7 +163,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
             m_MonstreList->push_back(new FastMonstre());
-            BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));
+            BlockGrille const initBlock=((*m_MonstreList)[m_MonstreList->size()-1]->searchInitPath(m_grilleDeJeu));//Le dernier Monstre qui a ete cree cherche l'entree de la grille. La facon dont il cherche l'entree de la grille depend de l'IA du Monstre.
 
             float const initBlockPosx= initBlock.getm_posx();
             float const initBlockPosy= initBlock.getm_posy();
