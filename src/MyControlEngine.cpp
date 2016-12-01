@@ -162,7 +162,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         //On verifie le bouton qui lance les Monstres
         if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-            m_player->setm_isAttack();
+            m_player->setm_isAttack(true);
 
         }
 
@@ -192,7 +192,7 @@ La methode KeyboardCallback de la classe MyControlEngine permet d'effectuer des 
 void MyControlEngine::KeyboardCallback(unsigned char key,int x, int y){
 
     if(key == 'g'){
-        m_player->setm_isAttack();
+        m_player->setm_isAttack(true);
     }
 }
 

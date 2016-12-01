@@ -25,6 +25,7 @@ void MyGraphicEngine::Draw(){
     //Si le score du Joueur atteint une valeur superieur ou egale a m_stepLevel*(la valeur du niveau de la grille)
     if(m_currentDrawLevel*m_stepLevel <= m_player->getm_score()){
        m_player->increaseLevel();//On incremente le niveau du Joueur
+       m_player->setm_isAttack(false);//Le Joueur n'est plus attaque
     }
 
     //Si l'attribut m_currentDrawLevel est different du niveau du Joueur

@@ -41,7 +41,7 @@ public:
 
     void setm_level(int const& level);//Setteur de l'attribut m_level
 
-    void setm_isAttack();//Setteur de l'attribut m_isAttack
+    void setm_isAttack(bool const& attack);//Setteur de l'attribut m_isAttack
 
 
     /******PROTOTYPES DES METHODES******/

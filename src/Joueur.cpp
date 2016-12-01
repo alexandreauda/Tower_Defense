@@ -94,10 +94,16 @@ void Joueur::setm_level(int const& level){
 @description:
 Mutateur de l'attribut m_isAttack.
 
-@param: null
+@param: La methode setm_isAttack prend un parametre obligatoire: un bool
+-param1: le nouveau bool pour m_isAttack
 */
-void Joueur::setm_isAttack(){
- m_isAttack=1;
+void Joueur::setm_isAttack(bool const& attack){
+ if(attack){
+    m_isAttack=1;
+ }
+ else{
+    m_isAttack=0;
+ }
 }
 
 
