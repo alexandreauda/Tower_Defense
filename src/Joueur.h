@@ -62,6 +62,8 @@ public:
 
     void increaseLevel();//Incremente l'attribut m_level
 
+    void decreaseLevel();//Decremente l'attribut m_level
+
     void increaseScore(int const& award);//Augmente l'attribut m_score d'une valeur egale a la valeur du int pris en parametre
 
     int isDead() const;//Renvoie 1 si la vie du Joueur est egale a 0 et 0 sinon

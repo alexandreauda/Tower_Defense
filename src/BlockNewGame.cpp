@@ -1,4 +1,4 @@
-#include "BlockSaveGame.h"
+#include "BlockNewGame.h"
 
 using namespace std;
 
@@ -14,14 +14,14 @@ using namespace std;
 
 /*
 @description:
-La methode draw de la classe BlockSaveGame permet de dessiner de maniere graphique le bouton qui sauvera la partie.
+La methode draw de la classe BlockNewGame permet de dessiner de maniere graphique le bouton qui permet de commencer une nouvelle partie.
 
 @param: null
 */
-void BlockSaveGame::draw() const
+void BlockNewGame::draw() const
 {
     float const alpha=1.0;
-    char* textSaveGame=new char[10]{'S','A','V','E'};//Contient le texte SAVE.
+    char* textSaveGame=new char[20]{'N','E','W',' ','G','A','M','E'};//Contient le texte NEW GAME.
 
      if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert
@@ -31,7 +31,7 @@ void BlockSaveGame::draw() const
         //on dessine le bouton en vert
         GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha); //on affiche le bloc en carre vert
 
-        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/7,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);
+        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/6,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);
      }
 
     else if(m_colorBlockID == 1){ //si le m_colorBlockID du bloc est egale a 1
@@ -42,7 +42,7 @@ void BlockSaveGame::draw() const
         //on dessine le bouton en rouge
         GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha);//on affiche le bloc en carre rouge
 
-        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/7,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);
+        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/6,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);;
         }
 
     else{ //si le m_colorBlockID possede toutes autres valeurs
@@ -53,6 +53,6 @@ void BlockSaveGame::draw() const
         //on dessine le bouton en bleu
         GraphicPrimitives::drawFillRect2D(m_posx, m_posy, m_width, m_height, r, g, b, alpha); //on affiche le bloc en carre bleu
 
-        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/7,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);
+        LibMatrix::drawLargeText2D(textSaveGame, m_posx+m_width*1/6,m_posy+m_height*1/3+0.007, 1, 1.0, 1.0, 1.0, 1.0);
     }
 }

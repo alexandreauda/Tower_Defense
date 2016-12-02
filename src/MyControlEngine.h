@@ -16,6 +16,8 @@
 #include "BlockStartMonstre.h"
 #include "BlockSaveGame.h"
 #include "Joueur.h"
+#include "BlockNewGame.h"
+#include "BlockLoadGame.h"
 
 //La Class MyControlEngine herite de la Class ControlEngine
 class MyControlEngine:public ControlEngine {
@@ -32,11 +34,13 @@ private:
     BlockSaveGame m_buttonSaveGame;
     Joueur* m_player;
     int m_currentDrawLevel;
+    BlockNewGame m_buttonNewGame;
+    BlockLoadGame m_buttonLoadGame;
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(), m_buttonSaveGame(), m_player(player), m_currentDrawLevel(player->getm_level()){
+    MyControlEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_stockColorTower(1), m_buttonStartMonstre(), m_buttonSaveGame(), m_player(player), m_currentDrawLevel(player->getm_level()), m_buttonNewGame(), m_buttonLoadGame(){
     Grille grilleInit;
     grilleInit.loadGrille(player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
     Store shop;

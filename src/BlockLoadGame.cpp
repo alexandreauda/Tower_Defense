@@ -1,4 +1,4 @@
-#include "BlockSaveGame.h"
+#include "BlockLoadGame.h"
 
 using namespace std;
 
@@ -14,14 +14,14 @@ using namespace std;
 
 /*
 @description:
-La methode draw de la classe BlockSaveGame permet de dessiner de maniere graphique le bouton qui sauvera la partie.
+La methode draw de la classe BlockLoadGame permet de dessiner de maniere graphique le bouton qui permet de charger une partie sauvee.
 
 @param: null
 */
-void BlockSaveGame::draw() const
+void BlockLoadGame::draw() const
 {
     float const alpha=1.0;
-    char* textSaveGame=new char[10]{'S','A','V','E'};//Contient le texte SAVE.
+    char* textSaveGame=new char[20]{'L','O','A','D',' ','G','A','M','E'};//Contient le texte LOAD GAME.
 
      if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert

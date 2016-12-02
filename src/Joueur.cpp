@@ -259,6 +259,16 @@ void Joueur::increaseLevel(){
 
 /*
 @description:
+La methode decreaseLevel de la classe Joueur diminue de 1 l'attribut m_level.
+
+@param: null
+*/
+void Joueur::decreaseLevel(){
+    m_level--;
+}
+
+/*
+@description:
 La methode increaseScore de la classe Joueur prend un int en parametre et augmente le score du Joueur d'une valeur egale a la valeur du int pris en parametre.
 
 @param: La methode increaseScore prend un parametre obligatoire: un int.

@@ -11,6 +11,7 @@
 #include "BlockStartMonstre.h"
 #include "BlockSaveGame.h"
 #include "Joueur.h"
+#include "WindowsBeforeGame.h"
 
 //La Class MyGraphicEngine herite de la Class GraphicEngine
 class MyGraphicEngine:public GraphicEngine {
@@ -29,11 +30,12 @@ private:
     int m_rewardExplosedStrongMonstre;
     int m_currentDrawLevel;
     int m_stepLevel;
+    WindowsBeforeGame m_menuBeforeGame;
 
 public:
 
     /******CONSTRUCTEUR******/
-    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_buttonSaveGame(), m_player(player), m_currentDrawLevel(player->getm_level()){
+    MyGraphicEngine(std::vector <TowerDefense *> *TowerDefenseList, std::vector <Monstre *> *MonstreList, Joueur* player): m_TowerDefenseList(TowerDefenseList), m_MonstreList(MonstreList), m_buttonStartMonstre(), m_buttonSaveGame(), m_player(player), m_currentDrawLevel(player->getm_level()), m_menuBeforeGame(){
         m_rewardFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardFastMonstre.txt");
         m_rewardStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardStrongMonstre.txt");
         m_rewardExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedFastMonstre.txt");
