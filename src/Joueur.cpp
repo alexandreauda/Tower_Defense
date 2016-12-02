@@ -308,7 +308,7 @@ void Joueur::gameOver() const{
     float const alpha = 1.0;
 
     //Affichage des informations concernant l'attribut m_vie
-    char * textGameOver=new char[10]{'G','A','M','E',' ','O','V','E','R'};//Contient le texte GAME OVER.
+    char * textGameOver=new char[50]{'G','A','M','E',' ','O','V','E','R'};//Contient le texte GAME OVER.
 
     LibMatrix::drawLargeText2D(textGameOver,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textGameOver.
 
