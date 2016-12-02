@@ -66,6 +66,8 @@ public:
 
     static int varAleatoireBetweenTwoNumbers(int const& nbMin, int const& nbMax);
 
+    static void writeIntInFileWithEraseData(std::string const& stringNameFile, int const& valueWrite, std::string const& stringNameDirectory="SlotDataBackup/");
+
 };
 
 

@@ -477,3 +477,31 @@ int LibMatrix::varAleatoireBetweenTwoNumbers(int const& nbMin, int const& nbMax)
     nombre_aleatoire = (rand() % (nbMax - nbMin + 1)) + nbMin;
     return nombre_aleatoire;
 }
+
+
+/*
+@description:
+La methode writeIntInFileWithEraseData permet d'ecrire un int pris en parametre dans dans un fichier en effacant au prealable son contenu.
+
+@param: La methode writeIntInFileWithEraseData prend deux parametres obligatoires et un parametre facultatif: un string, un int et un string facultatif.
+-param1: Le string permet de specifier le nom du ficher dont on souhaite ecrire le int passee en second parametre.
+-param2: Le int permet de specifier le int que l'on souhaite ecrire dans le ficher en ayant efface au prealable son contenu.
+-param3: Le string facultatif permet de specifier le nom du repertoire ou des multiples repertoires ou est stocke le fichier dont on souhaite ecrire le int passee en second parametre. Par defaut, le repertoire se nomme SlotDataBackup.
+*/
+void LibMatrix::writeIntInFileWithEraseData(string const& stringNameFile, int const& valueWrite, string const& stringNameDirectory){
+
+    //On construit petit a petit l'arborescence du chemin pour trouver les fichiers
+    string stringPathFile=stringNameDirectory;
+    stringPathFile+=stringNameFile;
+    stringPathFile+=".txt";
+
+    ofstream flux(stringPathFile.c_str());//ouverture en mode ecriture avec ecrasement des donnees
+    //si l'ouverture du fichier reussi
+    if(flux){
+        flux<<valueWrite;//Ecriture du int dans le fichier
+    }
+    //En cas de probleme lors de l'ouverture du fichier
+    else{
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;// on affiche un message d'erreur
+    }
+}
