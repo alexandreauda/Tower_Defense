@@ -299,3 +299,19 @@ int Joueur::haveMoneyEnough(int const& cost) const{
         return 0;
     }
 }
+
+/*
+@description:
+La methode SaveGame de la Class Joueur ecrit dans des fichiers (ecriture par ecrasement des donnees) les attributs du Joueur.
+
+@param: La methode SaveGame prend un parametre facultatif: un string, et un string facultatif.
+-param1: Le string facultatif permet de specifier le nom du repertoire ou des multiples repertoires ou est stocke le fichier dont on souhaite ecrire les attributs du Joueur. Par defaut, le repertoire se nomme SlotDataBackup.
+*/
+void Joueur::SaveGame(string const& stringNameDirectory) const{
+
+    LibMatrix::writeIntInFileWithEraseData("BackupVie",m_vie,stringNameDirectory);//Ecriture par ecrasement des donnees de l'attribut m_vie dans le fichier BackupVie
+    LibMatrix::writeIntInFileWithEraseData("BackupArgent",m_argent,stringNameDirectory);//Ecriture par ecrasement des donnees de l'attribut m_argent dans le fichier BackupArgent
+    LibMatrix::writeIntInFileWithEraseData("BackupLevel",m_level,stringNameDirectory);//Ecriture par ecrasement des donnees de l'attribut m_level dans le fichier BackupLevel
+    LibMatrix::writeIntInFileWithEraseData("BackupNumberMonstreKilled",m_numberMonstreKilled,stringNameDirectory);//Ecriture par ecrasement des donnees de l'attribut m_numberMonstreKilled dans le fichier BackupNumberMonstreKilled
+    LibMatrix::writeIntInFileWithEraseData("BackupScore",m_score,stringNameDirectory);//Ecriture par ecrasement des donnees de l'attribut m_score dans le fichier BackupScore
+}
