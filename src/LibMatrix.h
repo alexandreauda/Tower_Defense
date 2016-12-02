@@ -68,6 +68,8 @@ public:
 
     static void writeIntInFileWithEraseData(std::string const& stringNameFile, int const& valueWrite, std::string const& stringNameDirectory="SlotDataBackup/");
 
+    static int loadIntInFileWithDirectory(std::string const& stringLevel, std::string const& stringNameDirectory="SlotDataBackup/");
+
 };
 
 

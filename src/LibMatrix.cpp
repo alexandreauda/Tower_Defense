@@ -505,3 +505,35 @@ void LibMatrix::writeIntInFileWithEraseData(string const& stringNameFile, int co
         cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;// on affiche un message d'erreur
     }
 }
+
+
+/*
+@description:
+La methode loadIntInFileWithDirectory permet de retourner un int lu dans dans un fichier qui se trouve dans un ou dans de multiples repertoires.
+
+@param: La methode loadIntInFileWithDirectory prend un parametre obligatoire et un parametre facultatif: un string et un string facultatif.
+-param1: Le string pris en premier parametre permet de specifier le fichier contenant le int que l'on veut lire et retourner.
+-param2: Le string facultatif pris en second parametre permet de specifier le nom du repertoire ou des multiples repertoires ou est stocke le fichier contenant le int que l'on veut lire et retourner. Par defaut, le repertoire se nomme SlotDataBackup.
+*/
+int LibMatrix::loadIntInFileWithDirectory(string const& stringNameFile, string const& stringNameDirectory) {
+
+    //On construit petit a petit l'arborescence du chemin pour trouver les fichiers
+    string stringPathFile=stringNameDirectory;
+    stringPathFile+=stringNameFile;
+    stringPathFile+=".txt";
+
+    ifstream flux(stringPathFile.c_str(),ios::app);//ouverture du flux de lecture
+    int valueInt;
+
+    if(flux)//si l'ouverture du fichier reussi
+    {
+        while(flux>>valueInt){//on lit le fichier mot par mot jusqu'a la fin de celui-ci
+            return valueInt;
+        }
+
+    }
+    else// En cas de probleme lors de l'ouverture du fichier
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;// on affiche un message d'erreur
+    }
+}
