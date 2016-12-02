@@ -170,6 +170,13 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
         }
 
+        //On verifie le bouton qui sauvegarde la partie
+        if(m_buttonSaveGame.pointIsInBlock(mousePosx,mousePosy) == 1){
+
+            m_player->SaveGame();//Le Joueur sauve la partie
+
+        }
+
     }
 
     //Si le bouton droit de la souris est enfoncé alors...
