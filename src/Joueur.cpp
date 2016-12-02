@@ -54,6 +54,16 @@ int Joueur::getm_isAttack() const{
     return m_isAttack;
 }
 
+/*
+@description:
+Accesseur de l'attribut m_isInGame.
+
+@param: null
+*/
+bool Joueur::getm_isInGame() const{
+    return m_isInGame;
+}
+
 
 /******IMPLEMENTATION DES MUTATEURS******/
 
@@ -104,6 +114,17 @@ void Joueur::setm_isAttack(bool const& attack){
  else{
     m_isAttack=0;
  }
+}
+
+/*
+@description:
+Mutateur de l'attribut m_isInGame.
+
+@param: La methode setm_isInGame prend un parametre obligatoire: un bool
+-param1: le nouveau bool pour m_isInGame
+*/
+void Joueur::setm_isInGame(bool const& newBool){
+ m_isInGame=newBool;
 }
 
 

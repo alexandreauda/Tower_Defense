@@ -14,12 +14,13 @@ private:
     int m_numberMonstreKilled;
     int m_score;
     int m_isAttack;
+    bool m_isInGame;
 
 
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score), m_isAttack(0){
+    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score), m_isAttack(0), m_isInGame(false){
     }
 
 
@@ -34,6 +35,8 @@ public:
 
     int getm_isAttack() const;//Accesseur de l'attribut m_isAttack
 
+    bool getm_isInGame() const;//Accesseur de l'attribut m_isInGame
+
     /******MUTATEURS******/
     void setm_vie(int const& vie);//Setteur de l'attribut m_vie
 
@@ -42,6 +45,8 @@ public:
     void setm_level(int const& level);//Setteur de l'attribut m_level
 
     void setm_isAttack(bool const& attack);//Setteur de l'attribut m_isAttack
+
+    void setm_isInGame(bool const& newBool);//Setteur de l'attribut m_isInGame
 
 
     /******PROTOTYPES DES METHODES******/
