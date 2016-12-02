@@ -166,7 +166,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         //On verifie le bouton qui lance les Monstres
         if(m_buttonStartMonstre.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-            m_player->setm_isAttack(true);
+            m_player->setm_isAttack(true);//Le Joueur est attaque
 
         }
 

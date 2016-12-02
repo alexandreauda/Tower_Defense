@@ -38,6 +38,7 @@ void MyGraphicEngine::Draw(){
 
         m_currentDrawLevel=m_player->getm_level();//On set la valeur de l'attribut m_currentDrawLevel a la valeur du niveau du Joueur
     }
+    //Sinon, si l'attribut m_currentDrawLevel est identique au niveau du Joueur
     else{
 
         //Si le player n'est pas mort
@@ -56,6 +57,9 @@ void MyGraphicEngine::Draw(){
 
             //On affiche le bouton qui sert a lancer les vagues de Monstres
             m_buttonStartMonstre.draw();
+
+            //On affiche le bouton qui sert a sauver un partie
+            m_buttonSaveGame.draw();
 
             //On affiche les tourelles
             for(int i=0;i<m_TowerDefenseList->size();i++){
