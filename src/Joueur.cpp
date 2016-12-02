@@ -302,9 +302,25 @@ int Joueur::haveMoneyEnough(int const& cost) const{
 
 /*
 @description:
+La methode LoadGame de la Class Joueur met les attributs du Joueur avec les valeurs lues dans des fichiers.
+
+@param: La methode LoadGame prend un parametre facultatif: un string facultatif.
+-param1: Le string facultatif permet de specifier le nom du repertoire ou des multiples repertoires ou est stocke le fichier dont on souhaite ecrire les attributs du Joueur. Par defaut, le repertoire se nomme SlotDataBackup.
+*/
+void Joueur::LoadGame(string const& stringNameDirectory){
+
+    m_vie=LibMatrix::loadIntInFileWithDirectory("BackupVie",stringNameDirectory);//On set l'attribut m_vie par la valeur lu dans le fichier BackupVie
+    m_argent=LibMatrix::loadIntInFileWithDirectory("BackupArgent",stringNameDirectory);//On set l'attribut m_argent par la valeur lu dans le fichier BackupArgent
+    m_level=LibMatrix::loadIntInFileWithDirectory("BackupLevel",stringNameDirectory);//On set l'attribut m_level par la valeur lu dans le fichier BackupLevel
+    m_numberMonstreKilled=LibMatrix::loadIntInFileWithDirectory("BackupNumberMonstreKilled",stringNameDirectory);//On set l'attribut m_numberMonstreKilled par la valeur lu dans le fichier BackupNumberMonstreKilled
+    m_score=LibMatrix::loadIntInFileWithDirectory("BackupScore",stringNameDirectory);//On set l'attribut m_score par la valeur lu dans le fichier BackupScore
+}
+
+/*
+@description:
 La methode SaveGame de la Class Joueur ecrit dans des fichiers (ecriture par ecrasement des donnees) les attributs du Joueur.
 
-@param: La methode SaveGame prend un parametre facultatif: un string, et un string facultatif.
+@param: La methode SaveGame prend un parametre facultatif: un string facultatif.
 -param1: Le string facultatif permet de specifier le nom du repertoire ou des multiples repertoires ou est stocke le fichier dont on souhaite ecrire les attributs du Joueur. Par defaut, le repertoire se nomme SlotDataBackup.
 */
 void Joueur::SaveGame(string const& stringNameDirectory) const{
