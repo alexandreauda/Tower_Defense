@@ -7,6 +7,7 @@
 #include "Joueur.h"
 #include "ExplosedFastMonstre.h"
 #include "ExplosedStrongMonstre.h"
+#include "RegenerationFastMonstre.h"
 
 //La Class MyGameEngine herite de la Class GameEngine
 class MyGameEngine: public GameEngine {

@@ -25,7 +25,7 @@ void MyGameEngine::idle(){
             //Si le timer modulo (le temps de latance aleatoire) est egal a 0
             if(m_timer%m_tempsLatanceAleatoire == 0){
 
-                int const monstreAleatoire=LibMatrix::varAleatoire(4);//Variable permettant d'avoir une creation aleatoire de type de Monstre
+                int const monstreAleatoire=LibMatrix::varAleatoire(5);//Variable permettant d'avoir une creation aleatoire de type de Monstre
 
                 //Suivant le nombre aleatoire
                 switch(monstreAleatoire){
@@ -40,6 +40,9 @@ void MyGameEngine::idle(){
                             break;
 
                     case 4: m_MonstreList->push_back(new ExplosedStrongMonstre());//On cree un Monstre de type ExplosedStrongMonstre
+                            break;
+
+                    case 5: m_MonstreList->push_back(new RegenerationFastMonstre());//On cree un Monstre de type RegenerationFastMonstre
                             break;
 
                     default: m_MonstreList->push_back(new FastMonstre());//On cree un Monstre de type FastMonstre
@@ -95,6 +98,14 @@ void MyGameEngine::idle(){
             //Si le Monstre est un ExplosedFastMonstre
             if((*m_MonstreList)[i]->getClass() == "ExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre"){
             (*m_MonstreList)[i]->explosed(m_MonstreList);
+            }
+		}
+
+        //Pour chaque Monstre qui est un RegenerationFastMonstre
+        for(int i=0;i<m_MonstreList->size();i++){
+            //Si le Monstre est un RegenerationFastMonstre
+            if((*m_MonstreList)[i]->getClass() == "RegenerationFastMonstre"){
+            (*m_MonstreList)[i]->regeneration();//Les Monstres se regenere
             }
 		}
 }

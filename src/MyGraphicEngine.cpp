@@ -126,6 +126,14 @@ void MyGraphicEngine::Draw(){
                                     //supprime l'element (ici, le Monstre)
                                     (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                             }
+                            //Sinon, si le Monstre qui n'a plus de vie est un RegenerationFastMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "RegenerationFastMonstre"){//Si le Monstre qui n'a plus de vie est un RegenerationFastMonstre
+                                    m_player->earnMoney(m_rewardRegenerationFastMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardRegenerationFastMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
                             else{
                                     m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                     m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
