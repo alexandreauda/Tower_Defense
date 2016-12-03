@@ -90,7 +90,7 @@ void MyGameEngine::idle(){
             }
 		}
 
-        //Pour chaque Monstre qui est un ExplosedFastMonstre
+        //Pour chaque Monstre qui est un ExplosedFastMonstre ou un ExplosedStrongMonstre
         for(int i=0;i<m_MonstreList->size();i++){
             //Si le Monstre est un ExplosedFastMonstre
             if((*m_MonstreList)[i]->getClass() == "ExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre"){
