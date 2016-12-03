@@ -50,7 +50,7 @@ La methode regeneration de la classe RegenerationFastMonstre permet de regenerer
 */
 void RegenerationFastMonstre::regeneration(){
     int const vieAfterRegeneration=m_vie+m_rateRegeneration;
-    int const vieMax=100;
+    int const vieMax=LibMatrix::loadIntInFileWithDirectory("InitialLifeFastMonstre","InitialLifeMonstre/");
 
     //Si m_timer%(int)m_speed == 0 (i.e: Le Monstre est sur le centre d'un block)
     if(m_timer%(int)m_speed == 0){
