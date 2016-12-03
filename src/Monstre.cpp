@@ -344,7 +344,7 @@ void Monstre::slowDown(int const& rateSlowDown){
 
 /*
 @description:
-Methode qui sera override si le Monstre est du type explosif.
+Methode qui sera override si le Monstre est de type explosif.
 */
 void Monstre::explosed(vector <Monstre *> *MonstreList){
 
@@ -352,9 +352,17 @@ void Monstre::explosed(vector <Monstre *> *MonstreList){
 
 /*
 @description:
-Methode qui sera override si le Monstre est du type explosif.
+Methode qui sera override si le Monstre est de type explosif.
 */
 void Monstre::drawExplosion() const{
+
+}
+
+/*
+@description:
+Methode qui sera override si le Monstre est de type regenerant.
+*/
+void Monstre::regeneration(){
 
 }
 

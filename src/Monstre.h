@@ -116,9 +116,11 @@ public:
 
     void slowDown(int const& rateSlowDown);
 
-    virtual void explosed(std::vector <Monstre *> *MonstreList);//Methode qui sera override si le Monstre est du type explosif.
+    virtual void explosed(std::vector <Monstre *> *MonstreList);//Methode qui sera override si le Monstre est de type explosif.
 
-    virtual void drawExplosion() const;//Methode qui sera override si le Monstre est du type explosif.
+    virtual void drawExplosion() const;//Methode qui sera override si le Monstre est de type explosif.
+
+    virtual void regeneration();//Methode qui sera override si le Monstre est de type regenerant.
 
 
     /******PROTOTYPE OPERATEURS******/
