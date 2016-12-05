@@ -344,6 +344,65 @@ void Monstre::slowDown(int const& rateSlowDown){
 
 /*
 @description:
+La methode increaseVie de la classe Monstre prend un int en parametre et fait augmenter la vie du Monstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode increaseVie prend un parametre facultatif: un int facultatif.
+-param1: Le int facultatif doit representer la valeur de l'augmentation de la vie du Monstre. Par defaut, ce parametre vaut 1.
+*/
+void Monstre::increaseVie(int const& rateVieWin){
+    m_vie+=rateVieWin;
+}
+
+/*
+@description:
+La methode increaseDamageAttack de la classe Monstre prend un int en parametre et fait augmenter les degats du Monstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode increaseDamageAttack prend un parametre facultatif: un int facultatif.
+-param1: Le int facultatif doit representer la valeur de l'augmentation des degats du Monstre. Par defaut, ce parametre vaut 1.
+*/
+void Monstre::increaseDamageAttack(int const& rateDamageAttackWin){
+    m_damageAttack+=rateDamageAttackWin;
+}
+
+/*
+@description:
+La methode increaseLevelMonstre de la Class Monstre permet de gerer le niveau des Monstres en fonction du niveau du level. Ainsi, un Joueur de niveau 1 par exemple, combattra des Monsres de niveau 1 et ainsi de suite.
+
+@param: La methode increaseLevelMonstre prend un parametre obligatoire et deux parametres facultatifs: un Joueur, un string facultatif, un int unsigned facultatif.
+-param1: Le parametre de type Joueur doit etre le Joueur qui effectue la partie.
+-param1: Le string facultatif doit representer le nom de l'attribut du Monstre que l'on veut augmenter. Par defaut, ce parametre vaut "random" ce qui signifie que l'augmentation de niveau augmente un des attributs du Monstre determine aleatoirement.
+-param3: Le int unsigned facultatif doit representer la valeur du facteur de l'augmentation d'un attribut du Monstre. Par defaut, ce parametre vaut 1.
+*/
+void Monstre::increaseLevelMonstre(Joueur* player, string const& nameAttribut, int unsigned const& stepIncrease){
+    if(nameAttribut == "m_vie"){
+        increaseVie(stepIncrease*(player->getm_level() - 1));
+    }
+    else if(nameAttribut == "m_damageAttack"){
+        increaseDamageAttack((player->getm_level() - 1));
+    }
+    else if (nameAttribut == "random"){
+        int const varHazard=LibMatrix::varAleatoire(2);
+
+        switch(varHazard){
+
+            case 1: increaseVie(stepIncrease*(player->getm_level() - 1));
+                    break;
+
+            case 2: increaseDamageAttack((player->getm_level() - 1));
+                    break;
+
+            default: increaseVie(stepIncrease*(player->getm_level() - 1));
+                     break;
+
+        }
+    }
+    else{
+        increaseVie(stepIncrease*(player->getm_level() - 1));
+    }
+}
+
+/*
+@description:
 Methode qui sera override si le Monstre est de type explosif.
 */
 void Monstre::explosed(vector <Monstre *> *MonstreList){

@@ -116,6 +116,12 @@ public:
 
     void slowDown(int const& rateSlowDown);
 
+    void increaseVie(int const& rateVieWin=1);
+
+    void increaseDamageAttack(int const& rateDamageAttackWin=1);
+
+    virtual void increaseLevelMonstre(Joueur* player, std::string const& nameAttribut="random", int unsigned const& stepIncrease=1);
+
     virtual void explosed(std::vector <Monstre *> *MonstreList);//Methode qui sera override si le Monstre est de type explosif.
 
     virtual void drawExplosion() const;//Methode qui sera override si le Monstre est de type explosif.
