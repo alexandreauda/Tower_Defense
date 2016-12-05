@@ -48,27 +48,35 @@ BlockStore stockStore[12];//on definit un tableau vide de longueur 12 de type Bl
 loadStore(stockStore);//on initialise le vecteur statique stockStore pris en parametre avec des blocks de carasteristiques differentes
 
 
-char * textCorbeille=new char[5]{'B','I','N'};//Contient le texte pour indiquer la corbeille
+char * textCorbeille=new char[5]{'B','I','N','\0'};//Contient le texte pour indiquer la corbeille
 
 char * textCostTowerDefenseYellow=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle jaune
 char valueCostTowerDefenseYellow[10];//Contiendra la valeur du cout d'une tourelle jaune
 sprintf(valueCostTowerDefenseYellow, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseYellow.txt"));//Stock la valeur du cout d'une tourelle jaune dans un tableau de char
 strcat(textCostTowerDefenseYellow,valueCostTowerDefenseYellow);//Concatene les deux chaines de caracteres
+char * textFinDeTextCostTowerDefenseYellow=new char[1]{'\0'};//Contient un caractere de fin de texte
+strcat(textCostTowerDefenseYellow,textFinDeTextCostTowerDefenseYellow);//Concatene les deux chaines de caracteres
 
 char * textCostTowerDefenseOrange=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle orange
 char valueCostTowerDefenseOrange[10];//Contiendra la valeur du cout d'une tourelle orange
 sprintf(valueCostTowerDefenseOrange, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseOrange.txt"));//Stock la valeur du cout d'une tourelle orange dans un tableau de char
 strcat(textCostTowerDefenseOrange,valueCostTowerDefenseOrange);//Concatene les deux chaines de caracteres
+char * textFinDeTextCostTowerDefenseOrange=new char[1]{'\0'};//Contient un caractere de fin de texte
+strcat(textCostTowerDefenseOrange,textFinDeTextCostTowerDefenseOrange);//Concatene les deux chaines de caracteres
 
 char * textCostTowerDefensePurple=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle violette
 char valueCostTowerDefensePurple[10];//Contiendra la valeur du cout d'une tourelle violette
 sprintf(valueCostTowerDefensePurple, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefensePurple.txt"));//Stock la valeur du cout d'une tourelle violette dans un tableau de char
 strcat(textCostTowerDefensePurple,valueCostTowerDefensePurple);//Concatene les deux chaines de caracteres
+char * textFinDeTextCostTowerDefensePurple=new char[1]{'\0'};//Contient un caractere de fin de texte
+strcat(textCostTowerDefensePurple,textFinDeTextCostTowerDefensePurple);//Concatene les deux chaines de caracteres
 
 char * textCostTowerDefenseRicochet=new char[3]{' '};//Contient le texte pour indiquer le cout d'une tourelle rouge
 char valueCostTowerDefenseRicochet[10];//Contiendra la valeur du cout d'une tourelle rouge
 sprintf(valueCostTowerDefenseRicochet, "%d", LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseRicochet.txt"));//Stock la valeur du cout d'une tourelle rouge dans un tableau de char
 strcat(textCostTowerDefenseRicochet,valueCostTowerDefenseRicochet);//Concatene les deux chaines de caracteres
+char * textFinDeTextCostTowerDefenseRicochet=new char[1]{'\0'};//Contient un caractere de fin de texte
+strcat(textCostTowerDefenseRicochet,textFinDeTextCostTowerDefenseRicochet);//Concatene les deux chaines de caracteres
 
     //on parcourt le vecteur statique
     for(int i=0;i<12;i++){

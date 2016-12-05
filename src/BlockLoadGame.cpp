@@ -21,7 +21,7 @@ La methode draw de la classe BlockLoadGame permet de dessiner de maniere graphiq
 void BlockLoadGame::draw() const
 {
     float const alpha=1.0;
-    char* textSaveGame=new char[20]{'L','O','A','D',' ','G','A','M','E'};//Contient le texte LOAD GAME.
+    char* textSaveGame=new char[20]{'L','O','A','D',' ','G','A','M','E','\0'};//Contient le texte LOAD GAME.
 
      if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert

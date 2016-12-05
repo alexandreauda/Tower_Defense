@@ -21,7 +21,7 @@ La methode draw de la classe BlockNewGame permet de dessiner de maniere graphiqu
 void BlockNewGame::draw() const
 {
     float const alpha=1.0;
-    char* textSaveGame=new char[20]{'N','E','W',' ','G','A','M','E'};//Contient le texte NEW GAME.
+    char* textSaveGame=new char[20]{'N','E','W',' ','G','A','M','E','\0'};//Contient le texte NEW GAME.
 
      if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert

@@ -21,7 +21,7 @@ La methode draw de la classe BlockSaveGame permet de dessiner de maniere graphiq
 void BlockSaveGame::draw() const
 {
     float const alpha=1.0;
-    char* textSaveGame=new char[10]{'S','A','V','E'};//Contient le texte SAVE.
+    char* textSaveGame=new char[10]{'S','A','V','E','\0'};//Contient le texte SAVE.
 
      if (m_colorBlockID == 0){ //si le m_colorBlockID du bloc est egale a 0
          //on met les contantes RGB a vert

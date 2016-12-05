@@ -20,7 +20,7 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-    Joueur(int vie=100, int argent=100, int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score), m_isAttack(0), m_isInGame(false){
+    Joueur(int vie=LibMatrix::loadIntInFile("Fichier_Configuration/InitialLifePlayer.txt"), int argent=LibMatrix::loadIntInFile("Fichier_Configuration/InitialMoneyPlayer.txt"), int level=1, int numberMonstreKilled=0, int score=0): m_vie(vie), m_argent(argent), m_level(level), m_numberMonstreKilled(numberMonstreKilled), m_score(score), m_isAttack(0), m_isInGame(false){
     }
 
 
