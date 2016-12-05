@@ -8,6 +8,9 @@
 #include "ExplosedFastMonstre.h"
 #include "ExplosedStrongMonstre.h"
 #include "RegenerationFastMonstre.h"
+#include "RegenerationStrongMonstre.h"
+#include "RegenerationExplosedFastMonstre.h"
+#include "RegenerationExplosedStrongMonstre.h"
 
 //La Class MyGameEngine herite de la Class GameEngine
 class MyGameEngine: public GameEngine {

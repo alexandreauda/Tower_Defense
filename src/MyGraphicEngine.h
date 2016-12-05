@@ -9,6 +9,9 @@
 #include "ExplosedFastMonstre.h"
 #include "ExplosedStrongMonstre.h"
 #include "RegenerationFastMonstre.h"
+#include "RegenerationStrongMonstre.h"
+#include "RegenerationExplosedFastMonstre.h"
+#include "RegenerationExplosedStrongMonstre.h"
 #include "BlockStartMonstre.h"
 #include "BlockSaveGame.h"
 #include "Joueur.h"
@@ -30,6 +33,9 @@ private:
     int m_rewardExplosedFastMonstre;
     int m_rewardExplosedStrongMonstre;
     int m_rewardRegenerationFastMonstre;
+    int m_rewardRegenerationStrongMonstre;
+    int m_rewardRegenerationExplosedFastMonstre;
+    int m_rewardRegenerationExplosedStrongMonstre;
     int m_currentDrawLevel;
     int m_stepLevel;
     WindowsBeforeGame m_menuBeforeGame;
@@ -43,6 +49,9 @@ public:
         m_rewardExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedFastMonstre.txt");
         m_rewardExplosedStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardExplosedStrongMonstre.txt");
         m_rewardRegenerationFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardRegenerationFastMonstre.txt");
+        m_rewardRegenerationStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardRegenerationStrongMonstre.txt");
+        m_rewardRegenerationExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardRegenerationExplosedFastMonstre.txt");
+        m_rewardRegenerationExplosedStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardRegenerationExplosedStrongMonstre.txt");
         m_stepLevel=LibMatrix::loadIntInFile("StepLevel/StepLevel.txt");
     }
 

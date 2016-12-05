@@ -134,6 +134,32 @@ void MyGraphicEngine::Draw(){
                                     //supprime l'element (ici, le Monstre)
                                     (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                             }
+                            //Sinon, si le Monstre qui n'a plus de vie est un RegenerationStrongMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "RegenerationStrongMonstre"){//Si le Monstre qui n'a plus de vie est un RegenerationStrongMonstre
+                                    m_player->earnMoney(m_rewardRegenerationStrongMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardRegenerationStrongMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
+                            //Sinon, si le Monstre qui n'a plus de vie est un RegenerationExplosedFastMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "RegenerationExplosedFastMonstre"){//Si le Monstre qui n'a plus de vie est un RegenerationExplosedFastMonstre
+                                    m_player->earnMoney(m_rewardRegenerationExplosedFastMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    (*m_MonstreList)[i]->drawExplosion();//Le RegenerationExplosedFastMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardRegenerationExplosedFastMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
+                            //Sinon, si le Monstre qui n'a plus de vie est un RegenerationExplosedStrongMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "RegenerationExplosedStrongMonstre"){//Si le Monstre qui n'a plus de vie est un RegenerationExplosedStrongMonstre
+                                    m_player->earnMoney(m_rewardRegenerationExplosedStrongMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    (*m_MonstreList)[i]->drawExplosion();//Le RegenerationExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardRegenerationExplosedStrongMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
                             else{
                                     m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                     m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player

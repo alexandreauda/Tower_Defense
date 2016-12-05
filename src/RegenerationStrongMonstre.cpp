@@ -1,39 +1,39 @@
-#include "RegenerationFastMonstre.h"
+#include "RegenerationStrongMonstre.h"
 
 using namespace std;
 
 /******IMPLEMENTATION DES ACCESSEURS******/
-//Les accesseurs de la Class FastMonstre
+//Les accesseurs de la Class StrongMonstre
 
 
 /******IMPLEMENTATION DES MUTATEURS******/
-//Les mutateurs de la Class FastMonstre
+//Les mutateurs de la Class StrongMonstre
 
 
 /******IMPLEMENTATION DES METHODES******/
 
 /*
 @description:
-La methode getClass de la classe RegenerationFastMonstre renvoie le nom de la Class (ici, le string "RegenerationFastMonstre").
+La methode getClass de la classe RegenerationStrongMonstre renvoie le nom de la Class (ici, le string "RegenerationStrongMonstre").
 
 @param: null
 */
-string RegenerationFastMonstre::getClass() const{
-    return "RegenerationFastMonstre";
+string RegenerationStrongMonstre::getClass() const{
+    return "RegenerationStrongMonstre";
 }
 
 /*
 @description:
-La methode draw de la classe RegenerationFastMonstre permet de dessiner des Monstres vert de maniere graphique.
+La methode draw de la classe RegenerationStrongMonstre permet de dessiner des Monstres vert de maniere graphique.
 
 @param: null
 */
-void RegenerationFastMonstre::draw() const{
+void RegenerationStrongMonstre::draw() const{
 
     //Met les valeurs RGB dans la couleur turquoise
-    float const r=0.0;
-    float const g=1.0;
-    float const b=1.0;
+    float const r=1.0;
+    float const g=0.4;
+    float const b=0.0;
     float const alpha = 1.0;
 
 
@@ -44,13 +44,13 @@ void RegenerationFastMonstre::draw() const{
 
 /*
 @description:
-La methode regeneration de la classe RegenerationFastMonstre permet de regenerer la vie du Monstre d'une valeur egale a celle de l'attribut m_rateRegeneration.
+La methode regeneration de la classe RegenerationStrongMonstre permet de regenerer la vie du Monstre d'une valeur egale a celle de l'attribut m_rateRegeneration.
 
 @param: null
 */
-void RegenerationFastMonstre::regeneration(){
+void RegenerationStrongMonstre::regeneration(){
     int const vieAfterRegeneration=m_vie+m_rateRegeneration;
-    int const vieMax=LibMatrix::loadIntInFileWithDirectory("InitialLifeRegenerationFastMonstre","InitialLifeMonstre/");
+    int const vieMax=LibMatrix::loadIntInFileWithDirectory("InitialLifeRegenerationStrongMonstre","InitialLifeMonstre/");
 
     //Si m_timer%(int)m_speed == 0 (i.e: Le Monstre est sur le centre d'un block)
     if(m_timer%(int)m_speed == 0){
@@ -67,7 +67,7 @@ void RegenerationFastMonstre::regeneration(){
 
 
 /******METHODE DE CLASSE: OPERATEURS******/
-RegenerationFastMonstre& RegenerationFastMonstre::operator=(RegenerationFastMonstre const& monstreAcopier){
+RegenerationStrongMonstre& RegenerationStrongMonstre::operator=(RegenerationStrongMonstre const& monstreAcopier){
     if(this != &monstreAcopier){//on vérifie que l'objet n'est pas le même que l'objetAcopier reçu en argument
         //on copie tous les attributs qui ne sont pas des objets membres
         m_posx1= monstreAcopier.m_posx1;
