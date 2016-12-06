@@ -219,6 +219,15 @@ void MyGraphicEngine::Draw(){
                                     //supprime l'element (ici, le Monstre)
                                     (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                             }
+                            //Sinon, si le Monstre qui n'a plus de vie est un ThiefRegenerationExplosedStrongMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "ThiefRegenerationExplosedStrongMonstre"){//Si le Monstre qui n'a plus de vie est un ThiefRegenerationExplosedStrongMonstre
+                                    m_player->earnMoney(m_rewardThiefRegenerationExplosedStrongMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    (*m_MonstreList)[i]->drawExplosion();//Le ThiefRegenerationExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardThiefRegenerationExplosedStrongMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
                             else{
                                     m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                     m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
