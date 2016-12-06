@@ -16,6 +16,7 @@
 #include "ThiefExplosedFastMonstre.h"
 #include "ThiefExplosedStrongMonstre.h"
 #include "ThiefRegenerationFastMonstre.h"
+#include "ThiefRegenerationStrongMonstre.h"
 
 //La Class MyGameEngine herite de la Class GameEngine
 class MyGameEngine: public GameEngine {
