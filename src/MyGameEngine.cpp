@@ -25,7 +25,7 @@ void MyGameEngine::idle(){
             //Si le timer modulo (le temps de latance aleatoire) est egal a 0
             if(m_timer%m_tempsLatanceAleatoire == 0){
 
-                int const monstreAleatoire=LibMatrix::varAleatoire(8);//Variable permettant d'avoir une creation aleatoire de type de Monstre
+                int const monstreAleatoire=LibMatrix::varAleatoire(10);//Variable permettant d'avoir une creation aleatoire de type de Monstre
 
                 //Suivant le nombre aleatoire
                 switch(monstreAleatoire){
@@ -52,6 +52,12 @@ void MyGameEngine::idle(){
                             break;
 
                     case 8: m_MonstreList->push_back(new RegenerationExplosedStrongMonstre());//On cree un Monstre de type RegenerationExplosedStrongMonstre
+                            break;
+
+                    case 9: m_MonstreList->push_back(new ThiefFastMonstre());//On cree un Monstre de type ThiefFastMonstre
+                            break;
+
+                    case 10: m_MonstreList->push_back(new ThiefStrongMonstre());//On cree un Monstre de type ThiefStrongMonstre
                             break;
 
                     default: m_MonstreList->push_back(new FastMonstre());//On cree un Monstre de type FastMonstre
