@@ -92,7 +92,7 @@ public:
     /******PROTOTYPES DES METHODES******/
     virtual std::string getClass() const = 0;//methode virtuelle pure
 
-    virtual void draw() const = 0;//methode virtuelle pure
+    virtual void draw(Joueur* player) const = 0;//methode virtuelle pure
 
     virtual void walk(Joueur* player) = 0;//methode virtuelle pure
 

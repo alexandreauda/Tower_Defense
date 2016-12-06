@@ -26,15 +26,40 @@ string ExplosedStrongMonstre::getClass() const{
 @description:
 La methode draw de la classe ExplosedStrongMonstre permet de dessiner des Monstres vert de maniere graphique.
 
-@param: null
+@param: La methode walk prend un parametre obligatoire: un pointeur de type Joueur.
+-param1: un pointeur de type Joueur qui correspond au player
 */
-void ExplosedStrongMonstre::draw() const{
+void ExplosedStrongMonstre::draw(Joueur* player) const{
 
     //Met les valeurs RGB dans la couleur verte
-    float const r=1.0;
-    float const g=0.1;
-    float const b=0.9;
+    float r=1.0;
+    float g=0.1;
+    float b=0.9;
     float const alpha = 1.0;
+
+    float const subdivise=100.0;
+
+    //Gestion de la couleur des Monstres en fonction du niveau
+    if(r-player->getm_level()/subdivise < 0.0){
+        r=0.0;
+    }
+    else{
+        r-=player->getm_level()/subdivise;
+    }
+
+    if(g-player->getm_level()/subdivise < 0.0){
+        g=0.0;
+    }
+    else{
+        g-=player->getm_level()/subdivise;
+    }
+
+    if(b-player->getm_level()/subdivise < 0.0){
+        b=0.0;
+    }
+    else{
+        b-=player->getm_level()/subdivise;
+    }
 
 
     //Dessine les monstres

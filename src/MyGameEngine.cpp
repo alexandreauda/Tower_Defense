@@ -77,6 +77,8 @@ void MyGameEngine::idle(){
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posx3(initBlockPosx+initBlockWidth/6);
                 (*m_MonstreList)[m_MonstreList->size()-1]->setm_posy3(initBlockPosy+initBlockHeight*5/6);
 
+                (*m_MonstreList)[m_MonstreList->size()-1]->increaseLevelMonstre(m_player, "random", 1);//Ajustement du niveau des Monstres
+
                 m_tempsLatanceAleatoire=LibMatrix::varAleatoireBetweenTwoNumbers(100,300);//Definit le temps de latance entre deux creations de Monstres
 
             }

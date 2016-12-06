@@ -42,7 +42,7 @@ public:
     /******PROTOTYPES DES METHODES******/
     virtual std::string getClass() const;//Renvoie le nom de la Class (ici, le string "RegenerationExplosedStrongMonstre")
 
-    virtual void draw() const; //Dessine le monstre
+    virtual void draw(Joueur* player) const; //Dessine le monstre
 
     void regeneration();
 

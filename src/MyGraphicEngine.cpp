@@ -83,7 +83,7 @@ void MyGraphicEngine::Draw(){
                 for(int i=0;i<m_MonstreList->size();i++){
                     //Si le Monstre en question n'est pas arrive sur la derniere colonne
                     if((*m_MonstreList)[i]->getm_isArrive() == 0){
-                        (*m_MonstreList)[i]->draw();
+                        (*m_MonstreList)[i]->draw(m_player);
                     }
                     //Si le Monstre en question est arrive sur la derniere colonne
                     else{

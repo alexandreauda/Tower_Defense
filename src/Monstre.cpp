@@ -374,30 +374,35 @@ La methode increaseLevelMonstre de la Class Monstre permet de gerer le niveau de
 -param3: Le int unsigned facultatif doit representer la valeur du facteur de l'augmentation d'un attribut du Monstre. Par defaut, ce parametre vaut 1.
 */
 void Monstre::increaseLevelMonstre(Joueur* player, string const& nameAttribut, int unsigned const& stepIncrease){
-    if(nameAttribut == "m_vie"){
-        increaseVie(stepIncrease*(player->getm_level() - 1));
-    }
-    else if(nameAttribut == "m_damageAttack"){
-        increaseDamageAttack((player->getm_level() - 1));
-    }
-    else if (nameAttribut == "random"){
-        int const varHazard=LibMatrix::varAleatoire(2);
 
-        switch(varHazard){
+    int const niveau=stepIncrease*(player->getm_level()-1);
 
-            case 1: increaseVie(stepIncrease*(player->getm_level() - 1));
-                    break;
-
-            case 2: increaseDamageAttack((player->getm_level() - 1));
-                    break;
-
-            default: increaseVie(stepIncrease*(player->getm_level() - 1));
-                     break;
-
+    for(int i=0;i<niveau;i++){
+        if(nameAttribut == "m_vie"){
+            increaseVie(1);
         }
-    }
-    else{
-        increaseVie(stepIncrease*(player->getm_level() - 1));
+        else if(nameAttribut == "m_damageAttack"){
+            increaseDamageAttack(1);
+        }
+        else if (nameAttribut == "random"){
+            int varHazard=LibMatrix::varAleatoire(2);
+
+            switch(varHazard){
+
+                case 1: increaseVie(1);
+                        break;
+
+                case 2: increaseDamageAttack(1);
+                        break;
+
+                default: increaseVie(1);
+                         break;
+
+            }
+        }
+        else{
+            increaseVie(1);
+        }
     }
 }
 

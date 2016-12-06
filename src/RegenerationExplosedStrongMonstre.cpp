@@ -26,15 +26,40 @@ string RegenerationExplosedStrongMonstre::getClass() const{
 @description:
 La methode draw de la classe RegenerationExplosedStrongMonstre permet de dessiner des Monstres vert de maniere graphique.
 
-@param: null
+@param: La methode walk prend un parametre obligatoire: un pointeur de type Joueur.
+-param1: un pointeur de type Joueur qui correspond au player
 */
-void RegenerationExplosedStrongMonstre::draw() const{
+void RegenerationExplosedStrongMonstre::draw(Joueur* player) const{
 
     //Met les valeurs RGB dans la couleur vert pale
-    float const r=0.5;
-    float const g=0.0;
-    float const b=0.5;
+    float r=0.5;
+    float g=0.0;
+    float b=0.5;
     float const alpha = 1.0;
+
+    float const subdivise=100.0;
+
+    //Gestion de la couleur des Monstres en fonction du niveau
+    if(r-player->getm_level()/subdivise < 0.0){
+        r=0.0;
+    }
+    else{
+        r-=player->getm_level()/subdivise;
+    }
+
+    if(g-player->getm_level()/subdivise < 0.0){
+        g=0.0;
+    }
+    else{
+        g-=player->getm_level()/subdivise;
+    }
+
+    if(b-player->getm_level()/subdivise < 0.0){
+        b=0.0;
+    }
+    else{
+        b-=player->getm_level()/subdivise;
+    }
 
 
     //Dessine les monstres
