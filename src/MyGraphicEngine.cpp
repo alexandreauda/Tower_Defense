@@ -176,6 +176,24 @@ void MyGraphicEngine::Draw(){
                                     //supprime l'element (ici, le Monstre)
                                     (*m_MonstreList).erase((*m_MonstreList).begin()+i);
                             }
+                            //Sinon, si le Monstre qui n'a plus de vie est un ThiefExplosedFastMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "ThiefExplosedFastMonstre"){//Si le Monstre qui n'a plus de vie est un ThiefExplosedFastMonstre
+                                    m_player->earnMoney(m_rewardThiefExplosedFastMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    (*m_MonstreList)[i]->drawExplosion();//Le ThiefExplosedFastMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardThiefExplosedFastMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
+                            //Sinon, si le Monstre qui n'a plus de vie est un ThiefExplosedStrongMonstre
+                            else if((*m_MonstreList)[i]->getClass() == "ThiefExplosedStrongMonstre"){//Si le Monstre qui n'a plus de vie est un ThiefExplosedStrongMonstre
+                                    m_player->earnMoney(m_rewardThiefExplosedStrongMonstre);//Le Joueur gagne une certaine somme d'argent
+                                    (*m_MonstreList)[i]->drawExplosion();//Le ThiefExplosedStrongMonstre trace l'explosion lorsqu'il n'a plus de vie
+                                    m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
+                                    m_player->increaseScore(m_rewardThiefExplosedStrongMonstre);//On augmente le score du player
+                                    //supprime l'element (ici, le Monstre)
+                                    (*m_MonstreList).erase((*m_MonstreList).begin()+i);
+                            }
                             else{
                                     m_player->earnMoney(5);//Le Joueur gagne une certaine somme d'argent
                                     m_player->oneMoreKilled();//On incremente l'attribut m_numberMonstreKilled du player
