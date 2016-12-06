@@ -25,7 +25,7 @@ void MyGameEngine::idle(){
             //Si le timer modulo (le temps de latance aleatoire) est egal a 0
             if(m_timer%m_tempsLatanceAleatoire == 0){
 
-                int const monstreAleatoire=LibMatrix::varAleatoire(12);//Variable permettant d'avoir une creation aleatoire de type de Monstre
+                int const monstreAleatoire=LibMatrix::varAleatoire(13);//Variable permettant d'avoir une creation aleatoire de type de Monstre
 
                 //Suivant le nombre aleatoire
                 switch(monstreAleatoire){
@@ -58,13 +58,16 @@ void MyGameEngine::idle(){
                             break;
 
                     case 10: m_MonstreList->push_back(new ThiefStrongMonstre());//On cree un Monstre de type ThiefStrongMonstre
-                            break;
+                             break;
 
                     case 11: m_MonstreList->push_back(new ThiefExplosedFastMonstre());//On cree un Monstre de type ThiefExplosedFastMonstre
-                            break;
+                             break;
 
                     case 12: m_MonstreList->push_back(new ThiefExplosedStrongMonstre());//On cree un Monstre de type ThiefExplosedStrongMonstre
-                            break;
+                             break;
+
+                    case 13: m_MonstreList->push_back(new ThiefRegenerationFastMonstre());//On cree un Monstre de type ThiefExplosedStrongMonstre
+                             break;
 
                     default: m_MonstreList->push_back(new FastMonstre());//On cree un Monstre de type FastMonstre
                              break;
@@ -116,18 +119,18 @@ void MyGameEngine::idle(){
             }
 		}
 
-        //Pour chaque Monstre qui est un ExplosedFastMonstre ou un ExplosedStrongMonstre ou un RegenerationExplosedFastMonstre  ou un RegenerationExplosedStrongMonstre
+        //Pour chaque Monstre qui est un ExplosedFastMonstre ou un ExplosedStrongMonstre ou un RegenerationExplosedFastMonstre ou un RegenerationExplosedStrongMonstre ou un ThiefExplosedFastMonstre ou un ThiefExplosedStrongMonstre
         for(int i=0;i<m_MonstreList->size();i++){
             //Si le Monstre est un ExplosedFastMonstre
-            if((*m_MonstreList)[i]->getClass() == "ExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedStrongMonstre"){
+            if((*m_MonstreList)[i]->getClass() == "ExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "ExplosedStrongMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedStrongMonstre" || (*m_MonstreList)[i]->getClass() == "ThiefExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "ThiefExplosedStrongMonstre"){
             (*m_MonstreList)[i]->explosed(m_MonstreList);
             }
 		}
 
-        //Pour chaque Monstre qui est un RegenerationFastMonstre ou un RegenerationStrongMonstre ou un RegenerationExplosedFastMonstre ou un RegenerationExplosedStrongMonstre
+        //Pour chaque Monstre qui est un RegenerationFastMonstre ou un RegenerationStrongMonstre ou un RegenerationExplosedFastMonstre ou un RegenerationExplosedStrongMonstre ou un ThiefRegenerationFastMonstre
         for(int i=0;i<m_MonstreList->size();i++){
             //Si le Monstre est un RegenerationFastMonstre
-            if((*m_MonstreList)[i]->getClass() == "RegenerationFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationStrongMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedStrongMonstre"){
+            if((*m_MonstreList)[i]->getClass() == "RegenerationFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationStrongMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedFastMonstre" || (*m_MonstreList)[i]->getClass() == "RegenerationExplosedStrongMonstre" || (*m_MonstreList)[i]->getClass() == "ThiefRegenerationFastMonstre"){
             (*m_MonstreList)[i]->regeneration();//Les Monstres se regenere
             }
 		}

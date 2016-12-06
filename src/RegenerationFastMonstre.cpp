@@ -24,7 +24,7 @@ string RegenerationFastMonstre::getClass() const{
 
 /*
 @description:
-La methode draw de la classe RegenerationFastMonstre permet de dessiner des Monstres vert de maniere graphique.
+La methode draw de la classe RegenerationFastMonstre permet de dessiner des Monstres turquoise de maniere graphique.
 
 @param: La methode walk prend un parametre obligatoire: un pointeur de type Joueur.
 -param1: un pointeur de type Joueur qui correspond au player

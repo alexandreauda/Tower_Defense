@@ -16,6 +16,7 @@
 #include "ThiefStrongMonstre.h"
 #include "ThiefExplosedFastMonstre.h"
 #include "ThiefExplosedStrongMonstre.h"
+#include "ThiefRegenerationFastMonstre.h"
 #include "BlockStartMonstre.h"
 #include "BlockSaveGame.h"
 #include "Joueur.h"
@@ -44,6 +45,7 @@ private:
     int m_rewardThiefStrongMonstre;
     int m_rewardThiefExplosedFastMonstre;
     int m_rewardThiefExplosedStrongMonstre;
+    int m_rewardThiefRegenerationFastMonstre;
     int m_currentDrawLevel;
     int m_stepLevel;
     WindowsBeforeGame m_menuBeforeGame;
@@ -64,6 +66,7 @@ public:
         m_rewardThiefStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardThiefStrongMonstre.txt");
         m_rewardThiefExplosedFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardThiefExplosedFastMonstre.txt");
         m_rewardThiefExplosedStrongMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardThiefExplosedStrongMonstre.txt");
+        m_rewardThiefRegenerationFastMonstre=LibMatrix::loadIntInFile("RewardMonstre/RewardThiefRegenerationFastMonstre.txt");
         m_stepLevel=LibMatrix::loadIntInFile("StepLevel/StepLevel.txt");
     }
 
