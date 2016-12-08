@@ -146,7 +146,7 @@ void Joueur::drawAttribut() const{
 
 
     //Affichage des informations concernant l'attribut m_vie
-    char * textVie=new char[20]{'V','i','e',':',' '};//Contient le texte immuable concernant l'attribut m_vie
+    char * textVie=new char[20]{'V','i','e',':',' ','\0'};//Contient le texte immuable concernant l'attribut m_vie
     char valueVie[10];//Contiendra la valeur de la vie du Joueur
     sprintf(valueVie, "%d", m_vie);//Stock la valeur de l'attribut m_vie dans un tableau de char
     strcat(textVie,valueVie);//Concatene les deux chaines de caracteres
@@ -156,7 +156,7 @@ void Joueur::drawAttribut() const{
     GraphicPrimitives::drawText2D(textVie,-0.96,0.90, r, g, b,alpha);//Draw le texte relatif a la vie du Joueur.
 
     //Affichage des informations concernant l'attribut m_argent
-    char * textArgent=new char[20]{'A','r','g','e','n','t',':'};//Contient le texte immuable concernant l'attribut m_argent
+    char * textArgent=new char[20]{'A','r','g','e','n','t',':','\0'};//Contient le texte immuable concernant l'attribut m_argent
     char valueArgent[10];//Contiendra la valeur de la vie du Joueur
     sprintf(valueArgent, "%d", m_argent);//Stock la valeur de l'attribut m_argent dans un tableau de char
     strcat(textArgent,valueArgent);//Concatene les deux chaines de caracteres
@@ -166,7 +166,7 @@ void Joueur::drawAttribut() const{
     GraphicPrimitives::drawText2D(textArgent,-0.98,0.80, r, g, b,alpha);//Draw le texte relatif a l'argent du Joueur.
 
     //Affichage des informations concernant l'attribut m_level
-    char * textLevel=new char[20]{'L','e','v','e','l',':',' '};//Contient le texte immuable concernant l'attribut m_level
+    char * textLevel=new char[20]{'L','e','v','e','l',':',' ','\0'};//Contient le texte immuable concernant l'attribut m_level
     char valueLevel[10];//Contiendra la valeur de la vie du Joueur
     sprintf(valueLevel, "%d", m_level);//Stock la valeur de l'attribut m_level dans un tableau de char
     strcat(textLevel,valueLevel);//Concatene les deux chaines de caracteres
@@ -178,7 +178,7 @@ void Joueur::drawAttribut() const{
     //Affichage des informations concernant l'attribut m_numberMonstreKilled
     char * textNumberMonstreKilledPart1=new char[20]{'M','O','N','S','T','E','R','\0'};//Contient le texte immuable concernant l'attribut m_numberMonstreKilled
     GraphicPrimitives::drawText2D(textNumberMonstreKilledPart1,-0.98,0.50, r, g, b,alpha);//Draw le texte immuable relatif au nombre de Monstre elimines par le Joueur.
-    char * textNumberMonstreKilled=new char[10]{'K','I','L','L','E','D',':'};//Contient le texte immuable concernant l'attribut m_numberMonstreKilled
+    char * textNumberMonstreKilled=new char[10]{'K','I','L','L','E','D',':','\0'};//Contient le texte immuable concernant l'attribut m_numberMonstreKilled
     char valueNumberMonstreKilled[10];//Contiendra le nombre de Monstre elimines par le Joueur
     sprintf(valueNumberMonstreKilled, "%d", m_numberMonstreKilled);//Stock la valeur de l'attribut m_numberMonstreKilled dans un tableau de char
     strcat(textNumberMonstreKilled,valueNumberMonstreKilled);//Concatene les deux chaines de caracteres
@@ -188,7 +188,7 @@ void Joueur::drawAttribut() const{
     GraphicPrimitives::drawText2D(textNumberMonstreKilled,-0.97,0.43, r, g, b,alpha);//Draw le texte relatif au nombre de Monstre elimines par le Joueur.
 
     //Affichage des informations concernant l'attribut m_score
-    char * textScore=new char[20]{'S','c','o','r','e',':'};//Contient le texte immuable concernant l'attribut m_score
+    char * textScore=new char[20]{'S','c','o','r','e',':','\0'};//Contient le texte immuable concernant l'attribut m_score
     char valueScore[10];//Contiendra la valeur du score du Joueur
     sprintf(valueScore, "%d", m_score);//Stock la valeur de l'attribut m_score dans un tableau de char
     strcat(textScore,valueScore);//Concatene les deux chaines de caracteres
