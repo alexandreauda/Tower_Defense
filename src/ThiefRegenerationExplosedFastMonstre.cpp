@@ -125,6 +125,17 @@ void ThiefRegenerationExplosedFastMonstre::increaseMoneyStolen(int const& rateMo
     m_moneyStolen+=rateMoneyStolen;
 }
 
+/*
+@description:
+La methode increaseRateRegeneration de la classe ThiefRegenerationExplosedFastMonstre prend un int en parametre et fait augmenter l'attribut m_rateRegeneration du RegenerationExplosedStrongMonstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode increaseRateRegeneration prend un parametre facultatif: un int facultatif.
+-param1: Le int facultatif doit representer la valeur de l'augmentation de l'attribut m_rateRegeneration du ThiefRegenerationExplosedFastMonstre. Par defaut, ce parametre vaut 1.
+*/
+void ThiefRegenerationExplosedFastMonstre::increaseRateRegeneration(int const& rateRegenerationWin){
+    m_rateRegeneration+=rateRegenerationWin;
+}
+
 
 /*
 @description:
@@ -150,7 +161,7 @@ void ThiefRegenerationExplosedFastMonstre::increaseLevelMonstre(Joueur* player, 
             increaseMoneyStolen(1);
         }
         else if (nameAttribut == "random"){
-            int varHazard=LibMatrix::varAleatoire(3);
+            int varHazard=LibMatrix::varAleatoire(4);
 
             switch(varHazard){
 
@@ -161,6 +172,9 @@ void ThiefRegenerationExplosedFastMonstre::increaseLevelMonstre(Joueur* player, 
                         break;
 
                 case 3: increaseMoneyStolen(1);
+                        break;
+
+                case 4: increaseRateRegeneration(1);
                         break;
 
                 default: increaseVie(1);
