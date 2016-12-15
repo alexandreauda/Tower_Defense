@@ -90,6 +90,62 @@ void RegenerationExplosedFastMonstre::regeneration(){
     }
 }
 
+/*
+@description:
+La methode increaseRateRegeneration de la classe RegenerationExplosedFastMonstre prend un int en parametre et fait augmenter l'attribut m_rateRegeneration du RegenerationExplosedFastMonstre d'une valeur egale a la valeur du int pris en parametre.
+
+@param: La methode increaseRateRegeneration prend un parametre facultatif: un int facultatif.
+-param1: Le int facultatif doit representer la valeur de l'augmentation de l'attribut m_rateRegeneration du RegenerationExplosedFastMonstre. Par defaut, ce parametre vaut 1.
+*/
+void RegenerationExplosedFastMonstre::increaseRateRegeneration(int const& rateRegenerationWin){
+    m_rateRegeneration+=rateRegenerationWin;
+}
+
+/*
+@description:
+La methode increaseLevelMonstre de la Class RegenerationExplosedFastMonstre permet de gerer le niveau des RegenerationExplosedFastMonstre en fonction du niveau du level. Ainsi, un Joueur de niveau 1 par exemple, combattra des Monsres de niveau 1 et ainsi de suite.
+
+@param: La methode increaseLevelMonstre prend un parametre obligatoire et deux parametres facultatifs: un Joueur, un string facultatif, un int unsigned facultatif.
+-param1: Le parametre de type Joueur doit etre le Joueur qui effectue la partie.
+-param1: Le string facultatif doit representer le nom de l'attribut du RegenerationExplosedFastMonstre que l'on veut augmenter. Par defaut, ce parametre vaut "random" ce qui signifie que l'augmentation de niveau augmente un des attributs du Monstre determine aleatoirement.
+-param3: Le int unsigned facultatif doit representer la valeur du facteur de l'augmentation d'un attribut du RegenerationExplosedFastMonstre. Par defaut, ce parametre vaut 1.
+*/
+void RegenerationExplosedFastMonstre::increaseLevelMonstre(Joueur* player, string const& nameAttribut, int unsigned const& stepIncrease){
+
+    int const niveau=stepIncrease*(player->getm_level()-1);
+
+    for(int i=0;i<niveau;i++){
+        if(nameAttribut == "m_vie"){
+            increaseVie(1);
+        }
+        else if(nameAttribut == "m_damageAttack"){
+            increaseDamageAttack(1);
+        }
+        else if (nameAttribut == "random"){
+            int varHazard=LibMatrix::varAleatoire(3);
+
+            switch(varHazard){
+
+                case 1: increaseVie(1);
+                        break;
+
+                case 2: increaseDamageAttack(1);
+                        break;
+
+                case 3: increaseRateRegeneration(1);
+                        break;
+
+                default: increaseVie(1);
+                         break;
+
+            }
+        }
+        else{
+            increaseVie(1);
+        }
+    }
+}
+
 
 /******METHODE DE CLASSE: OPERATEURS******/
 RegenerationExplosedFastMonstre& RegenerationExplosedFastMonstre::operator=(RegenerationExplosedFastMonstre const& monstreAcopier){

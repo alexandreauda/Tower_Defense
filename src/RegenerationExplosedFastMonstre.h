@@ -46,6 +46,10 @@ public:
 
     void regeneration();
 
+    void increaseRateRegeneration(int const& rateRegenerationWin=1);
+
+    virtual void increaseLevelMonstre(Joueur* player, std::string const& nameAttribut="random", int unsigned const& stepIncrease=1);
+
     /******PROTOTYPE OPERATEURS******/
     RegenerationExplosedFastMonstre& operator=(RegenerationExplosedFastMonstre const& monstreAcopier);
 
