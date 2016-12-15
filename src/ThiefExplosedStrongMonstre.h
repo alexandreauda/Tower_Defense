@@ -19,7 +19,7 @@ protected:
 public:
 
     /******CONSTRUCTEUR PAR DEFAUT******/
-    ThiefExplosedStrongMonstre(): ExplosedStrongMonstre(new IASeveralPaths(), 0, 0, 0, 0, 0, 0, LibMatrix::loadIntInFileWithDirectory("InitialLifeThiefExplosedStrongMonstre","InitialLifeMonstre/"), 100.0, 0, 0, 5, 2, 5), m_moneyStolen(30){}
+    ThiefExplosedStrongMonstre(): ExplosedStrongMonstre(new IASeveralPaths(), 0, 0, 0, 0, 0, 0, LibMatrix::loadIntInFileWithDirectory("InitialLifeThiefExplosedStrongMonstre","InitialLifeMonstre/"), 200.0, 0, 0, 5, 2, 5), m_moneyStolen(30){}
 
     /******CONSTRUCTEUR A PARAMETRES******/
 	ThiefExplosedStrongMonstre(MonstreIA* monstreIA, float posx1=0, float posy1=0, float posx2=0, float posy2=0, float posx3=0, float posy3=0, int vie=LibMatrix::loadIntInFileWithDirectory("InitialLifeThiefExplosedStrongMonstre","InitialLifeMonstre/"), float speed=200.0, int timer=0, int isArrive=0, int damageAttack=5, int portee=2, int damageExplosed=5): ExplosedStrongMonstre(monstreIA, posx1, posy1, posx2, posy2, posx3, posy3, vie, speed, timer, isArrive, damageAttack, portee, damageExplosed), m_moneyStolen(30) {}
