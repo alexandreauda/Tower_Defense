@@ -261,16 +261,7 @@ void MyGraphicEngine::Draw(){
             }
             //Sinon, si l'attribut m_winLevelJoueur == true
             else{
-                //Met les valeurs RGB dans la couleur blanche
-                float const r=1.0;
-                float const g=1.0;
-                float const b=1.0;
-                float const alpha = 1.0;
-
-                //Affichage du texte Game Over
-                char * textGameOver=new char[10]{'Y','O','U',' ','W','I','N','!','\0'};//Contient le texte GAME OVER.
-
-                LibMatrix::drawLargeText2D(textGameOver,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textGameOver.
+                m_player->winGame();//On affiche le menu du winGame
             }
         }
     }

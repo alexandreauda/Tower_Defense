@@ -338,6 +338,29 @@ void Joueur::gameOver() const{
 
 /*
 @description:
+La methode winGame de la Class Joueur permet d'afficher le message de felicitation de maniere graphique.
+
+@param: null
+*/
+void Joueur::winGame() const{
+
+                //Met les valeurs RGB dans la couleur blanche
+                float const r=1.0;
+                float const g=1.0;
+                float const b=1.0;
+                float const alpha = 1.0;
+
+                //Affichage du texte Game Over
+                char * textCongratulation1=new char[10]{'Y','O','U',' ','W','I','N','!','\0'};//Contient le texte YOU WIN!.
+                char * textCongratulation2=new char[20]{'C','O','N','G','R','A','T','U','L','A','T','I','O','N','!','\0'};//Contient le texte YOU WIN!.
+
+                LibMatrix::drawLargeText2D(textCongratulation1,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textCongratulation1.
+                LibMatrix::drawLargeText2D(textCongratulation2,-0.22,-0.1, 1, r, g, b,alpha);//Draw le texte textCongratulation2.
+
+}
+
+/*
+@description:
 Renvoie 1 si le Joueur a assez d'argent pour payer le cout pris en parametre et 0 sinon. Ainsi, si m_money-cost>=0 alors on renvoie 1 et 0 sinon.
 
 @param: La methode haveMoneyEnough prend un parametre obligatoire: un int.
