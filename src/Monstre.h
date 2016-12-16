@@ -94,7 +94,7 @@ public:
 
     virtual void draw(Joueur* player) const = 0;//methode virtuelle pure
 
-    virtual void walk(Joueur* player) = 0;//methode virtuelle pure
+    virtual void walk(Joueur* player, std::string const& stringNameDirectory="Files_Levels/") = 0;//methode virtuelle pure
 
     float monsterCenterx() const;//Renvoi l'abscisse du barycentre du Monstre
 

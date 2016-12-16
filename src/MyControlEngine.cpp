@@ -28,7 +28,13 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     //Si l'attribut m_currentDrawLevel est different du niveau du Joueur
     if(m_currentDrawLevel != m_player->getm_level()){
         Grille grilleInit;
-        grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+        //Si le niveau du Joueur est different de 0
+        if(m_player->getm_level() != 0){
+            grilleInit.loadGrille(m_player->getm_level(),m_grilleDeJeu);//Load la matrice m_grilleDeJeu
+        }
+        else{
+            grilleInit.loadGrille(m_player->getm_level(), m_grilleDeJeu,"Level_Player/");//On initialise la variable m_grilleDeJeu avec la grille du level courant
+        }
         m_currentDrawLevel=m_player->getm_level();//On set la valeur de l'attribut m_currentDrawLevel a la valeur du niveau du Joueur
     }
 

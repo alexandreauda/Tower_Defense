@@ -17,7 +17,14 @@ void MyGameEngine::idle(){
         //On load le level courant
         Grille grilleDeJeu;
         BlockGrille grilleBlock[12][12];
-        grilleDeJeu.loadGrille(m_player->getm_level(), grilleBlock);//On initialise la variable grilleBlock avec la grille du level courant
+        //Si le niveau du Joueur est different de 0
+        if(m_player->getm_level() != 0){
+            grilleDeJeu.loadGrille(m_player->getm_level(), grilleBlock);//On initialise la variable grilleBlock avec la grille du level courant
+        }
+        //Sinon, si le niveau du Joueur est egale a 0
+        else{
+            grilleDeJeu.loadGrille(m_player->getm_level(), grilleBlock,"Level_Player/");//On initialise la variable grilleBlock avec la grille du level courant
+            }
 
         //Si le Joueur a lance une vague de Monstre
         if(m_player->getm_isAttack() == 1){
@@ -119,7 +126,14 @@ void MyGameEngine::idle(){
         for(int i=0;i<m_MonstreList->size();i++){
             //Si il existe un chemin pour que le Monstre puisse continuer (i.e: le Monstre n'est pas dans une impasse)
             if((*m_MonstreList)[i]->searchIfPath(grilleBlock) == 1 || ((*m_MonstreList)[i]->getm_monstreIA()->getm_previousPosition()).getm_posxID() != 11 && ((*m_MonstreList)[i]->getm_isLock() == 0)){
-                (*m_MonstreList)[i]->walk(m_player);
+                //Si le niveau du Joueur est different de 0
+                if(m_player->getm_level() != 0){
+                    (*m_MonstreList)[i]->walk(m_player);
+                }
+                //Sinon, si le niveau du Joueur est egale a 0
+                else{
+                    (*m_MonstreList)[i]->walk(m_player,"Level_Player/");
+                    }
             }
             //Si il n'existe pas de chemin pour que le Monstre puisse continuer (i.e: le Monstre est dans une impasse)
             else{

@@ -66,9 +66,18 @@ void MyGraphicEngine::Draw(){
                     //On affiche les attributs du Joueur
                     m_player->drawAttribut();
 
-                    //On affiche la grille de Jeu
-                    Grille grilleDeJeu;
-                    grilleDeJeu.draw(m_player->getm_level());
+                    //Si le niveau du Joueur est different de 0
+                    if(m_player->getm_level() != 0){
+                        //On affiche la grille de Jeu
+                        Grille grilleDeJeu;
+                        grilleDeJeu.draw(m_player->getm_level());
+                    }
+                    //Sinon, si le niveau du Joueur est egale a 0
+                    else{
+                        //On affiche la grille de Jeu
+                        Grille grilleDeJeu;
+                        grilleDeJeu.draw(m_player->getm_level(),"Level_Player/");
+                    }
 
                     //On affiche le Store
                     Store shop;

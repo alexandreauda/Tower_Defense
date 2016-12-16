@@ -71,14 +71,15 @@ void StrongMonstre::draw(Joueur* player) const{
 @description:
 La methode walk de la classe StrongMonstre permet au StrongMonstre de trouver son chemin dans le labyrinthe et de se deplacer en consequence, du block ou se trouve le StrongMonstre initialement au prochain block, le tout de maniere continue.
 
-@param: La methode walk prend un parametre obligatoire: un pointeur de type Joueur.
+@param: La methode walk prend un parametre obligatoire et un parametre facultatif: un pointeur de type Joueur et un string facultatif.
 -param1: un pointeur de type Joueur qui correspond au player
+-param2: un string facultatif qui specifie le repertoire ou se trouve la grille ou s'effectue le deplacement.
 */
-void StrongMonstre::walk(Joueur* player){
+void StrongMonstre::walk(Joueur* player, string const& stringNameDirectory){
 
     BlockGrille grilleDeJeu[12][12];
     Grille grilleInit;
-    grilleInit.loadGrille(player->getm_level(),grilleDeJeu);//Load la matrice m_grilleDeJeu
+    grilleInit.loadGrille(player->getm_level(),grilleDeJeu,stringNameDirectory);//Load la matrice m_grilleDeJeu
 
     //Variable qui contiendra le prochain BlockGrille ou ira le Monstre
     BlockGrille nextBlock;

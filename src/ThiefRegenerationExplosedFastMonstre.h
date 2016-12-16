@@ -44,7 +44,7 @@ public:
 
     virtual void draw(Joueur* player) const;
 
-    virtual void walk(Joueur* player);
+    virtual void walk(Joueur* player, std::string const& stringNameDirectory="Files_Levels/");
 
     void increaseMoneyStolen(int const& rateMoneyStolen=1);
 
