@@ -13,7 +13,7 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	BlockNewGame(float posx=-0.15, float posy=0.15, float width=0.40, float height=0.17, int colorBlockID=2, int colorPlayID=0): Block(posx,posy,width,height,colorBlockID){}//constructeur a parametre
+	BlockNewGame(float posx=-0.15, float posy=0.26, float width=0.40, float height=0.17, int colorBlockID=2, int colorPlayID=0): Block(posx,posy,width,height,colorBlockID){}//constructeur a parametre
 
 
     /******ACCESSEURS******/

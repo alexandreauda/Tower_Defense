@@ -28,4 +28,7 @@ void WindowsBeforeGame::draw() const {
     BlockLoadGame buttonLoadGame;
     buttonLoadGame.draw();//Dessine le bouton qui sert a loader une partie prealablement sauvee.
 
+    BlockLevelJoueur buttonLevelJoueur;
+    buttonLevelJoueur.draw();//Dessine le bouton qui sert a commencer une nouvelle partie sur un niveau exclusivement dedie et construit par le Joueur.
+
 }

@@ -102,6 +102,17 @@ void Joueur::setm_level(int const& level){
 
 /*
 @description:
+Mutateur de l'attribut m_score.
+
+@param: La methode setm_score prend un parametre obligatoire: un int
+-param1: le nouveau int pour m_score
+*/
+void Joueur::setm_score(int const& score){
+ m_score=score;
+}
+
+/*
+@description:
 Mutateur de l'attribut m_isAttack.
 
 @param: La methode setm_isAttack prend un parametre obligatoire: un bool
@@ -318,7 +329,7 @@ void Joueur::gameOver() const{
     float const b=1.0;
     float const alpha = 1.0;
 
-    //Affichage des informations concernant l'attribut m_vie
+    //Affichage du texte Game Over
     char * textGameOver=new char[10]{'G','A','M','E',' ','O','V','E','R','\0'};//Contient le texte GAME OVER.
 
     LibMatrix::drawLargeText2D(textGameOver,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textGameOver.

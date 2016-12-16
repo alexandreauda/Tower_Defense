@@ -1,6 +1,7 @@
 #pragma once
 #include "BlockNewGame.h"
 #include "BlockLoadGame.h"
+#include "BlockLevelJoueur.h"
 
 class WindowsBeforeGame{
 

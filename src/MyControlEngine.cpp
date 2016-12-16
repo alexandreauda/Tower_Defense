@@ -63,6 +63,13 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                 m_player->setm_isInGame(true);//Le Joueur commence une nouvelle partie.
 
             }
+            //On verifie le bouton qui permet de commencer une partie sur un niveau exclusivement dedie au Joueur. C'est donc exclusivement le Joueur qui definit le trace du chemin des Monstres de ce niveau.
+            if(m_buttonLevelJoueur.pointIsInBlock(mousePosx,mousePosy) == 1){
+
+                m_player->decreaseLevel();//On decremente l'attribut m_level
+                m_player->setm_isInGame(true);//Le Joueur commence une nouvelle partie.
+
+            }
         }
         //Sinon, si le Joueur n'est pas dans le Jeu
         else{
@@ -191,11 +198,14 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
             }
 
-            //On verifie le bouton qui sauvegarde la partie
-            if(m_buttonSaveGame.pointIsInBlock(mousePosx,mousePosy) == 1){
+            //Si le niveau du Joueur est different de 0
+            if(m_player->getm_level() != 0){
+                //On verifie le bouton qui sauvegarde la partie
+                if(m_buttonSaveGame.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-                m_player->SaveGame();//Le Joueur sauve la partie
+                    m_player->SaveGame();//Le Joueur sauve la partie
 
+                }
             }
         }
     }
