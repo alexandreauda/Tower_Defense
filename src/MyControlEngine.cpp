@@ -53,10 +53,10 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
             }
 
-            //On verifie le bouton qui permet de commencer une nouvelle partie
+            //On verifie le bouton qui permet de charger une partie precedemment sauvee
             if(m_buttonLoadGame.pointIsInBlock(mousePosx,mousePosy) == 1){
 
-                m_player->LoadGame();//Le Joueur set ses attributs avec les valeurs sauvegardees.
+                m_player->LoadGame();//Le Joueur set ses attributs avec les valeurs sauvegardees precedemment.
                 if(m_player->getm_level() != 1){
                    m_player->decreaseLevel();//On decremente l'attribut m_level
                 }
