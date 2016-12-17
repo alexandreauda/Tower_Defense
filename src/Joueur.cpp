@@ -352,10 +352,12 @@ void Joueur::winGame() const{
 
                 //Affichage du texte Game Over
                 char * textCongratulation1=new char[10]{'Y','O','U',' ','W','I','N','!','\0'};//Contient le texte YOU WIN!.
-                char * textCongratulation2=new char[20]{'C','O','N','G','R','A','T','U','L','A','T','I','O','N','!','\0'};//Contient le texte YOU WIN!.
+                char * textCongratulation2=new char[20]{'C','O','N','G','R','A','T','U','L','A','T','I','O','N','!','\0'};//Contient le texte CONGRATULATION!.
+                char * textCongratulation3=new char[93]{'T','o',' ','c','h','a','n','g','e',' ','t','h','e',' ','P','a','t','h',' ','o','f',' ','t','h','i','s',' ','L','e','v','e','l',',',' ','l','o','o','k',' ','t','h','e',' ','f','i','l','e',' ','"','L','e','v','e','l','_','0','.','t','x','t','"',' ','i','n',' ','t','h','e',' ','d','i','r','e','c','t','o','r','y',':',' ','L','e','v','e','l','_','P','l','a','y','e','r','\0'};//Contient le texte CONGRATULATION!.
 
                 LibMatrix::drawLargeText2D(textCongratulation1,-0.1,0.0, 1, r, g, b,alpha);//Draw le texte textCongratulation1.
                 LibMatrix::drawLargeText2D(textCongratulation2,-0.22,-0.1, 1, r, g, b,alpha);//Draw le texte textCongratulation2.
+                LibMatrix::drawLargeText2D(textCongratulation3,-0.88,-0.5, 1, r, g, b,alpha);//Draw le texte textCongratulation3.
 
 }
 
