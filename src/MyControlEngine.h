@@ -8,6 +8,7 @@
 #include "TowerDefenseYellow.h"
 #include "TowerDefenseOrange.h"
 #include "TowerDefensePurple.h"
+#include "TowerDefenseRicochet.h"
 #include "Monstre.h"
 #include "FastMonstre.h"
 #include "StrongMonstre.h"

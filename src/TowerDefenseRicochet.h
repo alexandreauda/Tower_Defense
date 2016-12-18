@@ -15,11 +15,15 @@ private:
 public:
 
     /******CONSTRUCTEUR A PARAMETRES******/
-	TowerDefenseRicochet(BlockGrille blockBase, int portee=3, int cadence=10, int timer=0, int attackDamage=12): TowerDefense(blockBase,(blockBase.getm_posx()+blockBase.getm_width()/2),(blockBase.getm_posy()+blockBase.getm_height()/2),(blockBase.getm_posx()+blockBase.getm_width()/2),(blockBase.getm_posy()+blockBase.getm_height()/2),portee,cadence,timer), m_nbRicochet(3), m_attackDamage(attackDamage){}
+	TowerDefenseRicochet(BlockGrille blockBase, int portee=3, int cadence=10, int timer=0, int attackDamage=4): TowerDefense(blockBase,(blockBase.getm_posx()+blockBase.getm_width()/2),(blockBase.getm_posy()+blockBase.getm_height()/2),(blockBase.getm_posx()+blockBase.getm_width()/2),(blockBase.getm_posy()+blockBase.getm_height()/2),portee,cadence,timer), m_nbRicochet(2), m_attackDamage(attackDamage){}
 
 
     /******ACCESSEURS******/
-    //null
+    int getm_nbRicochet() const;//Accesseur de l'attribut m_nbRicochet
+
+    int getm_attackDamage() const;//Accesseur de l'attribut m_attackDamage
+
+    virtual void watchdog(std::vector <Monstre *> *MonstreList);//Etablie la procedure d'attaque des tourelles
 
 
     /******MUTATEURS******/
@@ -34,6 +38,8 @@ public:
     virtual void drawTir() const;//Dessine les tirs des tourelles
 
     void drawTirRicochet(std::vector <Monstre *> *MonstreList) const;//Dessine les tirs des tourelles les ricochets des tirs des tourelles Ricochet
+
+    void attaquer(Monstre* monstreEnnemi, int const& g);
 
     virtual void attaque(Monstre* monstreEnnemi);
 

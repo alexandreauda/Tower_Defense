@@ -83,6 +83,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             int const costTowerDefenseYellow(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseYellow.txt"));//Cout d'une tourelle jaune
             int const costTowerDefenseOrange(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseOrange.txt"));//Cout d'une tourelle orange
             int const costTowerDefensePurple(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefensePurple.txt"));//Cout d'une tourelle violette
+            int const costTowerDefenseRicochet(LibMatrix::loadIntInFile("CostTowerDefense/CostTowerDefenseRicochet.txt"));//Cout d'une tourelle Ricochet
 
             //on parcourt la grille
             for(int x=0;x<12;x++){
@@ -98,8 +99,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                                     if(m_player->haveMoneyEnough(costTowerDefenseYellow) == 1){
                                         m_player->spendMoney(costTowerDefenseYellow);//Le joueur paye le cout d'une tourelle jaune
                                          m_TowerDefenseList->push_back(new TowerDefenseYellow((m_grilleDeJeu[x][y])));//on rajoute une tourelle jaune sur la case correspondante
-                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
-                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(1);//on met l'attribut m_colorTowerID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle jaune
+                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupee par une tourelle
+                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(1);//on met l'attribut m_colorTowerID de la case correspondante a 1, ce qui veut dire que cette case est occupee par une tourelle jaune
                                         cout<<"Vous avez depose une tourelle jaune!"<<endl<<endl;
                                     }
                                     //Si le player n'a pas assez d'argent pour se payer une tourelle jaune
@@ -112,8 +113,8 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                                     if(m_player->haveMoneyEnough(costTowerDefenseOrange) == 1){
                                         m_player->spendMoney(costTowerDefenseOrange);//Le joueur paye le cout d'une tourelle orange
                                         m_TowerDefenseList->push_back(new TowerDefenseOrange((m_grilleDeJeu[x][y])));//on rajoute une tourelle orange sur la case correspondante
-                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
-                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(2);//on met l'attribut m_colorTowerID de la case correspondante a 2, ce qui veut dire que cette case est occupeé par une tourelle orange
+                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupee par une tourelle
+                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(2);//on met l'attribut m_colorTowerID de la case correspondante a 2, ce qui veut dire que cette case est occupee par une tourelle orange
                                         cout<<"Vous avez depose une tourelle orange!"<<endl<<endl;
                                     }
                                     //Si le player n'a pas assez d'argent pour se payer une tourelle orange
@@ -126,13 +127,27 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                                     if(m_player->haveMoneyEnough(costTowerDefensePurple) == 1){
                                         m_player->spendMoney(costTowerDefensePurple);//Le joueur paye le cout d'une tourelle violette
                                         m_TowerDefenseList->push_back(new TowerDefensePurple((m_grilleDeJeu[x][y])));//on rajoute une tourelle violette sur la case correspondante
-                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupeé par une tourelle
-                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(3);//on met l'attribut m_colorTowerID de la case correspondante a 3, ce qui veut dire que cette case est occupeé par une tourelle violette
+                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupee par une tourelle
+                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(3);//on met l'attribut m_colorTowerID de la case correspondante a 3, ce qui veut dire que cette case est occupee par une tourelle violette
                                         cout<<"Vous avez deposer une tourelle viollette!"<<endl<<endl;
                                     }
                                     //Si le player n'a pas assez d'argent pour se payer une tourelle violette
                                     else{
                                         cout<<"Vous n'avez pas assez d'argent pour deposer une tourelle violette!"<<endl<<endl;
+                                    }
+                                    break;
+
+                            case 4: //Si le player a assez d'argent pour se payer une tourelle Ricochet
+                                    if(m_player->haveMoneyEnough(costTowerDefenseRicochet) == 1){
+                                        m_player->spendMoney(costTowerDefenseRicochet);//Le joueur paye le cout d'une tourelle violette
+                                        m_TowerDefenseList->push_back(new TowerDefenseRicochet((m_grilleDeJeu[x][y])));//on rajoute une tourelle violette sur la case correspondante
+                                        (m_grilleDeJeu[x][y]).setm_isFreeID(1);//on met l'attribut m_isFreeID de la case correspondante a 1, ce qui veut dire que cette case est occupee par une tourelle
+                                        (m_grilleDeJeu[x][y]).setm_colorTowerID(4);//on met l'attribut m_colorTowerID de la case correspondante a 4, ce qui veut dire que cette case est occupee par une tourelle Ricochet
+                                        cout<<"Vous avez deposer une tourelle Ricochet!"<<endl<<endl;
+                                    }
+                                    //Si le player n'a pas assez d'argent pour se payer une tourelle violette
+                                    else{
+                                        cout<<"Vous n'avez pas assez d'argent pour deposer une tourelle Ricochet!"<<endl<<endl;
                                     }
                                     break;
 
@@ -187,6 +202,11 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
                             case 3: m_stockColorTower=3;//on met la couleur de la souris a 3 ce qui correspond a la couleur violette
                                     cout<<"Vous avez choisi une tourelle violette dans le Store:"<<endl;
+                                    cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
+                                    break;
+
+                            case 4: m_stockColorTower=4;//on met la couleur de la souris a 4 ce qui correspond a la couleur de la tourelle Ricochet
+                                    cout<<"Vous avez choisi une tourelle Ricochet dans le Store:"<<endl;
                                     cout<<"-Veuillez la placer sur la grille!"<<endl<<endl;
                                     break;
 
