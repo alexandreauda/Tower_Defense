@@ -31,7 +31,7 @@ private:
     std::vector <Monstre *> *m_MonstreList;
     int m_stockColorTower; //Permet de stocker une couleur de tourelle dans la souris
     BlockGrille m_grilleDeJeu[12][12];
-    BlockStore m_stockStore[12];
+    BlockStore m_stockStore[13];
     BlockStartMonstre m_buttonStartMonstre;
     BlockSaveGame m_buttonSaveGame;
     Joueur* m_player;

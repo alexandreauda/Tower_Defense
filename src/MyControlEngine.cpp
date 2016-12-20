@@ -180,7 +180,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
 
             //On parcourt le Store
-            for(int i=0; i<12;i++){
+            for(int i=0; i<13;i++){
                 if((m_stockStore[i]).pointIsInBlock(mousePosx,mousePosy) == 1){//Si la souris appuie sur un block du Store
                         switch((m_stockStore[i]).getm_posID()){ //switch en fonction de la case du Store
 

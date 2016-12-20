@@ -22,13 +22,13 @@ Le vecteur statique en parametre est modifiee par la methode car il est passe pa
 @param: La methode loadStore prend un parametre obligatoire: un vecteur statique de type BlockStore et de dimension 12.
 -param1: un vecteur statique de type BlockStore et de dimension 12 qui va etre modifie pour etre initialise avec des blocks de carasteristiques differentes.
 */
-void Store::loadStore(BlockStore stockStore[12]) const {
+void Store::loadStore(BlockStore stockStore[13]) const {
 
-for(int i=0;i<12;i++){
+for(int i=0;i<13;i++){
 
 				stockStore[i]= BlockStore(-i*m_shopCellWidth-0.004*i+0.67, -0.85, m_shopCellWidth, m_shopCellHeight);//on initialise le tableau stockStore[] avec des blocs
 
-                (stockStore[i]).setm_posID(11-i);//on numerote les blocks au fur et a mesure
+                (stockStore[i]).setm_posID(12-i);//on numerote les blocks au fur et a mesure
 
                 (stockStore[i]).setm_colorBlockID(2);//on set l'ID
 
@@ -44,7 +44,7 @@ La methode draw de la classe Store permet de dessiner l'inventaire de maniere gr
 */
 void Store::draw() const {
 
-BlockStore stockStore[12];//on definit un tableau vide de longueur 12 de type BlockStore
+BlockStore stockStore[13];//on definit un tableau vide de longueur 12 de type BlockStore
 loadStore(stockStore);//on initialise le vecteur statique stockStore pris en parametre avec des blocks de carasteristiques differentes
 
 
@@ -79,14 +79,14 @@ char * textFinDeTextCostTowerDefenseRicochet=new char[1]{'\0'};//Contient un car
 strcat(textCostTowerDefenseRicochet,textFinDeTextCostTowerDefenseRicochet);//Concatene les deux chaines de caracteres
 
     //on parcourt le vecteur statique
-    for(int i=0;i<12;i++){
+    for(int i=0;i<13;i++){
 
         (stockStore[i]).draw();//on dessine le bloc correspondant (dependamment de son m_colorBlockID, il sera dessine dans une couleur specifique)
 
     }
-LibMatrix::drawLargeText2D(textCorbeille,(stockStore[11]).getm_posx()+((stockStore[11]).getm_width()/2.0)-0.03,(stockStore[11]).getm_posy()+(stockStore[11]).getm_height()+0.01, 0, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer la corbeille.
-LibMatrix::drawLargeText2D(textCostTowerDefenseYellow,(stockStore[10]).getm_posx()+((stockStore[10]).getm_width()/2.0)-0.03,(stockStore[10]).getm_posy()+(stockStore[10]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle jaune.
-LibMatrix::drawLargeText2D(textCostTowerDefenseOrange,(stockStore[9]).getm_posx()+((stockStore[9]).getm_width()/2.0)-0.03,(stockStore[9]).getm_posy()+(stockStore[9]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle orange.
-LibMatrix::drawLargeText2D(textCostTowerDefensePurple,(stockStore[8]).getm_posx()+((stockStore[8]).getm_width()/2.0)-0.03,(stockStore[8]).getm_posy()+(stockStore[8]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle violette.
-LibMatrix::drawLargeText2D(textCostTowerDefenseRicochet,(stockStore[7]).getm_posx()+((stockStore[7]).getm_width()/2.0)-0.05,(stockStore[7]).getm_posy()+(stockStore[7]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle rouge.
+LibMatrix::drawLargeText2D(textCorbeille,(stockStore[12]).getm_posx()+((stockStore[12]).getm_width()/2.0)-0.03,(stockStore[12]).getm_posy()+(stockStore[12]).getm_height()+0.01, 0, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer la corbeille.
+LibMatrix::drawLargeText2D(textCostTowerDefenseYellow,(stockStore[11]).getm_posx()+((stockStore[11]).getm_width()/2.0)-0.03,(stockStore[11]).getm_posy()+(stockStore[11]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle jaune.
+LibMatrix::drawLargeText2D(textCostTowerDefenseOrange,(stockStore[10]).getm_posx()+((stockStore[10]).getm_width()/2.0)-0.03,(stockStore[10]).getm_posy()+(stockStore[10]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle orange.
+LibMatrix::drawLargeText2D(textCostTowerDefensePurple,(stockStore[9]).getm_posx()+((stockStore[9]).getm_width()/2.0)-0.03,(stockStore[9]).getm_posy()+(stockStore[9]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle violette.
+LibMatrix::drawLargeText2D(textCostTowerDefenseRicochet,(stockStore[8]).getm_posx()+((stockStore[8]).getm_width()/2.0)-0.05,(stockStore[8]).getm_posy()+(stockStore[8]).getm_height()+0.01, 1, 1.0, 1.0, 1.0, 1.0);//Draw le texte pour indiquer le cout d'une tourelle rouge.
 }
