@@ -74,7 +74,7 @@ void MyGraphicEngine::Draw(){
                     }
                     //Sinon, si le niveau du Joueur est egale a 0
                     else{
-                        //On affiche la grille de Jeu
+                        //On affiche la grille de Jeu dediee au Joueur
                         Grille grilleDeJeu;
                         grilleDeJeu.draw(m_player->getm_level(),"Level_Player/");
                     }
