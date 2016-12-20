@@ -45,14 +45,14 @@ string TowerDefenseRicochetMediumLevel::getClass() const {
 
 /*
 @description:
-La methode draw de la classe TowerDefenseRicochetMediumLevel permet de dessiner des tourelles jaunes de maniere graphique dans le m_blockBase.
+La methode draw de la classe TowerDefenseRicochetMediumLevel permet de dessiner des tourelles rouge fonce de maniere graphique dans le m_blockBase.
 
 @param: null
 */
 void TowerDefenseRicochetMediumLevel::draw() const{
 
-    //Met les valeurs RGB dans la couleur rouge
-    float const r=1.0;
+    //Met les valeurs RGB dans la couleur rouge fonce
+    float const r=6.0;
     float const g=0.0;
     float const b=0.0;
     float const alpha = 1.0;

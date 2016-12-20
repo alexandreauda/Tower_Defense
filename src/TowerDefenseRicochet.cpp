@@ -45,7 +45,7 @@ string TowerDefenseRicochet::getClass() const {
 
 /*
 @description:
-La methode draw de la classe TowerDefenseRicochet permet de dessiner des tourelles jaunes de maniere graphique dans le m_blockBase.
+La methode draw de la classe TowerDefenseRicochet permet de dessiner des tourelles rouges de maniere graphique dans le m_blockBase.
 
 @param: null
 */
