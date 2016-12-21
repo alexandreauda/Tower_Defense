@@ -69,11 +69,12 @@ void TowerDefensePurpleSniper::drawTir() const{
 
 /*
 @description:
-La methode attaque de la classe TowerDefensePurpleSniper prend un pointeur de monstre en parametre et fait baisser la vitesse du monstre pointe par le pointeur.
+La methode attaque de la classe TowerDefensePurpleSniper prend un pointeur de monstre en parametre et fait baisser la vitesse et la vie du monstre pointe par le pointeur.
 
 @param: La methode attaque prend un parametre obligatoire: un pointeur de Monstre.
 -param1: un pointeur pointant sur le Monstre que la tourelle attaque
 */
 void TowerDefensePurpleSniper::attaque(Monstre* monstreEnnemi){
 monstreEnnemi->slowDown(2);//Le monstre ralentit
+monstreEnnemi->receiveDamage(10);//Le monstre recoit des dommages
 }
