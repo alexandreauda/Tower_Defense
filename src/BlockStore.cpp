@@ -96,6 +96,70 @@ void BlockStore::draw() const
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
                     break;
 
+            case 5: //La sixieme case qui correspond au stock de tourelles TowerDefenseYellowLongShot dans le Store
+                    //on met un carre jaune fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowLongShot
+                    tR=0.8;
+                    tG=0.8;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 6: //La septieme case qui correspond au stock de tourelles TowerDefenseOrangeLongShot dans le Store
+                    //on met un carre orange fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeLongShot
+                    tR=0.9;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 7: //La huitieme case qui correspond au stock de tourelles TowerDefensePurpleLongShot dans le Store
+                    //on met un carre violet fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleLongShot
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 8: //La neuvieme case qui correspond au stock de tourelles TowerDefenseRicochetMediumLevel dans le Store
+                    //on met un carre rouge fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetMediumLevel
+                    tR=0.6;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 9: //La dixieme case qui correspond au stock de tourelles TowerDefenseYellowSniper dans le Store
+                    //on met un carre jaune tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowSniper
+                    tR=0.6;
+                    tG=0.6;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 10: //La onzieme case qui correspond au stock de tourelles TowerDefenseOrangeSniper dans le Store
+                    //on met un carre orange tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeSniper
+                    tR=0.8;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 11: //La douzieme case qui correspond au stock de tourelles TowerDefensePurpleSniper dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleSniper
+                    tR=0.9;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 12: //La treizieme case qui correspond au stock de tourelles TowerDefenseRicochetHighLevel dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetHighLevel
+                    tR=0.4;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
             default: break;
         }
      }
@@ -154,6 +218,70 @@ void BlockStore::draw() const
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
                     break;
 
+            case 5: //La sixieme case qui correspond au stock de tourelles TowerDefenseYellowLongShot dans le Store
+                    //on met un carre jaune fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowLongShot
+                    tR=0.8;
+                    tG=0.8;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 6: //La septieme case qui correspond au stock de tourelles TowerDefenseOrangeLongShot dans le Store
+                    //on met un carre orange fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeLongShot
+                    tR=0.9;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 7: //La huitieme case qui correspond au stock de tourelles TowerDefensePurpleLongShot dans le Store
+                    //on met un carre violet fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleLongShot
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 8: //La neuvieme case qui correspond au stock de tourelles TowerDefenseRicochetMediumLevel dans le Store
+                    //on met un carre rouge fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetMediumLevel
+                    tR=0.6;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 9: //La dixieme case qui correspond au stock de tourelles TowerDefenseYellowSniper dans le Store
+                    //on met un carre jaune tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowSniper
+                    tR=0.6;
+                    tG=0.6;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 10: //La onzieme case qui correspond au stock de tourelles TowerDefenseOrangeSniper dans le Store
+                    //on met un carre orange tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeSniper
+                    tR=0.8;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 11: //La douzieme case qui correspond au stock de tourelles TowerDefensePurpleSniper dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleSniper
+                    tR=0.9;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 12: //La treizieme case qui correspond au stock de tourelles TowerDefenseRicochetHighLevel dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetHighLevel
+                    tR=0.4;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
             default: break;
         }
          }
@@ -207,6 +335,70 @@ void BlockStore::draw() const
             case 4: //La cinquieme case qui correspond au stock de tourelles ricochet dans le Store
                     //on met un carre rouge pour signifier qu'il s'agit du stock de tourelles de couleur rouge
                     tR=1.0;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 5: //La sixieme case qui correspond au stock de tourelles TowerDefenseYellowLongShot dans le Store
+                    //on met un carre jaune fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowLongShot
+                    tR=0.8;
+                    tG=0.8;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 6: //La septieme case qui correspond au stock de tourelles TowerDefenseOrangeLongShot dans le Store
+                    //on met un carre orange fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeLongShot
+                    tR=0.9;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 7: //La huitieme case qui correspond au stock de tourelles TowerDefensePurpleLongShot dans le Store
+                    //on met un carre violet fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleLongShot
+                    tR=1.0;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 8: //La neuvieme case qui correspond au stock de tourelles TowerDefenseRicochetMediumLevel dans le Store
+                    //on met un carre rouge fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetMediumLevel
+                    tR=0.6;
+                    tG=0.0;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 9: //La dixieme case qui correspond au stock de tourelles TowerDefenseYellowSniper dans le Store
+                    //on met un carre jaune tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseYellowSniper
+                    tR=0.6;
+                    tG=0.6;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 10: //La onzieme case qui correspond au stock de tourelles TowerDefenseOrangeSniper dans le Store
+                    //on met un carre orange tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseOrangeSniper
+                    tR=0.8;
+                    tG=0.3;
+                    tB=0.0;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 11: //La douzieme case qui correspond au stock de tourelles TowerDefensePurpleSniper dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefensePurpleSniper
+                    tR=0.9;
+                    tG=0.0;
+                    tB=0.6;
+                    GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge
+                    break;
+
+            case 12: //La treizieme case qui correspond au stock de tourelles TowerDefenseRicochetHighLevel dans le Store
+                    //on met un carre violet tres fonce pour signifier qu'il s'agit du stock de tourelles TowerDefenseRicochetHighLevel
+                    tR=0.4;
                     tG=0.0;
                     tB=0.0;
                     GraphicPrimitives::drawFillRect2D(m_posx+m_width/6, m_posy+m_height/6, m_width*2/3, m_height*2/3, tR, tG, tB, alpha); //on affiche un bloc violet dans le block du Store pour representer une tourelle rouge

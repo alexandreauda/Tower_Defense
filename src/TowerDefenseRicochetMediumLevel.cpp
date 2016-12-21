@@ -52,7 +52,7 @@ La methode draw de la classe TowerDefenseRicochetMediumLevel permet de dessiner 
 void TowerDefenseRicochetMediumLevel::draw() const{
 
     //Met les valeurs RGB dans la couleur rouge fonce
-    float const r=6.0;
+    float const r=0.6;
     float const g=0.0;
     float const b=0.0;
     float const alpha = 1.0;
