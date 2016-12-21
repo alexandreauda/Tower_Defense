@@ -105,7 +105,7 @@ void MyGraphicEngine::Draw(){
                     //On affiche les ricochets des tirs des tourelles Ricochet
                     for(int i=0;i<m_TowerDefenseList->size();i++){
                         //Si les tourelles sont des tourelles ricochet
-                        if((*m_TowerDefenseList)[i]->getClass() == "TowerDefenseRicochet"){
+                        if((*m_TowerDefenseList)[i]->getClass() == "TowerDefenseRicochet" || (*m_TowerDefenseList)[i]->getClass() == "TowerDefenseRicochetMediumLevel" || (*m_TowerDefenseList)[i]->getClass() == "TowerDefenseRicochetHighLevel"){
                             (*m_TowerDefenseList)[i]->drawTirRicochet(m_MonstreList);
                         }
                     }
